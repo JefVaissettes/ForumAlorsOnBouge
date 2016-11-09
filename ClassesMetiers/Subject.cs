@@ -58,13 +58,18 @@ namespace ClassesMetiers
         /// <summary>
         /// La liste de reponse, concernant un sujet
         /// </summary>
-        public List<Post> Reponses
+        public List<Post> Posts
         {
             get { return _Posts; }
             set { _Posts = value; }
         }
 
         private int _id_rubric;
+        private int v1;
+        private string v2;
+        private string v3;
+        private Rubric rubric;
+
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
@@ -104,6 +109,14 @@ namespace ClassesMetiers
         public Subject(int id_subject, string subject_title, string subject_description, int id_rubric, List<Post> Posts) : this(id_subject, subject_title, subject_description, id_rubric)
         {
             _Posts = Posts;
+        }
+
+        public Subject(int v1, string v2, string v3, Rubric rubric)
+        {
+            this.v1 = v1;
+            this.v2 = v2;
+            this.v3 = v3;
+            this.rubric = rubric;
         }
         #endregion
         #region "Methodes"

@@ -54,23 +54,23 @@ namespace DAO
         /// <summary>
         /// La methode GetSujetsByCategorie, permet de récupéré tous les sujets d'une catégorie
         /// </summary>
-        /// <param name="idcategorie">L'identifiant de la catégorie</param>
+        /// <param name="idrubric">L'identifiant de la catégorie</param>
         /// <returns>La liste des sujets pour une catégorie donnée</returns>
 
-        public static List<Subject> GetSujetsByCategorie(int id_rubric)
+        public static List<Subject> GetSujetsByCategorieID(int idrubric)
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetSujetsByCategorie";
+            cmd.CommandText = "GetSujetsByCategorieID";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@Id_rubric";
-            parm.Value = id_rubric;
+            parm.ParameterName = "@idrubric";
+            parm.Value = idrubric;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("AllSujets");
+            DataTable dt = new DataTable("AllSubjects");
             da.Fill(dt);
             //con.Close();
 
@@ -81,7 +81,7 @@ namespace DAO
                 // parcours des toutes lignes de notre table 
                 foreach (DataRow row in dt.Rows)
                 {
-                    _Sujets.Add(new Subject(int.Parse(row["ID_SUJET"].ToString()), row["TITRE"].ToString(), row["DESCRIPTION"].ToString(), id_rubric));
+                    Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), RubricDAO.GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
 
                 }
                 return _Sujets;

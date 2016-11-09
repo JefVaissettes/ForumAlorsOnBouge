@@ -11,7 +11,7 @@ namespace ClassesMetiers
     /// son username (nom) et son mot de passe
     /// </summary>
     
-    public class User
+    public class Utilisateur
     {
         #region "Property et attributs"
 
@@ -80,7 +80,7 @@ namespace ClassesMetiers
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public User(int id_users, string username, string password, string email, int role)
+        public Utilisateur(int id_users, string username, string password, string email, int role)
         {
             this.id_users = id_users;
             this.username = username;
@@ -89,7 +89,7 @@ namespace ClassesMetiers
             this.role = role;
         }
 
-        public User(int id_users, string username, string password, int role)
+        public Utilisateur(int id_users, string username, string password, int role)
         {
             this.id_users = id_users;
             this.username = username;
@@ -97,7 +97,7 @@ namespace ClassesMetiers
             this.role = role;
         }
 
-        public User(int id_users)
+        public Utilisateur(int id_users)
         {
             this.id_users = id_users;
         }

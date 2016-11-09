@@ -26,7 +26,7 @@ namespace FRv1
         private void RubricSujPost_Load(object sender, EventArgs e)
         {
             displaycbBxRubric(Methodes.Controller.GetAllRubrics());
-            //displaycbBxSubject(Methodes.Methodes.GetSujetsByCategorie((int)cbBxRubric.SelectedValue));
+            displaycbBxSubject(Methodes.Controller.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
         }
 
 
@@ -37,12 +37,20 @@ namespace FRv1
             cbBxRubric.DataSource = rubrics;
         }
 
-        //private void displaycbBxSubject(List<Subject> subjects)
-        //{
-        //    cbBxSubject.ValueMember = "ID_SUBJECT";
-        //    cbBxSubject.DisplayMember = "SUBJECT_TITLE";
-        //    cbBxSubject.DataSource = subjects;
-        //    Subject subject = (Subject)cbBxSubject.SelectedItem;
-        //}
+        private void displaycbBxSubject(List<Subject> subjects)
+        {
+            cbBxSubject.ValueMember = "ID_SUBJECT";
+            cbBxSubject.DisplayMember = "SUBJECT_TITLE";
+            cbBxSubject.DataSource = subjects;
+            Subject subject = (Subject)cbBxSubject.SelectedItem;
+        }
+
+        private void btConnect_Click(object sender, EventArgs e)
+        {
+            using (Identification frmIdentity = new Identification())
+            {
+                frmIdentity.ShowDialog();
+            }
+        }
     }
 }

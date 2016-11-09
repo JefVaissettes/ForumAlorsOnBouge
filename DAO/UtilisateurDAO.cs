@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DAO
 {
-    public static class UserDAO
+    public static class UtilisateurDAO
     {
         #region "Property et attributs"
 
@@ -28,7 +28,7 @@ namespace DAO
         /// <param name="login">Le Login (NOM)</param>
         /// <param name="password">LE mot de passe</param>
         /// <returns></returns>
-        public static User Login(string login, string password)
+        public static Utilisateur Login(string login, string password)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetLoginPassword";
@@ -57,7 +57,7 @@ namespace DAO
 
         }
 
-        public static User GetUsersByID(int iduser)
+        public static Utilisateur GetUsersByID(int iduser)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetUserByID";
@@ -76,13 +76,13 @@ namespace DAO
             if (dt.Rows.Count == 1)
             {
                 DataRow row = dt.Rows[0];
-                User user = new User(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
+                Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
                 return user;
             }
             return null;
         }
 
-        public static List<User> GetAllUsers()
+        public static List<Utilisateur> GetAllUsers()
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllUsers";
@@ -94,10 +94,10 @@ namespace DAO
 
             if (dt.Rows.Count >= 1)
             {
-                List<User> _Users = new List<User>();
+                List<Utilisateur> _Users = new List<Utilisateur>();
                 foreach (DataRow row in dt.Rows)
                 {
-                    User user = new User(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
+                    Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
                     _Users.Add(user);
                 }
                 return _Users;

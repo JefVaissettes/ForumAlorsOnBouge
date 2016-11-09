@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dGVSubject = new System.Windows.Forms.DataGridView();
             this.btCreerSujet = new System.Windows.Forms.Button();
             this.btModifSujet = new System.Windows.Forms.Button();
             this.cbBxRubric = new System.Windows.Forms.ComboBox();
@@ -44,20 +44,23 @@
             this.btCreerPost = new System.Windows.Forms.Button();
             this.gbxModerator = new System.Windows.Forms.GroupBox();
             this.gbxUserLogged = new System.Windows.Forms.GroupBox();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btConnect = new System.Windows.Forms.Button();
+            this.dGVPost = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVSubject)).BeginInit();
             this.gpBxRubric.SuspendLayout();
             this.gpBxSubject.SuspendLayout();
             this.gbxModerator.SuspendLayout();
             this.gbxUserLogged.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPost)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dGVSubject
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 48);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(636, 358);
-            this.dataGridView1.TabIndex = 0;
+            this.dGVSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVSubject.Location = new System.Drawing.Point(12, 48);
+            this.dGVSubject.Name = "dGVSubject";
+            this.dGVSubject.Size = new System.Drawing.Size(636, 170);
+            this.dGVSubject.TabIndex = 0;
             // 
             // btCreerSujet
             // 
@@ -207,30 +210,53 @@
             this.gbxUserLogged.TabIndex = 13;
             this.gbxUserLogged.TabStop = false;
             // 
+            // btConnect
+            // 
+            this.btConnect.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConnect.Location = new System.Drawing.Point(204, 426);
+            this.btConnect.Name = "btConnect";
+            this.btConnect.Size = new System.Drawing.Size(132, 40);
+            this.btConnect.TabIndex = 14;
+            this.btConnect.Text = "Se connecter";
+            this.btConnect.UseVisualStyleBackColor = true;
+            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
+            // 
+            // dGVPost
+            // 
+            this.dGVPost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVPost.Location = new System.Drawing.Point(12, 233);
+            this.dGVPost.Name = "dGVPost";
+            this.dGVPost.Size = new System.Drawing.Size(636, 172);
+            this.dGVPost.TabIndex = 15;
+            // 
             // RubricSujPost
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Menu;
             this.ClientSize = new System.Drawing.Size(815, 479);
+            this.Controls.Add(this.dGVPost);
+            this.Controls.Add(this.btConnect);
             this.Controls.Add(this.gbxUserLogged);
             this.Controls.Add(this.gbxModerator);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.gpBxSubject);
             this.Controls.Add(this.gpBxRubric);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dGVSubject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RubricSujPost";
             this.Text = "Alors on bouge !";
             this.Load += new System.EventHandler(this.RubricSujPost_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVSubject)).EndInit();
             this.gpBxRubric.ResumeLayout(false);
             this.gpBxRubric.PerformLayout();
             this.gpBxSubject.ResumeLayout(false);
             this.gpBxSubject.PerformLayout();
             this.gbxModerator.ResumeLayout(false);
             this.gbxUserLogged.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPost)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -238,7 +264,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dGVSubject;
         private System.Windows.Forms.Button btCreerSujet;
         private System.Windows.Forms.Button btModifSujet;
         private System.Windows.Forms.ComboBox cbBxRubric;
@@ -254,5 +280,7 @@
         private System.Windows.Forms.Button btCreerPost;
         private System.Windows.Forms.GroupBox gbxModerator;
         private System.Windows.Forms.GroupBox gbxUserLogged;
+        private System.Windows.Forms.Button btConnect;
+        private System.Windows.Forms.DataGridView dGVPost;
     }
 }

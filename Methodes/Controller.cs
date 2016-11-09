@@ -52,9 +52,9 @@ namespace Methodes
         /// </summary>
         /// <param name="id_rubric">L'identifiant de la rubrique</param>
         /// <returns>La liste des tous les sujets, d'une rubrique donnée</returns>
-        public static List<Subject> GetSujetsByCategorie(int id_rubric)
+        public static List<Subject> GetSujetsByCategorieID(int id_rubric)
         {
-            return SubjectDAO.GetSujetsByCategorie(id_rubric);
+            return SubjectDAO.GetSujetsByCategorieID(id_rubric);
         }
 
         /// <summary>
@@ -156,9 +156,9 @@ namespace Methodes
         /// <param name="username">Le nom de l'utilisateur</param>
         /// <param name="password">LE mot de passe</param>
         /// <returns></returns>
-        public static User Username(string username, string password)
+        public static Utilisateur Username(string username, string password)
         {
-            return UserDAO.Login(username, password);
+            return UtilisateurDAO.Login(username, password);
         }
 
         #endregion

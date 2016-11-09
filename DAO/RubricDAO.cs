@@ -30,7 +30,7 @@ namespace DAO
         /// La méthodes GetAllCategories, permet de récupérer toutes les catégories
         /// enregistrées dans la base de données
         /// </summary>
-        /// <returns>Les Catégories existant dans la bdd</returns>
+        /// <returns>Les rubriques de la database</returns>
         public static List<Rubric> GetAllRubrics()
         {
             // con.Open();
