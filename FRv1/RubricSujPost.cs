@@ -25,7 +25,7 @@ namespace FRv1
 
         private void RubricSujPost_Load(object sender, EventArgs e)
         {
-            displaycbBxRubric(Methodes.Methodes.GetAllRubrics());
+            displaycbBxRubric(Methodes.Controller.GetAllRubrics());
             //displaycbBxSubject(Methodes.Methodes.GetSujetsByCategorie((int)cbBxRubric.SelectedValue));
         }
 

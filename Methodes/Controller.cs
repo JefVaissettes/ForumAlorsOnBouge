@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Methodes
 {
-    public static class Methodes
+    public static class Controller
     {
         #region Méthodes Rubrique
 

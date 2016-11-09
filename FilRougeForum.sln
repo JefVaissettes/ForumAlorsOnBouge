@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesMetiers", "ClassesMetiers\ClassesMetiers.csproj", "{568CFC35-5B5C-4B74-B52B-3B575C8167E2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Methodes", "Methodes\Methodes.csproj", "{F7864EE7-6A98-4536-AFC9-91C583579B33}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Controller", "Methodes\Controller.csproj", "{F7864EE7-6A98-4536-AFC9-91C583579B33}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

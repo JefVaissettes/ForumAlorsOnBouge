@@ -133,9 +133,9 @@
       <Project>{ec6e10ed-945a-459e-bae1-f4a90b8870a2}</Project>
       <Name>DAO</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Methodes\Methodes.csproj">
+    <ProjectReference Include="..\Methodes\Controller.csproj">
       <Project>{f7864ee7-6a98-4536-afc9-91c583579b33}</Project>
-      <Name>Methodes</Name>
+      <Name>Controller</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
