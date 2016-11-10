@@ -1,4 +1,4 @@
-﻿namespace FRv1
+﻿namespace IHMFR
 {
     partial class Accueil
     {

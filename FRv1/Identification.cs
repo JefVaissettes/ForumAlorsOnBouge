@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FRv1
+namespace IHMFR
 {
     public partial class Identification : Form
     {

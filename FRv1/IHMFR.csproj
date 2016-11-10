@@ -58,12 +58,6 @@
     <Compile Include="CreerPost.Designer.cs">
       <DependentUpon>CreerPost.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreerModifSujet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreerModifSujet.Designer.cs">
-      <DependentUpon>CreerModifSujet.cs</DependentUpon>
-    </Compile>
     <Compile Include="Identification.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -75,6 +69,18 @@
     </Compile>
     <Compile Include="modifpwd.Designer.cs">
       <DependentUpon>modifpwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CreateSujet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateSujet.Designer.cs">
+      <DependentUpon>CreateSujet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ModifSujet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ModifSujet.Designer.cs">
+      <DependentUpon>ModifSujet.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -90,14 +96,17 @@
     <EmbeddedResource Include="CreerPost.resx">
       <DependentUpon>CreerPost.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreerModifSujet.resx">
-      <DependentUpon>CreerModifSujet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Identification.resx">
       <DependentUpon>Identification.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="modifpwd.resx">
       <DependentUpon>modifpwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CreateSujet.resx">
+      <DependentUpon>CreateSujet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ModifSujet.resx">
+      <DependentUpon>ModifSujet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -107,6 +116,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RubricSujPost.resx">
       <DependentUpon>RubricSujPost.cs</DependentUpon>

@@ -9,15 +9,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IHMFR
+namespace FRv1
 {
-    public partial class CreerPost : Form
+    public partial class ModifSujet : Form
     {
-        internal Post post;
+        internal Rubric rubric;
+        internal Subject subject;
 
-        public CreerPost()
+        public ModifSujet()
         {
             InitializeComponent();
         }
+
     }
 }

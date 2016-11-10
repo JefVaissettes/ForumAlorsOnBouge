@@ -9,13 +9,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FRv1
+namespace IHMFR
 {
     public partial class Accueil : Form
     {
-        //static internal int IsRmodo;
-        //static internal Users CurrentUsers;
-        //static internal bool Isconnected;
+        static internal int IsRmodo;
+        static internal Utilisateur CurrentUsers;
+        static internal bool IsConnected;
 
         public Accueil()
         {

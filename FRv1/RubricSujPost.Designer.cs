@@ -1,4 +1,4 @@
-﻿namespace FRv1
+﻿namespace IHMFR
 {
     partial class RubricSujPost
     {
@@ -71,6 +71,7 @@
             this.btCreerSujet.TabIndex = 1;
             this.btCreerSujet.Text = "Créer sujet";
             this.btCreerSujet.UseVisualStyleBackColor = true;
+            this.btCreerSujet.Click += new System.EventHandler(this.btCreerSujet_Click);
             // 
             // btModifSujet
             // 
@@ -81,6 +82,7 @@
             this.btModifSujet.TabIndex = 2;
             this.btModifSujet.Text = "Modifier sujet";
             this.btModifSujet.UseVisualStyleBackColor = true;
+            this.btModifSujet.Click += new System.EventHandler(this.btModifSujet_Click);
             // 
             // cbBxRubric
             // 
@@ -89,6 +91,7 @@
             this.cbBxRubric.Name = "cbBxRubric";
             this.cbBxRubric.Size = new System.Drawing.Size(121, 21);
             this.cbBxRubric.TabIndex = 3;
+            this.cbBxRubric.SelectedIndexChanged += new System.EventHandler(this.cbBxRubric_SelectedIndexChanged);
             // 
             // cbBxSubject
             // 
@@ -97,6 +100,7 @@
             this.cbBxSubject.Name = "cbBxSubject";
             this.cbBxSubject.Size = new System.Drawing.Size(121, 21);
             this.cbBxSubject.TabIndex = 4;
+            this.cbBxSubject.SelectedIndexChanged += new System.EventHandler(this.cbBxSubject_SelectedIndexChanged);
             // 
             // gpBxRubric
             // 
@@ -158,6 +162,7 @@
             this.btSupSujet.TabIndex = 8;
             this.btSupSujet.Text = "Supprimer sujet";
             this.btSupSujet.UseVisualStyleBackColor = true;
+            this.btSupSujet.Click += new System.EventHandler(this.btSupSujet_Click);
             // 
             // label1
             // 
@@ -188,6 +193,7 @@
             this.btCreerPost.TabIndex = 11;
             this.btCreerPost.Text = "Créer post";
             this.btCreerPost.UseVisualStyleBackColor = true;
+            this.btCreerPost.Click += new System.EventHandler(this.btCreerPost_Click);
             // 
             // gbxModerator
             // 

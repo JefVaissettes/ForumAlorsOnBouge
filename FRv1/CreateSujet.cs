@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClassesMetiers;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,9 +11,12 @@ using System.Windows.Forms;
 
 namespace FRv1
 {
-    public partial class CreerModifSujet : Form
+    public partial class CreateSujet : Form
     {
-        public CreerModifSujet()
+        internal Rubric rubric;
+        internal Subject subject;
+
+        public CreateSujet()
         {
             InitializeComponent();
         }

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FRv1.Properties
+namespace IHMFR.Properties
 {
 
 

@@ -8,10 +8,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace FRv1.Properties
-{
-
-
+namespace FRv1.Properties {
+    using System;
+    
+    
     /// <summary>
     ///   Une classe de ressource fortement typée destinée, entre autres, à la consultation des chaînes localisées.
     /// </summary>
@@ -22,49 +22,275 @@ namespace FRv1.Properties
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources
-    {
-
+    internal class Resources {
+        
         private static global::System.Resources.ResourceManager resourceMan;
-
+        
         private static global::System.Globalization.CultureInfo resourceCulture;
-
+        
         [global::System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("Microsoft.Performance", "CA1811:AvoidUncalledPrivateCode")]
-        internal Resources()
-        {
+        internal Resources() {
         }
-
+        
         /// <summary>
         ///   Retourne l'instance ResourceManager mise en cache utilisée par cette classe.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager
-        {
-            get
-            {
-                if ((resourceMan == null))
-                {
+        internal static global::System.Resources.ResourceManager ResourceManager {
+            get {
+                if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("FRv1.Properties.Resources", typeof(Resources).Assembly);
                     resourceMan = temp;
                 }
                 return resourceMan;
             }
         }
-
+        
         /// <summary>
         ///   Remplace la propriété CurrentUICulture du thread actuel pour toutes
         ///   les recherches de ressources à l'aide de cette classe de ressource fortement typée.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture
-        {
-            get
-            {
+        internal static global::System.Globalization.CultureInfo Culture {
+            get {
                 return resourceCulture;
             }
-            set
-            {
+            set {
                 resourceCulture = value;
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à la réponse a été ajouter avec succès.
+        /// </summary>
+        internal static string MsgBoxAddReponseText {
+            get {
+                return ResourceManager.GetString("MsgBoxAddReponseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter une réponse.
+        /// </summary>
+        internal static string MsgBoxAddReponseTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxAddReponseTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Le sujet a été ajouté avec succès.
+        /// </summary>
+        internal static string MsgBoxAddSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxAddSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Ajouter un sujet.
+        /// </summary>
+        internal static string MsgBoxAddSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxAddSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte..
+        /// </summary>
+        internal static string MsgBoxCancelText {
+            get {
+                return ResourceManager.GetString("MsgBoxCancelText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Annuler.
+        /// </summary>
+        internal static string MsgBoxCancelTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxCancelTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Vous-êtes déconnecté, avec succès.
+        /// </summary>
+        internal static string MsgBoxDeconnexionText {
+            get {
+                return ResourceManager.GetString("MsgBoxDeconnexionText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Déconnexion.
+        /// </summary>
+        internal static string MsgBoxDeconnexionTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxDeconnexionTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir supprimer la réponse ?.
+        /// </summary>
+        internal static string MsgBoxDeletePostText {
+            get {
+                return ResourceManager.GetString("MsgBoxDeletePostText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression de la réponse.
+        /// </summary>
+        internal static string MsgBoxDeletePostTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxDeletePostTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir supprimer le sujet sélectionné ?.
+        /// </summary>
+        internal static string MsgBoxDeleteSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxDeleteSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression du Sujet.
+        /// </summary>
+        internal static string MsgBoxDeleteSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxDeleteSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter la réponse !.
+        /// </summary>
+        internal static string MsgBoxErreurAddReponseText {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurAddReponseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout de la réponse.
+        /// </summary>
+        internal static string MsgBoxErreurAddReponseTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurAddReponseTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter le sujet.
+        /// </summary>
+        internal static string MsgBoxErreurAddSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurAddSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout du sujet.
+        /// </summary>
+        internal static string MsgBoxErreurAddSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurAddSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression impossible de la réponse !.
+        /// </summary>
+        internal static string MsgBoxErreurDeletePostText {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurDeletePostText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur !.
+        /// </summary>
+        internal static string MsgBoxErreurDeletePostTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurDeletePostTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Suppression impossible du sujet !.
+        /// </summary>
+        internal static string MsgBoxErreurDeleteSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurDeleteSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur !.
+        /// </summary>
+        internal static string MsgBoxErreurDeleteSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurDeleteSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir modifier le sujet ?.
+        /// </summary>
+        internal static string MsgBoxUpDateSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxUpDateSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Mofdification du sujet.
+        /// </summary>
+        internal static string MsgBoxUpDateSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxUpDateSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Désolé ! Le sujet sélectionné, ne contient aucune reponse.
+        /// </summary>
+        internal static string MsglblPasDeReponseText {
+            get {
+                return ResourceManager.GetString("MsglblPasDeReponseText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pas de reponse pour le sujet sélectionné.
+        /// </summary>
+        internal static string MsglblPasDeReponseTitre {
+            get {
+                return ResourceManager.GetString("MsglblPasDeReponseTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Désolé ! la catégorie sélectionnée ne contient aucun sujet.
+        /// </summary>
+        internal static string MsglblPasDeSujetText {
+            get {
+                return ResourceManager.GetString("MsglblPasDeSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Pas de sujet pour la catégorie sélectionnée.
+        /// </summary>
+        internal static string MsglblPasDeSujetTitre {
+            get {
+                return ResourceManager.GetString("MsglblPasDeSujetTitre", resourceCulture);
             }
         }
     }
