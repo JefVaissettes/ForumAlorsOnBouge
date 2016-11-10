@@ -58,13 +58,15 @@ namespace ClassesMetiers
         {
             this.id_rubric = id_rubric;
             this.rubric_title = rubric_title;
-            this.rubric_summary = rubric_summary;
         }
         #endregion
+
         #region "Methodes"
         #endregion
+
         #region "Methodes héritées et substituées"
         #endregion
+
         #region "Methodes à implementer pour les interfaces"
         #endregion
     }

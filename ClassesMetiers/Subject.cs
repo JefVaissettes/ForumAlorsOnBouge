@@ -65,11 +65,6 @@ namespace ClassesMetiers
         }
 
         private int _id_rubric;
-        private int v1;
-        private string v2;
-        private string v3;
-        private Rubric rubric;
-
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
@@ -111,18 +106,28 @@ namespace ClassesMetiers
             _Posts = Posts;
         }
 
-        public Subject(int v1, string v2, string v3, Rubric rubric)
+        /// <summary>
+        /// Constructeur d'un nouveau sujet
+        /// </summary>
+        /// <param name="id_subject">Identifiant du sujet</param>
+        /// <param name="subject_title">Titre du sujet</param>
+        /// <param name="id_rubric">Identifiant de la rubrique</param>
+        public Subject(int id_subject, string subject_title, int id_rubric)
         {
-            this.v1 = v1;
-            this.v2 = v2;
-            this.v3 = v3;
-            this.rubric = rubric;
+            this.id_subject = id_subject;
+            this.subject_title = subject_title;
+            this.id_rubric = id_rubric;
         }
+
+
         #endregion
+
         #region "Methodes"
         #endregion
+
         #region "Methodes héritées et substituées"
         #endregion
+
         #region "Methodes à implementer pour les interfaces"
         #endregion
     }

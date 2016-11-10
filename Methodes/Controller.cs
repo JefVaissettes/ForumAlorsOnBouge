@@ -50,7 +50,7 @@ namespace Methodes
         /// La méthode GetSujetsByRubric, permet de recupérer tous les sujets
         /// d'une rubrique, dont l'identifiant est passé en paramètre
         /// </summary>
-        /// <param name="id_rubric">L'identifiant de la rubrique</param>
+        /// <param name="idrubric">L'identifiant de la rubrique</param>
         /// <returns>La liste des tous les sujets, d'une rubrique donnée</returns>
         public static List<Subject> GetSujetsByCategorieID(int id_rubric)
         {

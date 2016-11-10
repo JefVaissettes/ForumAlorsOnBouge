@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dGVSubject = new System.Windows.Forms.DataGridView();
+            this.dGVPSubject = new System.Windows.Forms.DataGridView();
             this.btCreerSujet = new System.Windows.Forms.Button();
             this.btModifSujet = new System.Windows.Forms.Button();
             this.cbBxRubric = new System.Windows.Forms.ComboBox();
@@ -46,7 +46,7 @@
             this.gbxUserLogged = new System.Windows.Forms.GroupBox();
             this.btConnect = new System.Windows.Forms.Button();
             this.dGVPost = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVSubject)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPSubject)).BeginInit();
             this.gpBxRubric.SuspendLayout();
             this.gpBxSubject.SuspendLayout();
             this.gbxModerator.SuspendLayout();
@@ -54,13 +54,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.dGVPost)).BeginInit();
             this.SuspendLayout();
             // 
-            // dGVSubject
+            // dGVPSubject
             // 
-            this.dGVSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVSubject.Location = new System.Drawing.Point(12, 48);
-            this.dGVSubject.Name = "dGVSubject";
-            this.dGVSubject.Size = new System.Drawing.Size(636, 170);
-            this.dGVSubject.TabIndex = 0;
+            this.dGVPSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVPSubject.Location = new System.Drawing.Point(12, 48);
+            this.dGVPSubject.Name = "dGVPSubject";
+            this.dGVPSubject.Size = new System.Drawing.Size(636, 170);
+            this.dGVPSubject.TabIndex = 0;
             // 
             // btCreerSujet
             // 
@@ -225,9 +225,9 @@
             // dGVPost
             // 
             this.dGVPost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVPost.Location = new System.Drawing.Point(12, 233);
+            this.dGVPost.Location = new System.Drawing.Point(13, 236);
             this.dGVPost.Name = "dGVPost";
-            this.dGVPost.Size = new System.Drawing.Size(636, 172);
+            this.dGVPost.Size = new System.Drawing.Size(636, 170);
             this.dGVPost.TabIndex = 15;
             // 
             // RubricSujPost
@@ -244,12 +244,12 @@
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.gpBxSubject);
             this.Controls.Add(this.gpBxRubric);
-            this.Controls.Add(this.dGVSubject);
+            this.Controls.Add(this.dGVPSubject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RubricSujPost";
             this.Text = "Alors on bouge !";
             this.Load += new System.EventHandler(this.RubricSujPost_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVSubject)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dGVPSubject)).EndInit();
             this.gpBxRubric.ResumeLayout(false);
             this.gpBxRubric.PerformLayout();
             this.gpBxSubject.ResumeLayout(false);
@@ -264,7 +264,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dGVSubject;
+        private System.Windows.Forms.DataGridView dGVPSubject;
         private System.Windows.Forms.Button btCreerSujet;
         private System.Windows.Forms.Button btModifSujet;
         private System.Windows.Forms.ComboBox cbBxRubric;
