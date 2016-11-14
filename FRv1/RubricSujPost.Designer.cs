@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dGVPSubject = new System.Windows.Forms.DataGridView();
             this.btCreerSujet = new System.Windows.Forms.Button();
             this.btModifSujet = new System.Windows.Forms.Button();
             this.cbBxRubric = new System.Windows.Forms.ComboBox();
@@ -46,21 +45,12 @@
             this.gbxUserLogged = new System.Windows.Forms.GroupBox();
             this.btConnect = new System.Windows.Forms.Button();
             this.dGVPost = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dGVPSubject)).BeginInit();
             this.gpBxRubric.SuspendLayout();
             this.gpBxSubject.SuspendLayout();
             this.gbxModerator.SuspendLayout();
             this.gbxUserLogged.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVPost)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dGVPSubject
-            // 
-            this.dGVPSubject.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVPSubject.Location = new System.Drawing.Point(12, 48);
-            this.dGVPSubject.Name = "dGVPSubject";
-            this.dGVPSubject.Size = new System.Drawing.Size(636, 170);
-            this.dGVPSubject.TabIndex = 0;
             // 
             // btCreerSujet
             // 
@@ -91,7 +81,6 @@
             this.cbBxRubric.Name = "cbBxRubric";
             this.cbBxRubric.Size = new System.Drawing.Size(121, 21);
             this.cbBxRubric.TabIndex = 3;
-            this.cbBxRubric.SelectedIndexChanged += new System.EventHandler(this.cbBxRubric_SelectedIndexChanged);
             // 
             // cbBxSubject
             // 
@@ -183,6 +172,7 @@
             this.btSupPost.TabIndex = 10;
             this.btSupPost.Text = "Supprimer post";
             this.btSupPost.UseVisualStyleBackColor = true;
+            this.btSupPost.Click += new System.EventHandler(this.btSupPost_Click);
             // 
             // btCreerPost
             // 
@@ -231,9 +221,9 @@
             // dGVPost
             // 
             this.dGVPost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dGVPost.Location = new System.Drawing.Point(13, 236);
+            this.dGVPost.Location = new System.Drawing.Point(13, 48);
             this.dGVPost.Name = "dGVPost";
-            this.dGVPost.Size = new System.Drawing.Size(636, 170);
+            this.dGVPost.Size = new System.Drawing.Size(636, 358);
             this.dGVPost.TabIndex = 15;
             // 
             // RubricSujPost
@@ -250,12 +240,10 @@
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.gpBxSubject);
             this.Controls.Add(this.gpBxRubric);
-            this.Controls.Add(this.dGVPSubject);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "RubricSujPost";
             this.Text = "Alors on bouge !";
             this.Load += new System.EventHandler(this.RubricSujPost_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dGVPSubject)).EndInit();
             this.gpBxRubric.ResumeLayout(false);
             this.gpBxRubric.PerformLayout();
             this.gpBxSubject.ResumeLayout(false);
@@ -269,8 +257,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.DataGridView dGVPSubject;
         private System.Windows.Forms.Button btCreerSujet;
         private System.Windows.Forms.Button btModifSujet;
         private System.Windows.Forms.ComboBox cbBxRubric;

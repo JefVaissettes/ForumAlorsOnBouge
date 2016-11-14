@@ -93,17 +93,53 @@ namespace IHMFR
         private void btSupSujet_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
-            dr = MessageBox.Show(Properties.Resources.MsgBoxDeleteSujetText, Properties.Resources.MsgBoxDeleteSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            dr = MessageBox.Show( Properties.Resources.MsgBoxDeleteSujetText, Properties.Resources.MsgBoxDeleteSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if(dr == DialogResult.OK)
+            {
+                if(Controller.DeleteSujet((int)cbBxSubject.SelectedValue) != 1)
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxErreurDeleteSujetText, Properties.Resources.MsgBoxErreurDeleteSujetTitre);
+
+                }
+                List<Subject> subjects = Controller.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
+                if(subjects != null)
+                {
+                    displaycbBxSubject(subjects);
+                }
+            }
+           
         }
 
-
+        private void btSupPost_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show(Properties.Resources.MsgBoxDeletePostText, Properties.Resources.MsgBoxDeletePostTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
+            if(dr == DialogResult.OK)
+            {
+                if(Controller.DeleteReponse((int)dGVPost.CurrentRow.Cells["ID_POST"].Value) != 1)
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
+                }
+                List<Post> posts = Controller.GetAllReponseBySujet((int)cbBxSubject.SelectedValue);
+                if(posts != null)
+                {
+                    displaydgVPost(posts);
+                }
+            }
+        }
 
         #endregion
 
-        private void displaycbBxRubric(List<Subject> subjects)
-        {
-            throw new NotImplementedException();
-        }
+
+
+
+
+
+
+
+
+
+        
 
         private void displaycbBxRubric(List<Rubric> rubrics)
         {
