@@ -76,7 +76,7 @@ namespace DAO
             if (dt.Rows.Count == 1)
             {
                 DataRow row = dt.Rows[0];
-                Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
+                Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (bool.Parse(row["ROLE"].ToString())));
                 return user;
             }
             return null;
@@ -97,7 +97,7 @@ namespace DAO
                 List<Utilisateur> _Users = new List<Utilisateur>();
                 foreach (DataRow row in dt.Rows)
                 {
-                    Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (int.Parse(row["ROLE"].ToString())));
+                    Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (bool.Parse(row["ROLE"].ToString())));
                     _Users.Add(user);
                 }
                 return _Users;

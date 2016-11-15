@@ -13,7 +13,7 @@ namespace IHMFR
 {
     public partial class Accueil : Form
     {
-        static internal int IsRmodo;
+        static internal bool IsRmodo;
         static internal Utilisateur CurrentUsers;
         static internal bool IsConnected;
 
@@ -24,7 +24,7 @@ namespace IHMFR
 
         private void btConsul_Click(object sender, EventArgs e)
         {
-            using (RubricSujPost frmMain = new RubricSujPost())
+            using (frmPrincipale frmMain = new frmPrincipale())
             {
                 frmMain.ShowDialog();
             }

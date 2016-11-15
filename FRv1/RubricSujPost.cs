@@ -35,7 +35,6 @@ namespace IHMFR
 
         #endregion
 
-
         #region Event click
 
         private void btAnnuler_Click(object sender, EventArgs e)
@@ -171,7 +170,7 @@ namespace IHMFR
             List<Subject> subjects = Controller.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
             if (subjects != null)
             {
-                displaycbBxRubric(subjects);
+                //displaycbBxRubric(subjects);
             }
         }
 

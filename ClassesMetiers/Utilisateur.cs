@@ -58,12 +58,12 @@ namespace ClassesMetiers
             set { _email = value; }
         }
 
-        private int _role;
+        private bool _role;
         /// <summary>
         /// Numéro de role de l'utilisateur
         /// 0 = userlogged, 1 = moderator, 2 = administrator
         /// </summary>
-        public int role
+        public bool role
         {
             get { return _role; }
             set { _role = value; }
@@ -80,7 +80,7 @@ namespace ClassesMetiers
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public Utilisateur(int id_users, string username, string password, string email, int role)
+        public Utilisateur(int id_users, string username, string password, string email, bool role)
         {
             this.id_users = id_users;
             this.username = username;
@@ -89,7 +89,7 @@ namespace ClassesMetiers
             this.role = role;
         }
 
-        public Utilisateur(int id_users, string username, string password, int role)
+        public Utilisateur(int id_users, string username, string password, bool role)
         {
             this.id_users = id_users;
             this.username = username;

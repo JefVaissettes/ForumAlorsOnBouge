@@ -73,6 +73,18 @@
     <Compile Include="CreerPost.Designer.cs">
       <DependentUpon>CreerPost.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmCreerSujet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmCreerSujet.Designer.cs">
+      <DependentUpon>frmCreerSujet.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmModifSujet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmModifSujet.Designer.cs">
+      <DependentUpon>frmModifSujet.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +128,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CreerPost.resx">
       <DependentUpon>CreerPost.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmCreerSujet.resx">
+      <DependentUpon>frmCreerSujet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmModifSujet.resx">
+      <DependentUpon>frmModifSujet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipale.resx">
       <DependentUpon>frmPrincipale.cs</DependentUpon>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -35,9 +36,17 @@ namespace IHMFR
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-            using (RubricSujPost frmMain = new RubricSujPost())
+            Accueil.CurrentUsers = UtilisateurDAO.Login(txtLogin.Text, txtPwd.Text);
+            if(Accueil.CurrentUsers != null)
             {
-                frmMain.ShowDialog();
+                Accueil.IsConnected = true;
+                Accueil.IsRmodo = Accueil.CurrentUsers.role;
+                this.Close();
+            }
+            else
+            {
+                Accueil.IsConnected = false;
+                MessageBox.Show("Votre Login ou votre mot de passe sont incorrect!", "Veuillez saisir vos identifiants svp", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }
