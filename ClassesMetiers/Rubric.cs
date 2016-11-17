@@ -35,16 +35,6 @@ namespace ClassesMetiers
             set { _rubric_title = value; }
         }
 
-        private string _rubric_summary;
-        /// <summary>
-        /// Résumé de la rubrique
-        /// </summary>
-        public string rubric_summary
-        {
-            get { return _rubric_summary; }
-            set { _rubric_summary = value; }
-        }
-
         #endregion
 
         #region "Constructeurs"
@@ -59,6 +49,8 @@ namespace ClassesMetiers
             this.id_rubric = id_rubric;
             this.rubric_title = rubric_title;
         }
+
+
         #endregion
 
         #region "Methodes"

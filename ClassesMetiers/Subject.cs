@@ -64,14 +64,14 @@ namespace ClassesMetiers
             set { _Posts = value; }
         }
 
-        private int _id_rubric;
+        private Rubric _Rubric;
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
-        public int id_rubric
+        public Rubric Rubric
         {
-            get { return _id_rubric; }
-            set { _id_rubric = value; }
+            get { return _Rubric; }
+            set { _Rubric = value; }
         }
 
         #region "Constructeurs"
@@ -82,13 +82,13 @@ namespace ClassesMetiers
         /// <param name="id_subject">Identifiant du sujet</param>
         /// <param name="subject_title">Titre du sujet</param>
         /// <param name="subject_description">Description du sujet</param>
-        /// <param name="id_rubric">Identifiant de la rubrique</param>
-        public Subject(int id_subject, string subject_title, string subject_description, int id_rubric)
+        /// <param name="rubric">Identifiant de la rubrique</param>
+        public Subject(int id_subject, string subject_title, string subject_description, Rubric rubric)
         {
             this.id_subject = id_subject;
             this.subject_title = subject_title;
             this.subject_description = subject_description;
-            this.id_rubric = id_rubric;
+            this.Rubric = rubric;
             this._Posts = new List<Post>();
             this.subject_date = DateTime.Now;
         }
@@ -101,9 +101,9 @@ namespace ClassesMetiers
         /// <param name="subject_description">Description du sujet</param>
         /// <param name="id_rubric">Identifiant de la rubrique</param>
         /// <param name="Posts">Post en retour</param>
-        public Subject(int id_subject, string subject_title, string subject_description, int id_rubric, List<Post> Posts) : this(id_subject, subject_title, subject_description, id_rubric)
+        public Subject(int id_subject, string subject_title, string subject_description, Rubric rubric, List<Post> Posts) : this(id_subject, subject_title, subject_description, rubric)
         {
-            _Posts = Posts;
+            this.Posts = Posts;
         }
 
         /// <summary>
@@ -112,11 +112,11 @@ namespace ClassesMetiers
         /// <param name="id_subject">Identifiant du sujet</param>
         /// <param name="subject_title">Titre du sujet</param>
         /// <param name="id_rubric">Identifiant de la rubrique</param>
-        public Subject(int id_subject, string subject_title, int id_rubric)
+        public Subject(int id_subject, string subject_title, Rubric rubric)
         {
             this.id_subject = id_subject;
             this.subject_title = subject_title;
-            this.id_rubric = id_rubric;
+            this.Rubric = rubric;
         }
 
 

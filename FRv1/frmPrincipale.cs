@@ -1,6 +1,5 @@
 ﻿using ClassesMetiers;
 using DAO;
-using Methodes;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -126,7 +125,7 @@ namespace IHMFR
             dr = MessageBox.Show(Properties.Resources.MsgBoxDeleteSujetText, Properties.Resources.MsgBoxDeleteSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
-                if (Controller.DeleteSujet((int)cbBxSubject.SelectedValue) != 1)
+                if (SubjectDAO.DeleteSujet((int)cbBxSubject.SelectedValue) != 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeleteSujetText, Properties.Resources.MsgBoxErreurDeleteSujetTitre);
 
@@ -151,7 +150,7 @@ namespace IHMFR
         {
             if (cbBxRubric.SelectedIndex != -1)
             {
-                if (Controller.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
+                if (SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
                 {
                     return true;
                 }

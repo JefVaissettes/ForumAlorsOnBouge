@@ -23,21 +23,21 @@ namespace DAO
         #region "Methodes"
 
         /// <summary>
-        /// La méthode login, permet à un utilisateur de s'identifier
+        /// Cette méthode permet à un utilisateur de s'identifier
         /// </summary>
-        /// <param name="login">Le Login (NOM)</param>
+        /// <param name="username">Le username (NOM)</param>
         /// <param name="password">LE mot de passe</param>
         /// <returns></returns>
-        public static Utilisateur Login(string login, string password)
+        public static DataTable GetLoginPassword(string username, string password)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetLoginPassword";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parmLogin = cmd.CreateParameter();
-            parmLogin.ParameterName = "@LOGIN";
-            parmLogin.Value = login;
-            cmd.Parameters.Add(parmLogin);
+            SqlParameter parmUsername = cmd.CreateParameter();
+            parmUsername.ParameterName = "@USERNAME";
+            parmUsername.Value = username;
+            cmd.Parameters.Add(parmUsername);
 
             SqlParameter parmMPD = cmd.CreateParameter();
             parmMPD.ParameterName = "@PASSWORD";
@@ -45,44 +45,32 @@ namespace DAO
             cmd.Parameters.Add(parmMPD);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Login");
+            DataTable dt = new DataTable("Username");
             da.Fill(dt);
 
-            if (dt.Rows.Count == 1)
-            {
-                DataRow row = dt.Rows[0];
-                return GetUsersByID(int.Parse(row["ID_UTILISATEUR"].ToString()));
-            }
-            return null;
-
+            return dt;
         }
 
-        public static Utilisateur GetUsersByID(int iduser)
+        public static DataTable GetUserByID(int idutilisateur)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetUserByID";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@ID_UTILISATEUR";
-            parm.Value = iduser;
+            parm.ParameterName = "@idutilisateur";
+            parm.Value = idutilisateur;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Users");
+            DataTable dt = new DataTable("Utilisateur");
             da.Fill(dt);
             //con.Close();
 
-            if (dt.Rows.Count == 1)
-            {
-                DataRow row = dt.Rows[0];
-                Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (bool.Parse(row["ROLE"].ToString())));
-                return user;
-            }
-            return null;
+            return dt;
         }
 
-        public static List<Utilisateur> GetAllUsers()
+        public static DataTable  GetAllUsers()
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllUsers";
@@ -92,19 +80,31 @@ namespace DAO
             DataTable dt = new DataTable("Users");
             //con.Close();
 
-            if (dt.Rows.Count >= 1)
-            {
-                List<Utilisateur> _Users = new List<Utilisateur>();
-                foreach (DataRow row in dt.Rows)
-                {
-                    Utilisateur user = new Utilisateur(int.Parse(row["ID_USERS"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (bool.Parse(row["ROLE"].ToString())));
-                    _Users.Add(user);
-                }
-                return _Users;
-            }
-            return null;
-
+            return dt;
         }
+
+        public static int ModifierPassword(int iduser, string password)
+        {
+            SqlCommand cmd = con.CreateCommand();
+            cmd.CommandText = "ModifierPassword";
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parIdUser = cmd.CreateParameter(); //On creer une nouvelle instance d'objet sqlParameter
+            parIdUser.ParameterName = "@ID_UTILISATEUR";
+            parIdUser.Value = iduser;
+            cmd.Parameters.Add(parIdUser);
+
+            SqlParameter parPassword = cmd.CreateParameter(); //On creer une nouvelle instance d'objet sqlParameter
+            parPassword.ParameterName = "@PASSWORD";
+            parPassword.Value = password;
+            cmd.Parameters.Add(parPassword);
+
+            con.Open();
+            int nbligne = cmd.ExecuteNonQuery();
+            con.Close();
+            return nbligne;
+        }
+
         #endregion
 
         #region "Methodes héritées et substituées"

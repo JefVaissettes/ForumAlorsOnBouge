@@ -158,7 +158,7 @@ namespace Methodes
         /// <returns></returns>
         public static Utilisateur Username(string username, string password)
         {
-            return UtilisateurDAO.Login(username, password);
+            return UtilisateurDAO.GetLoginPassword(username, password);
         }
 
         #endregion

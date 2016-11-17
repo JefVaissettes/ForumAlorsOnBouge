@@ -25,7 +25,7 @@ namespace IHMFR
 
         private void btValider_Click(object sender, EventArgs e)
         {
-            Accueil.CurrentUsers = UtilisateurDAO.Login(txtLogin.Text, txtPwd.Text);
+            Accueil.CurrentUsers = UtilisateurDAO.GetLoginPassword(txtLogin.Text, txtPwd.Text);
             if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;

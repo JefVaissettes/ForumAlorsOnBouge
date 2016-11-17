@@ -29,7 +29,7 @@ namespace DAO
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Les reponses, concernant un sujet dont l'identifiant est passé en paramètre</returns>
         /// 
-        public static List<Post> GetAllPostBySubject(int id_subject)
+        public static DataTable GetAllPostBySubject(int id_subject)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllPostByIdSubject";
@@ -44,17 +44,7 @@ namespace DAO
             DataTable dt = new DataTable("Post") ;
             da.Fill(dt);
 
-            if (dt.Rows.Count >= 1)
-            {
-                List<Post> _Posts = new List<Post>();
-                foreach (DataRow row in dt.Rows)
-                {
-                    Post rep = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), int.Parse(row["ID_USERS"].ToString()), id_subject);
-                    _Posts.Add(rep);
-                }
-                return _Posts;
-            }
-            return null;
+            return dt;
         }
 
         /// <summary>

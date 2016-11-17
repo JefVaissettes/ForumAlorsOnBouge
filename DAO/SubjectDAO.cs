@@ -1,5 +1,4 @@
-﻿using ClassesMetiers;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -25,11 +24,11 @@ namespace DAO
         /// La méthode GetAllSujet, retourne tous les sujets du forum
         /// </summary>
         /// <returns>Tous les sujets</returns>
-        public static List<Subject> GetAllSujets()
+        public static DataTable GetAllSujets()
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetAllSujet";
+            cmd.CommandText = "GetAllSujets";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter();
@@ -37,19 +36,7 @@ namespace DAO
             da.Fill(dt);
             //con.Close();
 
-            if (dt.Rows.Count >= 1)
-            {
-                List<Subject> _Subjects = new List<Subject>();
-
-                foreach (DataRow row in dt.Rows)
-                {
-                    _Subjects.Add(new Subject(int.Parse(row["ID_SUJET"].ToString()), row["TITRE"].ToString(), row["DESCRIPTION"].ToString(), int.Parse(row["ID_CATEGORIE"].ToString())));
-                }
-
-                return _Subjects;
-            }
-
-            return null;
+           return dt;
         }
         /// <summary>
         /// La methode GetSujetsByCategorie, permet de récupéré tous les sujets d'une catégorie
@@ -57,7 +44,7 @@ namespace DAO
         /// <param name="id_rubric">L'identifiant de la catégorie</param>
         /// <returns>La liste des sujets pour une catégorie donnée</returns>
 
-        public static List<Subject> GetSujetsByCategorieID(int id_rubric)
+        public static DataTable GetSujetsByCategorieID(int id_rubric)
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -65,7 +52,7 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idrubric";
+            parm.ParameterName = "@idRubric";
             parm.Value = id_rubric;
             cmd.Parameters.Add(parm);
 
@@ -74,19 +61,8 @@ namespace DAO
             da.Fill(dt);
             //con.Close();
 
-            if (dt.Rows.Count >= 1)
-            {
-                List<Subject> _Sujets = new List<Subject>();
-
-                // parcours des toutes lignes de notre table 
-                foreach (DataRow row in dt.Rows)
-                {
-                    Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), id_rubric));
-
-                }
-                return _Sujets;
-            }
-            return null;
+            return dt;
+            
         }
 
         /// <summary>
@@ -94,7 +70,7 @@ namespace DAO
         /// </summary>
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Le sujet, dont l'identifiant est passé en paramatre </returns>
-        public static Subject GetSujetByID(int id_subject)
+        public static DataTable GetSujetByID(int id_subject)
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -112,15 +88,8 @@ namespace DAO
             da.Fill(dt);
             //con.Close();
 
-            if (dt.Rows.Count == 1)
-            {
-                DataRow row = dt.Rows[0];
-                Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), int.Parse(row["ID_RUBRIC"].ToString()));
-
-                return subject;
-            }
-
-            return null;
+            return dt;
+            
         }
 
         /// <summary>
@@ -132,7 +101,7 @@ namespace DAO
         /// <param name="description">La description du sujet</param>
         /// <param name="titre">Le titre su sujet</param>
         /// <returns>Le nombre de ligne, nbligne = 1, si tout se passe bien</returns>
-        public static int AddSujet(int idUtilisateur, int idCategorie, string description, string titre)
+        public static int AddSujet(int idUtilisateur, int idRubric, string description, string titre)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "AddSujet";
@@ -144,17 +113,17 @@ namespace DAO
             cmd.Parameters.Add(parmIdUtilisateur);
 
             SqlParameter parmIdCategorie = cmd.CreateParameter();
-            parmIdCategorie.ParameterName = "@ID_CATEGORIE";
-            parmIdCategorie.Value = idCategorie;
+            parmIdCategorie.ParameterName = "@ID_RUBRIC";
+            parmIdCategorie.Value = idRubric;
             cmd.Parameters.Add(parmIdCategorie);
 
             SqlParameter parmDescri = cmd.CreateParameter();
-            parmDescri.ParameterName = "@DESCRIPTION";
+            parmDescri.ParameterName = "@SUBJECT_DESCRIPTION";
             parmDescri.Value = description;
             cmd.Parameters.Add(parmDescri);
 
             SqlParameter parmTitre = cmd.CreateParameter();
-            parmTitre.ParameterName = "@TITRE";
+            parmTitre.ParameterName = "@SUBJECT_TITLE";
             parmTitre.Value = titre;
             cmd.Parameters.Add(parmTitre);
 
@@ -165,49 +134,94 @@ namespace DAO
         }
 
         /// <summary>
-        /// La méthode EditSujet, permet la modification du titre d'un sujet, et/ou la description
-        /// on passant l'ancien sujet en parametre
+        /// La méthode ModifierSujet, permet la modification d'un sujet en lui changeant le titre et/ou la description
+        /// on passe les anciennes données en paramètres
         /// </summary>
-        /// <param name="id_sujet">Sujet</param>
-        /// <param name="subject_title">Nouveau Titre</param>
-        /// <param name="subject_description">Nouvelle description</param>
-        /// <returns>Le nombre des lignes affectées, nbligne = 1, si tout se passe bien</returns>
-        public static int EditSujet(int id_subject, string subject_title, string subject_description)
+        /// <param name="subject">le sujet à modifier</param>
+        /// <param name="newTitre">le nouveau titre</param>
+        /// <param name="newDescription">la nouvelle description</param>
+        /// <returns>le nombre de ligne modifié, nbligne = 1 si tout va bien</returns>
+        public static int ModifierSujet (int idsubject, string oldtitre,  string newTitre, string olddescription, string newDescription)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "EditSujet";
+            cmd.CommandText = "ModifierSujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parmIdSujet = cmd.CreateParameter();
-            parmIdSujet.ParameterName = "@ID_SUJET";
-            parmIdSujet.Value = id_subject;
+            parmIdSujet.ParameterName = "@ID_SUBJECT";
+            parmIdSujet.Value = idsubject;
             cmd.Parameters.Add(parmIdSujet);
 
-            SqlParameter paramTitre = cmd.CreateParameter();
-            paramTitre.ParameterName = "@NEW_TITRE";
-            paramTitre.Value = subject_title;
-            cmd.Parameters.Add(paramTitre);
+            SqlParameter parmNewTitre = cmd.CreateParameter();
+            parmNewTitre.ParameterName = "@NEW_TITRE";
+            parmNewTitre.Value = newTitre;
+            cmd.Parameters.Add(parmNewTitre);
 
-            //SqlParameter parmOldTitre = cmd.CreateParameter();
-            //parmOldTitre.ParameterName = "@OLD_TITRE";
-            //parmOldTitre.Value = subject.subject_title;
-            //cmd.Parameters.Add(parmOldTitre);
+            SqlParameter parmOldTitre = cmd.CreateParameter();
+            parmOldTitre.ParameterName = "@OLD_TITRE";
+            parmOldTitre.Value = oldtitre;
+            cmd.Parameters.Add(parmOldTitre);
 
-            SqlParameter parmDesc = cmd.CreateParameter();
-            parmDesc.ParameterName = "@NEW_DESC";
-            parmDesc.Value = subject_description;
-            cmd.Parameters.Add(parmDesc);
+            SqlParameter parmNewDescr = cmd.CreateParameter();
+            parmNewDescr.ParameterName = "@NEW_DESC";
+            parmNewDescr.Value = newDescription;
+            cmd.Parameters.Add(parmNewDescr);
 
-            //SqlParameter parmOldDesc = cmd.CreateParameter();
-            //parmOldDesc.ParameterName = "@OLD_DESC";
-            //parmOldDesc.Value = subject.subject_description;
-            //cmd.Parameters.Add(parmOldDesc);
+            SqlParameter parmOldDescr = cmd.CreateParameter();
+            parmOldDescr.ParameterName = "@OLD_DESC";
+            parmOldDescr.Value = olddescription;
+            cmd.Parameters.Add(parmOldDescr);
 
             con.Open();
             int nbLigne = cmd.ExecuteNonQuery();
             con.Close();
             return nbLigne;
         }
+
+        ///// <summary>
+        ///// La méthode EditSujet, permet la modification du titre d'un sujet, et/ou la description
+        ///// on passant l'ancien sujet en parametre
+        ///// </summary>
+        ///// <param name="id_sujet">Sujet</param>
+        ///// <param name="subject_title">Nouveau Titre</param>
+        ///// <param name="subject_description">Nouvelle description</param>
+        ///// <returns>Le nombre des lignes affectées, nbligne = 1, si tout se passe bien</returns>
+        //public static int EditSujet(int id_subject, string subject_title, string subject_description)
+        //{
+        //    SqlCommand cmd = con.CreateCommand();
+        //    cmd.CommandText = "EditSujet";
+        //    cmd.CommandType = CommandType.StoredProcedure;
+
+        //    SqlParameter parmIdSujet = cmd.CreateParameter();
+        //    parmIdSujet.ParameterName = "@ID_SUJET";
+        //    parmIdSujet.Value = id_subject;
+        //    cmd.Parameters.Add(parmIdSujet);
+
+        //    SqlParameter paramTitre = cmd.CreateParameter();
+        //    paramTitre.ParameterName = "@NEW_TITRE";
+        //    paramTitre.Value = subject_title;
+        //    cmd.Parameters.Add(paramTitre);
+
+        //    //SqlParameter parmOldTitre = cmd.CreateParameter();
+        //    //parmOldTitre.ParameterName = "@OLD_TITRE";
+        //    //parmOldTitre.Value = subject.subject_title;
+        //    //cmd.Parameters.Add(parmOldTitre);
+
+        //    SqlParameter parmDesc = cmd.CreateParameter();
+        //    parmDesc.ParameterName = "@NEW_DESC";
+        //    parmDesc.Value = subject_description;
+        //    cmd.Parameters.Add(parmDesc);
+
+        //    //SqlParameter parmOldDesc = cmd.CreateParameter();
+        //    //parmOldDesc.ParameterName = "@OLD_DESC";
+        //    //parmOldDesc.Value = subject.subject_description;
+        //    //cmd.Parameters.Add(parmOldDesc);
+
+        //    con.Open();
+        //    int nbLigne = cmd.ExecuteNonQuery();
+        //    con.Close();
+        //    return nbLigne;
+        //}
 
 
         /// <summary>
@@ -223,7 +237,7 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parmIdSujet = cmd.CreateParameter();
-            parmIdSujet.ParameterName = "@ID_SUJET";
+            parmIdSujet.ParameterName = "@ID_SUBJECT";
             parmIdSujet.Value = idsujet;
             cmd.Parameters.Add(parmIdSujet);
 

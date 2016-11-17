@@ -103,12 +103,6 @@
     <Compile Include="modifpwd.Designer.cs">
       <DependentUpon>modifpwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateSujet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CreateSujet.Designer.cs">
-      <DependentUpon>CreateSujet.cs</DependentUpon>
-    </Compile>
     <Compile Include="ModifSujet.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -117,12 +111,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="RubricSujPost.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="RubricSujPost.Designer.cs">
-      <DependentUpon>RubricSujPost.cs</DependentUpon>
-    </Compile>
     <EmbeddedResource Include="Accueil.resx">
       <DependentUpon>Accueil.cs</DependentUpon>
     </EmbeddedResource>
@@ -144,9 +132,6 @@
     <EmbeddedResource Include="modifpwd.resx">
       <DependentUpon>modifpwd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CreateSujet.resx">
-      <DependentUpon>CreateSujet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="ModifSujet.resx">
       <DependentUpon>ModifSujet.cs</DependentUpon>
     </EmbeddedResource>
@@ -160,9 +145,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RubricSujPost.resx">
-      <DependentUpon>RubricSujPost.cs</DependentUpon>
-    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -180,14 +162,6 @@
     <ProjectReference Include="..\ClassesMetiers\ClassesMetiers.csproj">
       <Project>{568cfc35-5b5c-4b74-b52b-3b575c8167e2}</Project>
       <Name>ClassesMetiers</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\DAO\DAO.csproj">
-      <Project>{ec6e10ed-945a-459e-bae1-f4a90b8870a2}</Project>
-      <Name>DAO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Methodes\Controller.csproj">
-      <Project>{f7864ee7-6a98-4536-afc9-91c583579b33}</Project>
-      <Name>Controller</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
