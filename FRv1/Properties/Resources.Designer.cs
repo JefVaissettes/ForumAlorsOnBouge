@@ -169,6 +169,15 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Modification du sujet.
+        /// </summary>
+        internal static string MsgBoxEditSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxEditSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter la réponse !.
         /// </summary>
         internal static string MsgBoxErreurAddReponseText {
@@ -237,6 +246,24 @@ namespace IHMFR.Properties {
         internal static string MsgBoxErreurDeleteSujetTitre {
             get {
                 return ResourceManager.GetString("MsgBoxErreurDeleteSujetTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur de modification du sujet.
+        /// </summary>
+        internal static string MsgBoxErreurEditSujetText {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurEditSujetText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Erreur de modification du titre du sujet.
+        /// </summary>
+        internal static string MsgBoxErreurEditSujetTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxErreurEditSujetTitre", resourceCulture);
             }
         }
         

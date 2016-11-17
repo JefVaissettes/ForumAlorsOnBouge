@@ -1,4 +1,5 @@
 ﻿using ClassesMetiers;
+using DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -19,6 +20,49 @@ namespace IHMFR
         public frmCreerSujet()
         {
             InitializeComponent();
+        }
+
+        private void frmCreerSujet_Load(object sender, EventArgs e)
+        {
+            if(subject == null)
+            {
+                txtBxTitreSujet.Text = string.Empty;
+                txtBxDescSujet.Text = string.Empty;
+                btValider.Text = "Valider l'ajout du sujet";
+            }
+            else
+            {
+                txtBxTitreSujet.Text = subject.subject_title;
+                txtBxDescSujet.Text = subject.subject_description;
+                btValider.Text = "Valider la modification";
+            }
+        }
+
+        private void btValider_Click(object sender, EventArgs e)
+        {
+            if(subject == null)
+            {
+                if(SubjectDAO.AddSujet(Accueil.CurrentUsers.id_users, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxAddSujetText, Properties.Resources.MsgBoxAddSujetTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxErreurAddSujetText, Properties.Resources.MsgBoxErreurAddSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+            }
+            else
+            {
+                if(SubjectDAO.ModifierSujet(subject, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxEditSujetText, Properties.Resources.MsgBoxEditSujetText, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(Properties.Resources.MsgBoxErreurEditSujetText, Properties.Resources.MsgBoxErreurEditSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+                }
+            }
         }
     }
 }

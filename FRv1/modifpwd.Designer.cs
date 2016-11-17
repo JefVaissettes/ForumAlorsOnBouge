@@ -30,13 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.gpbxIdentification = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPwd = new System.Windows.Forms.TextBox();
+            this.txtLogin = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.gpbxModifIdentity = new System.Windows.Forms.GroupBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtNewPwd = new System.Windows.Forms.TextBox();
+            this.txtConfirmNewPwd = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btValider = new System.Windows.Forms.Button();
@@ -49,7 +49,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(108, 20);
+            this.label1.Location = new System.Drawing.Point(96, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 20);
             this.label1.TabIndex = 0;
@@ -57,8 +57,8 @@
             // 
             // gpbxIdentification
             // 
-            this.gpbxIdentification.Controls.Add(this.textBox2);
-            this.gpbxIdentification.Controls.Add(this.textBox1);
+            this.gpbxIdentification.Controls.Add(this.txtPwd);
+            this.gpbxIdentification.Controls.Add(this.txtLogin);
             this.gpbxIdentification.Controls.Add(this.label3);
             this.gpbxIdentification.Controls.Add(this.label2);
             this.gpbxIdentification.Location = new System.Drawing.Point(20, 53);
@@ -67,19 +67,19 @@
             this.gpbxIdentification.TabIndex = 1;
             this.gpbxIdentification.TabStop = false;
             // 
-            // textBox2
+            // txtPwd
             // 
-            this.textBox2.Location = new System.Drawing.Point(129, 75);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(190, 20);
-            this.textBox2.TabIndex = 3;
+            this.txtPwd.Location = new System.Drawing.Point(129, 75);
+            this.txtPwd.Name = "txtPwd";
+            this.txtPwd.Size = new System.Drawing.Size(190, 20);
+            this.txtPwd.TabIndex = 3;
             // 
-            // textBox1
+            // txtLogin
             // 
-            this.textBox1.Location = new System.Drawing.Point(129, 35);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(190, 20);
-            this.textBox1.TabIndex = 2;
+            this.txtLogin.Location = new System.Drawing.Point(129, 35);
+            this.txtLogin.Name = "txtLogin";
+            this.txtLogin.Size = new System.Drawing.Size(190, 20);
+            this.txtLogin.TabIndex = 2;
             // 
             // label3
             // 
@@ -103,8 +103,8 @@
             // 
             // gpbxModifIdentity
             // 
-            this.gpbxModifIdentity.Controls.Add(this.textBox4);
-            this.gpbxModifIdentity.Controls.Add(this.textBox3);
+            this.gpbxModifIdentity.Controls.Add(this.txtNewPwd);
+            this.gpbxModifIdentity.Controls.Add(this.txtConfirmNewPwd);
             this.gpbxModifIdentity.Controls.Add(this.label5);
             this.gpbxModifIdentity.Controls.Add(this.label4);
             this.gpbxModifIdentity.Location = new System.Drawing.Point(19, 190);
@@ -114,19 +114,21 @@
             this.gpbxModifIdentity.TabStop = false;
             this.gpbxModifIdentity.Text = "Modification Password";
             // 
-            // textBox4
+            // txtNewPwd
             // 
-            this.textBox4.Location = new System.Drawing.Point(130, 34);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(190, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtNewPwd.Location = new System.Drawing.Point(130, 34);
+            this.txtNewPwd.Name = "txtNewPwd";
+            this.txtNewPwd.Size = new System.Drawing.Size(190, 20);
+            this.txtNewPwd.TabIndex = 3;
+            this.txtNewPwd.TextChanged += new System.EventHandler(this.txtNewPwd_TextChanged);
             // 
-            // textBox3
+            // txtConfirmNewPwd
             // 
-            this.textBox3.Location = new System.Drawing.Point(130, 76);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(190, 20);
-            this.textBox3.TabIndex = 2;
+            this.txtConfirmNewPwd.Location = new System.Drawing.Point(130, 76);
+            this.txtConfirmNewPwd.Name = "txtConfirmNewPwd";
+            this.txtConfirmNewPwd.Size = new System.Drawing.Size(190, 20);
+            this.txtConfirmNewPwd.TabIndex = 2;
+            this.txtConfirmNewPwd.TextChanged += new System.EventHandler(this.txtConfirmNewPwd_TextChanged);
             // 
             // label5
             // 
@@ -196,13 +198,13 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox gpbxIdentification;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPwd;
+        private System.Windows.Forms.TextBox txtLogin;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gpbxModifIdentity;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtNewPwd;
+        private System.Windows.Forms.TextBox txtConfirmNewPwd;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btValider;

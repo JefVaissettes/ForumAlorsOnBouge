@@ -153,6 +153,9 @@
   <data name="MsgBoxDeleteSujetTitre" xml:space="preserve">
     <value>Suppression du Sujet</value>
   </data>
+  <data name="MsgBoxEditSujetText" xml:space="preserve">
+    <value>Modification du sujet</value>
+  </data>
   <data name="MsgBoxErreurAddReponseText" xml:space="preserve">
     <value>Impossible d'ajouter la réponse !</value>
   </data>
@@ -176,6 +179,12 @@
   </data>
   <data name="MsgBoxErreurDeleteSujetTitre" xml:space="preserve">
     <value>Erreur !</value>
+  </data>
+  <data name="MsgBoxErreurEditSujetText" xml:space="preserve">
+    <value>Erreur de modification du sujet</value>
+  </data>
+  <data name="MsgBoxErreurEditSujetTitre" xml:space="preserve">
+    <value>Erreur de modification du titre du sujet</value>
   </data>
   <data name="MsgBoxUpDateSujetText" xml:space="preserve">
     <value>Etes-vous sur de vouloir modifier le sujet ?</value>

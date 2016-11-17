@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.gBxTitreSujet = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtBxTitreSujet = new System.Windows.Forms.TextBox();
             this.gBxDescription = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtBxDescSujet = new System.Windows.Forms.TextBox();
             this.btAnnuler = new System.Windows.Forms.Button();
             this.btValider = new System.Windows.Forms.Button();
             this.gBxTitreSujet.SuspendLayout();
@@ -40,7 +40,7 @@
             // 
             // gBxTitreSujet
             // 
-            this.gBxTitreSujet.Controls.Add(this.textBox1);
+            this.gBxTitreSujet.Controls.Add(this.txtBxTitreSujet);
             this.gBxTitreSujet.Location = new System.Drawing.Point(28, 22);
             this.gBxTitreSujet.Name = "gBxTitreSujet";
             this.gBxTitreSujet.Size = new System.Drawing.Size(366, 76);
@@ -48,16 +48,16 @@
             this.gBxTitreSujet.TabStop = false;
             this.gBxTitreSujet.Text = "Titre du sujet";
             // 
-            // textBox1
+            // txtBxTitreSujet
             // 
-            this.textBox1.Location = new System.Drawing.Point(17, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(337, 20);
-            this.textBox1.TabIndex = 0;
+            this.txtBxTitreSujet.Location = new System.Drawing.Point(17, 30);
+            this.txtBxTitreSujet.Name = "txtBxTitreSujet";
+            this.txtBxTitreSujet.Size = new System.Drawing.Size(337, 20);
+            this.txtBxTitreSujet.TabIndex = 0;
             // 
             // gBxDescription
             // 
-            this.gBxDescription.Controls.Add(this.textBox2);
+            this.gBxDescription.Controls.Add(this.txtBxDescSujet);
             this.gBxDescription.Location = new System.Drawing.Point(28, 115);
             this.gBxDescription.Name = "gBxDescription";
             this.gBxDescription.Size = new System.Drawing.Size(366, 170);
@@ -65,14 +65,14 @@
             this.gBxDescription.TabStop = false;
             this.gBxDescription.Text = "Description sujet";
             // 
-            // textBox2
+            // txtBxDescSujet
             // 
-            this.textBox2.Location = new System.Drawing.Point(17, 31);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox2.Size = new System.Drawing.Size(337, 133);
-            this.textBox2.TabIndex = 0;
+            this.txtBxDescSujet.Location = new System.Drawing.Point(17, 31);
+            this.txtBxDescSujet.Multiline = true;
+            this.txtBxDescSujet.Name = "txtBxDescSujet";
+            this.txtBxDescSujet.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtBxDescSujet.Size = new System.Drawing.Size(337, 133);
+            this.txtBxDescSujet.TabIndex = 0;
             // 
             // btAnnuler
             // 
@@ -93,6 +93,7 @@
             this.btValider.TabIndex = 12;
             this.btValider.Text = "Valider";
             this.btValider.UseVisualStyleBackColor = true;
+            this.btValider.Click += new System.EventHandler(this.btValider_Click);
             // 
             // frmCreerSujet
             // 
@@ -106,6 +107,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "frmCreerSujet";
             this.Text = "Alors on bouge !";
+            this.Load += new System.EventHandler(this.frmCreerSujet_Load);
             this.gBxTitreSujet.ResumeLayout(false);
             this.gBxTitreSujet.PerformLayout();
             this.gBxDescription.ResumeLayout(false);
@@ -117,9 +119,9 @@
         #endregion
 
         private System.Windows.Forms.GroupBox gBxTitreSujet;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBxTitreSujet;
         private System.Windows.Forms.GroupBox gBxDescription;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtBxDescSujet;
         private System.Windows.Forms.Button btAnnuler;
         private System.Windows.Forms.Button btValider;
     }
