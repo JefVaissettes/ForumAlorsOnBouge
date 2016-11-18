@@ -75,7 +75,7 @@
             this.tblLPfrmPrincipale.ColumnCount = 3;
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.34F));
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.66F));
-            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 179F));
+            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 180F));
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPRubric, 0, 0);
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPUserLogged, 1, 3);
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPModerator, 2, 2);
@@ -148,7 +148,7 @@
             this.tbLPUserLogged.RowCount = 1;
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tbLPUserLogged.Size = new System.Drawing.Size(457, 82);
+            this.tbLPUserLogged.Size = new System.Drawing.Size(456, 82);
             this.tbLPUserLogged.TabIndex = 2;
             // 
             // gbxUserLogged
@@ -190,7 +190,7 @@
             this.tbLPModerator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPModerator.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tbLPModerator.Controls.Add(this.gbxModerator, 0, 0);
-            this.tbLPModerator.Location = new System.Drawing.Point(649, 133);
+            this.tbLPModerator.Location = new System.Drawing.Point(648, 133);
             this.tbLPModerator.Name = "tbLPModerator";
             this.tbLPModerator.RowCount = 1;
             this.tbLPModerator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -292,6 +292,7 @@
             // gpBxDescSubject
             // 
             this.gpBxDescSubject.Controls.Add(this.txtDescSujet);
+            this.gpBxDescSubject.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gpBxDescSubject.Location = new System.Drawing.Point(3, 109);
             this.gpBxDescSubject.Name = "gpBxDescSubject";
             this.gpBxDescSubject.Size = new System.Drawing.Size(171, 134);
@@ -312,9 +313,10 @@
             // 
             this.lbPasDeSujet.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbPasDeSujet.AutoSize = true;
-            this.lbPasDeSujet.Location = new System.Drawing.Point(12, 261);
+            this.lbPasDeSujet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPasDeSujet.Location = new System.Drawing.Point(16, 250);
             this.lbPasDeSujet.Name = "lbPasDeSujet";
-            this.lbPasDeSujet.Size = new System.Drawing.Size(152, 26);
+            this.lbPasDeSujet.Size = new System.Drawing.Size(145, 48);
             this.lbPasDeSujet.TabIndex = 9;
             this.lbPasDeSujet.Text = "La rubrique ne contient aucun sujet, pour le moment.";
             // 
@@ -343,7 +345,7 @@
             this.tbLPConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tbLPConnexion.Controls.Add(this.btConnect, 0, 0);
-            this.tbLPConnexion.Location = new System.Drawing.Point(649, 440);
+            this.tbLPConnexion.Location = new System.Drawing.Point(648, 440);
             this.tbLPConnexion.Name = "tbLPConnexion";
             this.tbLPConnexion.RowCount = 1;
             this.tbLPConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -366,10 +368,15 @@
             // 
             // dGVPost
             // 
+            this.dGVPost.AllowUserToAddRows = false;
+            this.dGVPost.AllowUserToDeleteRows = false;
+            this.dGVPost.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dGVPost.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.DisplayedCells;
             this.dGVPost.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dGVPost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGVPost.Location = new System.Drawing.Point(186, 133);
             this.dGVPost.Name = "dGVPost";
-            this.dGVPost.Size = new System.Drawing.Size(457, 301);
+            this.dGVPost.Size = new System.Drawing.Size(456, 301);
             this.dGVPost.TabIndex = 16;
             this.dGVPost.SelectionChanged += new System.EventHandler(this.dGVPost_SelectionChanged);
             // 
@@ -377,9 +384,10 @@
             // 
             this.lbPasDePost.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbPasDePost.AutoSize = true;
-            this.lbPasDePost.Location = new System.Drawing.Point(297, 114);
+            this.lbPasDePost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbPasDePost.Location = new System.Drawing.Point(270, 112);
             this.lbPasDePost.Name = "lbPasDePost";
-            this.lbPasDePost.Size = new System.Drawing.Size(234, 13);
+            this.lbPasDePost.Size = new System.Drawing.Size(287, 16);
             this.lbPasDePost.TabIndex = 17;
             this.lbPasDePost.Text = "Le sujet ne contient aucun post pour le moment.";
             // 

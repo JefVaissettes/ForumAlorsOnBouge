@@ -44,10 +44,10 @@ namespace ClassesMetiers
         /// <param name="id_rubric">L'identifiant d'une rubrique</param>
         /// <param name="rubric_title">Titre d'une rubrique</param>
         /// 
-        public Rubric(int id_rubric, string rubric_title)
+        public Rubric(int id, string title)
         {
-            this.id_rubric = id_rubric;
-            this.rubric_title = rubric_title;
+            this.id_rubric = id;
+            this.rubric_title = title;
         }
 
 

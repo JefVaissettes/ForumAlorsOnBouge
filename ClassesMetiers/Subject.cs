@@ -79,15 +79,15 @@ namespace ClassesMetiers
         /// <summary>
         /// Constructeur d'un nouveau sujet
         /// </summary>
-        /// <param name="id_subject">Identifiant du sujet</param>
-        /// <param name="subject_title">Titre du sujet</param>
-        /// <param name="subject_description">Description du sujet</param>
+        /// <param name="id">Identifiant du sujet</param>
+        /// <param name="title">Titre du sujet</param>
+        /// <param name="description">Description du sujet</param>
         /// <param name="rubric">Identifiant de la rubrique</param>
-        public Subject(int id_subject, string subject_title, string subject_description, Rubric rubric)
+        public Subject(int id, string title, string description, Rubric rubric)
         {
-            this.id_subject = id_subject;
-            this.subject_title = subject_title;
-            this.subject_description = subject_description;
+            this.id_subject = id;
+            this.subject_title = title;
+            this.subject_description = description;
             this.Rubric = rubric;
             this._Posts = new List<Post>();
             this.subject_date = DateTime.Now;
@@ -109,13 +109,13 @@ namespace ClassesMetiers
         /// <summary>
         /// Constructeur d'un nouveau sujet
         /// </summary>
-        /// <param name="id_subject">Identifiant du sujet</param>
-        /// <param name="subject_title">Titre du sujet</param>
-        /// <param name="id_rubric">Identifiant de la rubrique</param>
-        public Subject(int id_subject, string subject_title, Rubric rubric)
+        /// <param name="id">Identifiant du sujet</param>
+        /// <param name="title">Titre du sujet</param>
+        /// <param name="rubric">Identifiant de la rubrique</param>
+        public Subject(int id, string title, Rubric rubric)
         {
-            this.id_subject = id_subject;
-            this.subject_title = subject_title;
+            this.id_subject = id;
+            this.subject_title = title;
             this.Rubric = rubric;
         }
 

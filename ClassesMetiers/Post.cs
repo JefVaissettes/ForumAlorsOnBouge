@@ -175,7 +175,7 @@ namespace ClassesMetiers
         /// <summary>
         /// La méthode permet de reccupèré le nom de l'utilisateur 
         /// </summary>
-        /// <returns>Le login (nom de l'utilisateur)</returns>
+        /// <returns>Username (nom de l'utilisateur)</returns>
         public string GetUsername()
         {
             return Utilisateur.username;

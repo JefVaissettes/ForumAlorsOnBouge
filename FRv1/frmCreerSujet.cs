@@ -41,7 +41,7 @@ namespace IHMFR
         {
             if(subject == null)
             {
-                if(Outil.AddSujet(Accueil.CurrentUsers.id_users, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                if(Outil.AddSujet(Accueil.CurrentUsers.id_utilisateur, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxAddSujetText, Properties.Resources.MsgBoxAddSujetTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();

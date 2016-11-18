@@ -90,7 +90,7 @@ namespace IHMFR
                 frmCreerPost.subject = (Subject)cbBxSubject.SelectedItem;
                 frmCreerPost.Text = string.Format("Ajout du post au sujet {0}", frmCreerPost.subject.subject_title);
                 frmCreerPost.ShowDialog();
-                displaydgVPost(Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue));
+                displaydgVPost(Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue));
             }
         }
 
@@ -185,7 +185,7 @@ namespace IHMFR
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
                 }
-                List<Post> posts = Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
+                List<Post> posts = Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue);
                 if (posts != null)
                 {
                     displaydgVPost(posts);
@@ -205,7 +205,7 @@ namespace IHMFR
         {
             if (cbBxSubject.SelectedIndex != -1)
             {
-                if (Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue) != null)
+                if (Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue) != null)
                 {
                     return true;
                 }
@@ -235,13 +235,14 @@ namespace IHMFR
         {
             if (visibiliteSujets())
             {
+                PanelSujetVisible();
                 Subject subject = (Subject)cbBxSubject.SelectedItem;
                 txtDescSujet.Text = subject.subject_description;
 
                 if (visibilitePost())
                 {
                     PanelPostVisible();
-                    List<Post> posts = Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
+                    List<Post> posts = Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue);
                     if (posts != null)
                     {
                         displaydgVPost(posts);

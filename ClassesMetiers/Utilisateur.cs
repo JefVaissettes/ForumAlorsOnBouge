@@ -15,14 +15,14 @@ namespace ClassesMetiers
     {
         #region "Property et attributs"
 
-        private int _id_users;
+        private int _id_utilisateur;
         /// <summary>
         /// Identifiant de l'utilisateur
         /// </summary>
-        public int id_users
+        public int id_utilisateur
         {
-            get { return _id_users; }
-            set { _id_users = value; }
+            get { return _id_utilisateur; }
+            set { _id_utilisateur = value; }
         }
 
         private string _username;
@@ -76,40 +76,42 @@ namespace ClassesMetiers
         /// <summary>
         /// Constructeur d'un utilisateur
         /// </summary>
-        /// <param name="id_users">Identifiant d'un utilisateur</param>
+        /// <param name="id">Identifiant d'un utilisateur</param>
         /// <param name="username">Nom d'un utilisateur</param>
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public Utilisateur(int id_users, string username, string password, string email, bool role)
+        public Utilisateur(int id, string username, string password, string email, bool role)
         {
-            this.id_users = id_users;
+            this.id_utilisateur = id;
             this.username = username;
             this.password = password;
             this.email = email;
             this.role = role;
         }
 
-        public Utilisateur(int id_users, string username, string password, bool role)
+        public Utilisateur(int id, string username, string password, bool role)
         {
-            this.id_users = id_users;
+            this.id_utilisateur = id;
             this.username = username;
             this.password = password;
             this.role = role;
         }
 
-        public Utilisateur(int id_users)
+        public Utilisateur(int id)
         {
-            this.id_users = id_users;
+            this.id_utilisateur = id;
         }
 
-
         #endregion
+
         #region "Methodes"
 
         #endregion
+
         #region "Methodes héritées et substituées"
         #endregion
+
         #region "Methodes à implementer pour les interfaces"
         #endregion
     }

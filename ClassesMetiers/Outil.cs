@@ -207,7 +207,7 @@ namespace ClassesMetiers
         /// <returns></returns>
         public static List<Utilisateur> GetAllUsers()
         {
-            DataTable dt = UtilisateurDAO.GetAllUsers();
+            DataTable dt = UtilisateurDAO.GetAllUtilisateurs();
             if (dt.Rows.Count >= 1)
             {
                 List<Utilisateur> _users = new List<Utilisateur>();
@@ -236,9 +236,9 @@ namespace ClassesMetiers
 
         #region Post
 
-        public static List<Post> GetAllPostBySubject(int id_subject)
+        public static List<Post> GetAllReponseBySubject(int id_subject)
         {
-            DataTable dt = PostDAO.GetAllPostBySubject(id_subject);
+            DataTable dt = PostDAO.GetAllReponseBySubject(id_subject);
                 if (dt.Rows.Count >= 1)
             {
                 List<Post> _Posts = new List<Post>();
@@ -253,9 +253,9 @@ namespace ClassesMetiers
             return null;
         }
 
-        public static int AddPost(int id_subject, int id_users, string post_content)
+        public static int AddReponse(int id_subject, int id_users, string post_content)
         {
-            return PostDAO.AddPost(id_subject, id_users, post_content);
+            return PostDAO.AddReponse(id_subject, id_users, post_content);
         }
 
         public static int DeleteReponse(int idReponse)

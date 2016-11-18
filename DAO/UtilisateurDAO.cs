@@ -69,10 +69,10 @@ namespace DAO
             return dt;
         }
 
-        public static DataTable  GetAllUsers()
+        public static DataTable  GetAllUtilisateurs()
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetAllUsers";
+            cmd.CommandText = "GetAllUtilisateurs";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

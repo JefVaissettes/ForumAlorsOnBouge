@@ -36,12 +36,15 @@ namespace IHMFR
 
         private void btConnect_Click(object sender, EventArgs e)
         {
+
             Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
-            if(Accueil.CurrentUsers != null)
+            if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;
                 Accueil.IsRmodo = Accueil.CurrentUsers.role;
                 this.Close();
+
+                frmPrincipale frmprincipale = new frmPrincipale();
             }
             else
             {

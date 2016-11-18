@@ -28,14 +28,14 @@ namespace DAO
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Les reponses, concernant un sujet dont l'identifiant est passé en paramètre</returns>
         /// 
-        public static DataTable GetAllPostBySubject(int id_subject)
+        public static DataTable GetAllReponseBySubject(int id_subject)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllReponseBySujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@Idsubject";
+            parm.ParameterName = "@idsubject";
             parm.Value = id_subject;
             cmd.Parameters.Add(parm);
 
@@ -54,10 +54,10 @@ namespace DAO
         /// <param name="id_users">L'identifiant de l'utilisateur, qui répond</param>
         /// <param name="post_content">Le texte de la reponse</param>
         /// <returns></returns>
-        public static int AddPost(int id_subject, int id_users, string post_content)
+        public static int AddReponse(int id_subject, int id_users, string post_content)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "AddPost";
+            cmd.CommandText = "AddReponse";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parmid_subject = cmd.CreateParameter();
@@ -86,9 +86,9 @@ namespace DAO
         /// La méthode DeleteReponse, permet la suppression d'une reponse
         /// dont l'id est passé en parametre
         /// </summary>
-        /// <param name="idsujet">L'identifiant de la reponse</param>
+        /// <param name="idPost">L'identifiant de la reponse</param>
         /// <returns>Le nombre de lignes supprimées, nbligne = 1 si tout va bien</returns>
-        public static int DeleteReponse(int idReponse)
+        public static int DeleteReponse(int idPost)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "DeleteReponse";
@@ -96,7 +96,7 @@ namespace DAO
 
             SqlParameter parmIdRep = cmd.CreateParameter();
             parmIdRep.ParameterName = "@ID_POST";
-            parmIdRep.Value = idReponse;
+            parmIdRep.Value = idPost;
             cmd.Parameters.Add(parmIdRep);
 
             con.Open();
