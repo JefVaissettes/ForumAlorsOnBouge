@@ -31,7 +31,7 @@ namespace DAO
         public static DataTable GetAllPostBySubject(int id_subject)
         {
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetAllPostByIdSubject";
+            cmd.CommandText = "GetAllReponseBySujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();

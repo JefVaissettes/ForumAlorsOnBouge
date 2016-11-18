@@ -97,7 +97,7 @@ namespace ClassesMetiers
                 foreach (DataRow row in dt.Rows)
                 {
                     Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
-
+                    _Sujets.Add(subject);
                 }
                 return _Sujets;
             }
@@ -112,6 +112,7 @@ namespace ClassesMetiers
         public static Subject GetSujetByID(int id_subject)
         {
             DataTable dt = SubjectDAO.GetSujetByID(id_subject);
+            //DataTable dt = SubjectDAO.GetSujetByID(id_subject);
             if (dt.Rows.Count == 1)
             {
                 DataRow row = dt.Rows[0];

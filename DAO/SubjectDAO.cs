@@ -52,7 +52,7 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idRubric";
+            parm.ParameterName = "@idrubric";
             parm.Value = id_rubric;
             cmd.Parameters.Add(parm);
 
@@ -74,11 +74,11 @@ namespace DAO
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetSubjetByID";
+            cmd.CommandText = "GetSujetByID";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@IdSujet";
+            parm.ParameterName = "@ID_SUBJECT";
             parm.Value = id_subject;
 
             cmd.Parameters.Add(parm);

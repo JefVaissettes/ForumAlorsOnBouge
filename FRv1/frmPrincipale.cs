@@ -33,15 +33,15 @@ namespace IHMFR
 
         private void displaycbBxRubric(List<Rubric> rubrics)
         {
-            cbBxRubric.ValueMember = "ID_RUBRIC";
-            cbBxRubric.DisplayMember = "RUBRIC_TITLE";
+            cbBxRubric.ValueMember = "id_rubric";
+            cbBxRubric.DisplayMember = "rubric_title";
             cbBxRubric.DataSource = rubrics;
         }
 
         private void displaycbBxSubject(List<Subject> subjects)
         {
-            cbBxSubject.ValueMember = "ID_SUBJECT";
-            cbBxSubject.DisplayMember = "SUBJECT_TITLE";
+            cbBxSubject.ValueMember = "id_subject";
+            cbBxSubject.DisplayMember = "subject_title";
             cbBxSubject.DataSource = subjects;
             Subject subject = (Subject)cbBxSubject.SelectedItem;
         }
@@ -238,7 +238,7 @@ namespace IHMFR
                 Subject subject = (Subject)cbBxSubject.SelectedItem;
                 txtDescSujet.Text = subject.subject_description;
 
-                if (visibiliteSujets())
+                if (visibilitePost())
                 {
                     PanelPostVisible();
                     List<Post> posts = Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
