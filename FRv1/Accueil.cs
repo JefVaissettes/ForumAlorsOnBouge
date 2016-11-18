@@ -34,6 +34,7 @@ namespace IHMFR
         {
             this.Close();
         }
+        
 
         private void btConnect_Click(object sender, EventArgs e)
         {
