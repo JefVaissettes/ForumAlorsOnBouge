@@ -52,7 +52,7 @@
             this.label1.Location = new System.Drawing.Point(96, 20);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(189, 20);
-            this.label1.TabIndex = 0;
+            this.label1.TabIndex = 15;
             this.label1.Text = "Modification du Password";
             // 
             // gpbxIdentification
@@ -64,7 +64,7 @@
             this.gpbxIdentification.Location = new System.Drawing.Point(20, 53);
             this.gpbxIdentification.Name = "gpbxIdentification";
             this.gpbxIdentification.Size = new System.Drawing.Size(343, 119);
-            this.gpbxIdentification.TabIndex = 1;
+            this.gpbxIdentification.TabIndex = 16;
             this.gpbxIdentification.TabStop = false;
             // 
             // txtPwd
@@ -72,14 +72,14 @@
             this.txtPwd.Location = new System.Drawing.Point(129, 75);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.Size = new System.Drawing.Size(190, 20);
-            this.txtPwd.TabIndex = 3;
+            this.txtPwd.TabIndex = 1;
             // 
             // txtLogin
             // 
             this.txtLogin.Location = new System.Drawing.Point(129, 35);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(190, 20);
-            this.txtLogin.TabIndex = 2;
+            this.txtLogin.TabIndex = 0;
             // 
             // label3
             // 
@@ -87,9 +87,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(17, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 16);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Password";
+            this.label3.Size = new System.Drawing.Size(90, 16);
+            this.label3.TabIndex = 19;
+            this.label3.Text = "Mot de passe";
             // 
             // label2
             // 
@@ -97,9 +97,9 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(17, 36);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 16);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Username";
+            this.label2.Size = new System.Drawing.Size(96, 16);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Nom utilisateur";
             // 
             // gpbxModifIdentity
             // 
@@ -110,7 +110,7 @@
             this.gpbxModifIdentity.Location = new System.Drawing.Point(19, 190);
             this.gpbxModifIdentity.Name = "gpbxModifIdentity";
             this.gpbxModifIdentity.Size = new System.Drawing.Size(343, 116);
-            this.gpbxModifIdentity.TabIndex = 2;
+            this.gpbxModifIdentity.TabIndex = 17;
             this.gpbxModifIdentity.TabStop = false;
             this.gpbxModifIdentity.Text = "Modification Password";
             // 
@@ -119,7 +119,7 @@
             this.txtNewPwd.Location = new System.Drawing.Point(130, 34);
             this.txtNewPwd.Name = "txtNewPwd";
             this.txtNewPwd.Size = new System.Drawing.Size(190, 20);
-            this.txtNewPwd.TabIndex = 3;
+            this.txtNewPwd.TabIndex = 2;
             this.txtNewPwd.TextChanged += new System.EventHandler(this.txtNewPwd_TextChanged);
             // 
             // txtConfirmNewPwd
@@ -127,7 +127,7 @@
             this.txtConfirmNewPwd.Location = new System.Drawing.Point(130, 76);
             this.txtConfirmNewPwd.Name = "txtConfirmNewPwd";
             this.txtConfirmNewPwd.Size = new System.Drawing.Size(190, 20);
-            this.txtConfirmNewPwd.TabIndex = 2;
+            this.txtConfirmNewPwd.TabIndex = 3;
             this.txtConfirmNewPwd.TextChanged += new System.EventHandler(this.txtConfirmNewPwd_TextChanged);
             // 
             // label5
@@ -136,9 +136,9 @@
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(18, 77);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 16);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "Confirm new pwd";
+            this.label5.Size = new System.Drawing.Size(100, 16);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "Confirm nv mdp";
             // 
             // label4
             // 
@@ -146,9 +146,9 @@
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(18, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(98, 16);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "New Password";
+            this.label4.Size = new System.Drawing.Size(93, 16);
+            this.label4.TabIndex = 20;
+            this.label4.Text = "Nouveau mdp";
             // 
             // btValider
             // 
@@ -156,7 +156,7 @@
             this.btValider.Location = new System.Drawing.Point(253, 312);
             this.btValider.Name = "btValider";
             this.btValider.Size = new System.Drawing.Size(109, 40);
-            this.btValider.TabIndex = 3;
+            this.btValider.TabIndex = 4;
             this.btValider.Text = "Valider";
             this.btValider.UseVisualStyleBackColor = true;
             this.btValider.Click += new System.EventHandler(this.btValider_Click);
@@ -167,7 +167,7 @@
             this.btAnnuler.Location = new System.Drawing.Point(20, 312);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(109, 40);
-            this.btAnnuler.TabIndex = 4;
+            this.btAnnuler.TabIndex = 5;
             this.btAnnuler.Text = "Annuler";
             this.btAnnuler.UseVisualStyleBackColor = true;
             this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
