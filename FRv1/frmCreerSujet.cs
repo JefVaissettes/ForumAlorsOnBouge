@@ -1,5 +1,4 @@
 ﻿using ClassesMetiers;
-using DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -28,7 +27,7 @@ namespace IHMFR
             {
                 txtBxTitreSujet.Text = string.Empty;
                 txtBxDescSujet.Text = string.Empty;
-                btValider.Text = "Valider l'ajout du sujet";
+                btValider.Text = "Valider l'ajout";
             }
             else
             {
@@ -42,7 +41,7 @@ namespace IHMFR
         {
             if(subject == null)
             {
-                if(SubjectDAO.AddSujet(Accueil.CurrentUsers.id_users, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                if(Outil.AddSujet(Accueil.CurrentUsers.id_users, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxAddSujetText, Properties.Resources.MsgBoxAddSujetTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -54,7 +53,7 @@ namespace IHMFR
             }
             else
             {
-                if(SubjectDAO.ModifierSujet(subject, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                if(Outil.ModifierSujet(subject.id_subject, subject.subject_title ,subject.subject_description,txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxEditSujetText, Properties.Resources.MsgBoxEditSujetText, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

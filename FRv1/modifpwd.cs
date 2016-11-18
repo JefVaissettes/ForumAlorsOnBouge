@@ -1,4 +1,4 @@
-﻿using DAO;
+﻿using ClassesMetiers;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -25,7 +25,7 @@ namespace IHMFR
 
         private void btValider_Click(object sender, EventArgs e)
         {
-            Accueil.CurrentUsers = UtilisateurDAO.GetLoginPassword(txtLogin.Text, txtPwd.Text);
+            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
             if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;

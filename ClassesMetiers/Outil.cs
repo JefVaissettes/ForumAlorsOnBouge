@@ -145,9 +145,9 @@ namespace ClassesMetiers
         /// <param name="olddescription"></param>
         /// <param name="newDescription"></param>
         /// <returns></returns>
-        public static int ModifierSujet(int idsubject, string oldtitre, string newTitre, string olddescription, string newDescription)
+        public static int ModifierSujet(int idsubject, string oldtitre ,string olddescription, string newTitre,  string newDescription)
         {
-            return SubjectDAO.ModifierSujet(idsubject, oldtitre, newTitre, olddescription, newDescription);
+            return SubjectDAO.ModifierSujet(idsubject, oldtitre, olddescription, newTitre,  newDescription);
         }
 
         /// <summary>
@@ -243,7 +243,8 @@ namespace ClassesMetiers
                 List<Post> _Posts = new List<Post>();
                 foreach (DataRow row in dt.Rows)
                 {
-                    Post rep = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(id_subject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString()));
+                  
+                    Post rep = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(id_subject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())));
                     _Posts.Add(rep);
                 }
                 return _Posts;
@@ -251,6 +252,15 @@ namespace ClassesMetiers
             return null;
         }
 
+        public static int AddPost(int id_subject, int id_users, string post_content)
+        {
+            return PostDAO.AddPost(id_subject, id_users, post_content);
+        }
+
+        public static int DeleteReponse(int idReponse)
+        {
+            return PostDAO.DeleteReponse(idReponse);
+        }
         #endregion
     }
 }

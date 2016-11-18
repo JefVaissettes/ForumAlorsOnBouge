@@ -1,5 +1,4 @@
 ﻿using ClassesMetiers;
-using DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -14,7 +13,6 @@ namespace IHMFR
 {
     public partial class CreerPost : Form
     {
-        internal Post post;
         internal Subject subject;
 
         public CreerPost()
@@ -24,7 +22,7 @@ namespace IHMFR
 
         private void btValider_Click(object sender, EventArgs e)
         {
-            if(PostDAO.AddPost(Accueil.CurrentUsers.id_users, subject.id_subject, txtPostContent.Text) == 1)
+            if(Outil.AddPost(Accueil.CurrentUsers.id_users, subject.id_subject, txtPostContent.Text) == 1)
             {
                 MessageBox.Show(Properties.Resources.MsgBoxAddReponseText, Properties.Resources.MsgBoxAddReponseTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

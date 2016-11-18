@@ -68,7 +68,8 @@ namespace ClassesMetiers
             get { return _role; }
             set { _role = value; }
         }
-        #endregion
+
+       #endregion
 
         #region "Constructeurs"
 

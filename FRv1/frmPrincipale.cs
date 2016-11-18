@@ -1,5 +1,4 @@
 ﻿using ClassesMetiers;
-using DAO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -27,8 +26,8 @@ namespace IHMFR
 
         private void frmPrincipale_Load(object sender, EventArgs e)
         {
-            displaycbBxRubric(RubricDAO.GetAllRubrics());
-            displaycbBxSubject(SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
+            displaycbBxRubric(Outil.GetAllRubrics());
+            displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             visibiliteModerateur();
         }
 
@@ -80,7 +79,7 @@ namespace IHMFR
                 creerSujet.rubric = (Rubric)cbBxRubric.SelectedItem;
                 creerSujet.Text = string.Format("Ajouter le sujet dans la rubrique {0}", creerSujet.rubric.rubric_title);
                 creerSujet.ShowDialog();
-                displaycbBxSubject(SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
+                displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             }
         }
 
@@ -88,10 +87,10 @@ namespace IHMFR
         {
             using (CreerPost frmCreerPost = new CreerPost())
             {
-                frmCreerPost.post = (Post)cbBxSubject.SelectedItem;
-                frmCreerPost.Text = string.Format("Ajout du post au sujet {0}", frmCreerPost.post.subject_title);
+                frmCreerPost.subject = (Subject)cbBxSubject.SelectedItem;
+                frmCreerPost.Text = string.Format("Ajout du post au sujet {0}", frmCreerPost.subject.subject_title);
                 frmCreerPost.ShowDialog();
-                displaydgVPost(PostDAO.GetAllPostBySubject((int)cbBxSubject.SelectedValue));
+                displaydgVPost(Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue));
             }
         }
 
@@ -109,13 +108,13 @@ namespace IHMFR
 
         private void btModifSujet_Click(object sender, EventArgs e)
         {
-            using (frmModifSujet modifSujet = new frmModifSujet())
+            using( frmCreerSujet Modifsubject = new frmCreerSujet())
             {
-                modifSujet.rubric = (Rubric)cbBxRubric.SelectedItem;
-                modifSujet.subject = (Subject)cbBxSubject.SelectedItem;
-                modifSujet.Text = string.Format("Modifie le sujet {0} dans la rubrique {1}", modifSujet.subject.subject_title, modifSujet.subject.subject_description);
-                modifSujet.ShowDialog();
-                displaycbBxSubject(SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
+                Modifsubject.rubric = (Rubric)cbBxRubric.SelectedItem;
+                Modifsubject.subject = (Subject)cbBxSubject.SelectedItem;
+                Modifsubject.Text = string.Format("Changer le sujet {0} dans la rubrique {1}", Modifsubject.subject.subject_title, Modifsubject.subject.subject_description);
+                Modifsubject.ShowDialog();
+                displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             }
         }
 
@@ -125,12 +124,12 @@ namespace IHMFR
             dr = MessageBox.Show(Properties.Resources.MsgBoxDeleteSujetText, Properties.Resources.MsgBoxDeleteSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
-                if (SubjectDAO.DeleteSujet((int)cbBxSubject.SelectedValue) != 1)
+                if (Outil.DeleteSujet((int)cbBxSubject.SelectedValue) != 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeleteSujetText, Properties.Resources.MsgBoxErreurDeleteSujetTitre);
 
                 }
-                List<Subject> subjects = SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
+                List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
                 if (subjects != null)
                 {
                     displaycbBxSubject(subjects);
@@ -150,7 +149,7 @@ namespace IHMFR
         {
             if (cbBxRubric.SelectedIndex != -1)
             {
-                if (SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
+                if (Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
                 {
                     return true;
                 }
@@ -182,11 +181,11 @@ namespace IHMFR
             dr = MessageBox.Show(Properties.Resources.MsgBoxDeletePostText, Properties.Resources.MsgBoxDeletePostTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
-                if (PostDAO.DeleteReponse((int)dGVPost.CurrentRow.Cells["ID_POST"].Value) != 1)
+                if (Outil.DeleteReponse((int)dGVPost.CurrentRow.Cells["ID_POST"].Value) != 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
                 }
-                List<Post> posts = PostDAO.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
+                List<Post> posts = Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
                 if (posts != null)
                 {
                     displaydgVPost(posts);
@@ -206,7 +205,7 @@ namespace IHMFR
         {
             if (cbBxSubject.SelectedIndex != -1)
             {
-                if (PostDAO.GetAllPostBySubject((int)cbBxSubject.SelectedValue) != null)
+                if (Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue) != null)
                 {
                     return true;
                 }
@@ -220,7 +219,7 @@ namespace IHMFR
 
         private void cbBxRubric_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Subject> subjects = SubjectDAO.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
+            List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
             if (subjects != null)
             {
                 PanelSujetVisible();
@@ -242,7 +241,7 @@ namespace IHMFR
                 if (visibiliteSujets())
                 {
                     PanelPostVisible();
-                    List<Post> posts = PostDAO.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
+                    List<Post> posts = Outil.GetAllPostBySubject((int)cbBxSubject.SelectedValue);
                     if (posts != null)
                     {
                         displaydgVPost(posts);

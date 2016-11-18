@@ -79,12 +79,6 @@
     <Compile Include="frmCreerSujet.Designer.cs">
       <DependentUpon>frmCreerSujet.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmModifSujet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmModifSujet.Designer.cs">
-      <DependentUpon>frmModifSujet.cs</DependentUpon>
-    </Compile>
     <Compile Include="frmPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,12 +97,6 @@
     <Compile Include="modifpwd.Designer.cs">
       <DependentUpon>modifpwd.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModifSujet.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="ModifSujet.Designer.cs">
-      <DependentUpon>ModifSujet.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Accueil.resx">
@@ -120,9 +108,6 @@
     <EmbeddedResource Include="frmCreerSujet.resx">
       <DependentUpon>frmCreerSujet.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmModifSujet.resx">
-      <DependentUpon>frmModifSujet.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipale.resx">
       <DependentUpon>frmPrincipale.cs</DependentUpon>
     </EmbeddedResource>
@@ -131,9 +116,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="modifpwd.resx">
       <DependentUpon>modifpwd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="ModifSujet.resx">
-      <DependentUpon>ModifSujet.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
