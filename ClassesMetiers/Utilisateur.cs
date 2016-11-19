@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
+    [Serializable]
+
+    [DataContract]
+
     /// <summary>
     /// La classe Users permet à un utilisateur de s'identifier avec 
     /// son username (nom) et son mot de passe
@@ -19,6 +24,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de l'utilisateur
         /// </summary>
+        [DataMember]
         public int id_utilisateur
         {
             get { return _id_utilisateur; }
@@ -29,7 +35,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Nom de l'utilisateur
         /// </summary>
-
+        [DataMember]
         public string username
         {
             get { return _username; }
@@ -40,7 +46,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Mot de passe de l'utilisateur
         /// </summary>
-
+        [DataMember]
         public string password
         {
             get { return _password; }
@@ -51,7 +57,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Email de l'utilisateur
         /// </summary>
-
+        [DataMember]
         public string email
         {
             get { return _email; }
@@ -63,6 +69,7 @@ namespace ClassesMetiers
         /// Numéro de role de l'utilisateur
         /// 0 = userlogged, 1 = moderator, 2 = administrator
         /// </summary>
+        [DataMember]
         public bool role
         {
             get { return _role; }

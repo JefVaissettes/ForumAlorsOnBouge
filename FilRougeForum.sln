@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAO", "DAO\DAO.csproj", "{E
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassesMetiers", "ClassesMetiers\ClassesMetiers.csproj", "{568CFC35-5B5C-4B74-B52B-3B575C8167E2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServRestFR", "WebServRestFR\WebServRestFR.csproj", "{BF2D7DD8-6F72-40B2-95AE-D29256020093}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{568CFC35-5B5C-4B74-B52B-3B575C8167E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{568CFC35-5B5C-4B74-B52B-3B575C8167E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{568CFC35-5B5C-4B74-B52B-3B575C8167E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BF2D7DD8-6F72-40B2-95AE-D29256020093}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BF2D7DD8-6F72-40B2-95AE-D29256020093}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BF2D7DD8-6F72-40B2-95AE-D29256020093}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BF2D7DD8-6F72-40B2-95AE-D29256020093}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

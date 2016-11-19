@@ -1,11 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
+    [Serializable]
+
+    [DataContract]
+
     /// <summary>
     /// La classe Subject, permet de voir tous les sujets d'une rubrique
     /// Permet de voir les posts, concernant un sujet
@@ -18,6 +23,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant du sujet
         /// </summary>
+        [DataMember]
         public int id_subject
         {
             get { return _id_subject; }
@@ -28,6 +34,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Titre du sujet
         /// </summary>
+        [DataMember]
         public string subject_title
         {
             get { return _subject_title; }
@@ -38,6 +45,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Description du sujet
         /// </summary>
+        [DataMember]
         public string subject_description
         {
             get { return _subject_description; }
@@ -48,6 +56,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Date de création du sujet
         /// </summary>
+        [DataMember]
         public DateTime subject_date
         {
             get { return _subject_date; }
@@ -58,6 +67,7 @@ namespace ClassesMetiers
         /// <summary>
         /// La liste de reponse, concernant un sujet
         /// </summary>
+        [DataMember]
         public List<Post> Posts
         {
             get { return _Posts; }
@@ -68,6 +78,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
+        [DataMember]
         public Rubric Rubric
         {
             get { return _Rubric; }
