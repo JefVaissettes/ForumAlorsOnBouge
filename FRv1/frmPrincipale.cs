@@ -31,29 +31,7 @@ namespace IHMFR
             visibiliteModerateur();
         }
 
-        private void displaycbBxRubric(List<Rubric> rubrics)
-        {
-            cbBxRubric.ValueMember = "id_rubric";
-            cbBxRubric.DisplayMember = "rubric_title";
-            cbBxRubric.DataSource = rubrics;
-        }
 
-        private void displaycbBxSubject(List<Subject> subjects)
-        {
-            cbBxSubject.ValueMember = "id_subject";
-            cbBxSubject.DisplayMember = "subject_title";
-            cbBxSubject.DataSource = subjects;
-            Subject subject = (Subject)cbBxSubject.SelectedItem;
-        }
-
-        private void visibiliteModerateur()
-        {
-            tbLPModerator.Visible = frmPrincipale.IsConnected;
-            tbLPUserLogged.Visible = frmPrincipale.IsConnected;
-            btConnect.Visible = frmPrincipale.IsConnected;
-            //gpBoxAdministration.Visible = FrmAccueil.IsRmodo;
-            //btLogin.Visible = !FrmAccueil.IsConnected;
-        }
 
         #endregion
 
@@ -94,21 +72,13 @@ namespace IHMFR
             }
         }
 
-        private void displaydgVPost(List<Post> posts)
-        {
-            dGVPost.DataSource = posts;
-            dGVPost.Columns["ID"].Visible = false;
-            dGVPost.Columns["SUJET"].Visible = false;
-            dGVPost.Columns["UTILISATEUR"].Visible = false;
-        }
-
         #endregion
 
         #region modérateur
 
         private void btModifSujet_Click(object sender, EventArgs e)
         {
-            using( frmCreerSujet Modifsubject = new frmCreerSujet())
+            using (frmCreerSujet Modifsubject = new frmCreerSujet())
             {
                 Modifsubject.rubric = (Rubric)cbBxRubric.SelectedItem;
                 Modifsubject.subject = (Subject)cbBxSubject.SelectedItem;
@@ -145,36 +115,6 @@ namespace IHMFR
             }
         }
 
-        private bool visibiliteSujets()
-        {
-            if (cbBxRubric.SelectedIndex != -1)
-            {
-                if (Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-
-        private void PanelSujetVisible()
-        {
-            cbBxSubject.Visible = true;
-            gpBxDescSubject.Visible = true;
-            lbPasDeSujet.Visible = false;
-            btModifSujet.Enabled = true;
-            btSupSujet.Enabled = true;
-        }
-
-        private void PanelSujetInvisible()
-        {
-            cbBxSubject.Visible = false;
-            gpBxDescSubject.Visible = false;
-            lbPasDeSujet.Visible = true;
-            btModifSujet.Enabled = false;
-            btSupSujet.Enabled = false;
-        }
-
         private void btSupPost_Click(object sender, EventArgs e)
         {
             DialogResult dr = new DialogResult();
@@ -199,18 +139,6 @@ namespace IHMFR
                     PanelSujetInvisible();
                 }
             }
-        }
-
-        private bool visibilitePost()
-        {
-            if (cbBxSubject.SelectedIndex != -1)
-            {
-                if (Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue) != null)
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         #endregion
@@ -259,6 +187,94 @@ namespace IHMFR
             }
         }
 
+        private void dGVPost_SelectionChanged(object sender, EventArgs e)
+        {
+            if (visibilitePost())
+            {
+                PanelPostVisible();
+            }
+            else
+            {
+                PanelPostInvisible();
+            }
+        }
+
+        #endregion
+
+        #region Méthode
+
+        private void displaycbBxRubric(List<Rubric> rubrics)
+        {
+            cbBxRubric.ValueMember = "id_rubric";
+            cbBxRubric.DisplayMember = "rubric_title";
+            cbBxRubric.DataSource = rubrics;
+        }
+
+        private void displaycbBxSubject(List<Subject> subjects)
+        {
+            cbBxSubject.ValueMember = "id_subject";
+            cbBxSubject.DisplayMember = "subject_title";
+            cbBxSubject.DataSource = subjects;
+            Subject subject = (Subject)cbBxSubject.SelectedItem;
+        }
+
+        private void visibiliteModerateur()
+        {
+            //tbLPModerator.Visible = frmPrincipale.IsConnected;
+            //tbLPUserLogged.Visible = frmPrincipale.IsConnected;
+            //btConnect.Visible = frmPrincipale.IsConnected;
+        }
+
+        private void displaydgVPost(List<Post> posts)
+        {
+            dGVPost.DataSource = posts;
+            dGVPost.Columns["ID"].Visible = false;
+            dGVPost.Columns["SUJET"].Visible = false;
+            dGVPost.Columns["UTILISATEUR"].Visible = false;
+        }
+
+        private bool visibiliteSujets()
+        {
+            if (cbBxRubric.SelectedIndex != -1)
+            {
+                if (Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue) != null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        private void PanelSujetVisible()
+        {
+            cbBxSubject.Visible = true;
+            gpBxDescSubject.Visible = true;
+            lbPasDeSujet.Visible = false;
+            btModifSujet.Enabled = true;
+            btSupSujet.Enabled = true;
+        }
+
+        private void PanelSujetInvisible()
+        {
+            cbBxSubject.Visible = false;
+            gpBxDescSubject.Visible = false;
+            lbPasDeSujet.Visible = true;
+            btModifSujet.Enabled = false;
+            btSupSujet.Enabled = false;
+        }
+
+        private bool visibilitePost()
+        {
+            if (cbBxSubject.SelectedIndex != -1)
+            {
+                if (Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue) != null)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
         private void PanelPostVisible()
         {
             dGVPost.Visible = true;
@@ -273,20 +289,7 @@ namespace IHMFR
             btSupPost.Enabled = false;
         }
 
-        private void dGVPost_SelectionChanged(object sender, EventArgs e)
-        {
-            if(visibilitePost())
-            {
-                PanelPostVisible();
-            }
-            else
-            {
-                PanelPostInvisible();
-            }
-        }
-
         #endregion
-
 
     }
 }

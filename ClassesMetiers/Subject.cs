@@ -85,12 +85,12 @@ namespace ClassesMetiers
         /// <param name="rubric">Identifiant de la rubrique</param>
         public Subject(int id, string title, string description, Rubric rubric)
         {
-            this.id_subject = id;
-            this.subject_title = title;
-            this.subject_description = description;
-            this.Rubric = rubric;
-            this._Posts = new List<Post>();
-            this.subject_date = DateTime.Now;
+            id_subject = id;
+            subject_title = title;
+            subject_description = description;
+            Rubric = rubric;
+            _Posts = new List<Post>();
+            subject_date = DateTime.Now;
         }
 
         /// <summary>

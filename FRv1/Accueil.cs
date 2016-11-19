@@ -30,12 +30,6 @@ namespace IHMFR
             }
         }
 
-        private void btQuitter_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-        
-
         private void btConnect_Click(object sender, EventArgs e)
         {
 
@@ -43,6 +37,13 @@ namespace IHMFR
             {
                 frmIdentity.ShowDialog();
             }
+            
         }
+
+        private void btQuitter_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

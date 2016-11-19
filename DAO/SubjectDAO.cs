@@ -141,15 +141,15 @@ namespace DAO
         /// <param name="newTitre">le nouveau titre</param>
         /// <param name="newDescription">la nouvelle description</param>
         /// <returns>le nombre de ligne modifié, nbligne = 1 si tout va bien</returns>
-        public static int ModifierSujet (int idsubject, string oldtitre,  string newTitre, string olddescription, string newDescription)
+        public static int ModifierSujet (int idsujet, string oldtitre,  string newTitre, string olddescription, string newDescription)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "ModifierSujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parmIdSujet = cmd.CreateParameter();
-            parmIdSujet.ParameterName = "@ID_SUBJECT";
-            parmIdSujet.Value = idsubject;
+            parmIdSujet.ParameterName = "@ID_SUJET";
+            parmIdSujet.Value = idsujet;
             cmd.Parameters.Add(parmIdSujet);
 
             SqlParameter parmNewTitre = cmd.CreateParameter();
