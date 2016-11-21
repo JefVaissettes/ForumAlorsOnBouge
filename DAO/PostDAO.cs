@@ -54,24 +54,25 @@ namespace DAO
         /// <param name="id_users">L'identifiant de l'utilisateur, qui répond</param>
         /// <param name="post_content">Le texte de la reponse</param>
         /// <returns></returns>
-        public static int AddReponse(int id_subject, int id_users, string post_content)
+        public static int AddReponse(int id_users, int id_subject, string post_content)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "AddReponse";
             cmd.CommandType = CommandType.StoredProcedure;
+
+            SqlParameter parmidid_users = cmd.CreateParameter();
+            parmidid_users.ParameterName = "@ID_UTILISATEUR";
+            parmidid_users.Value = id_users;
+            cmd.Parameters.Add(parmidid_users);
 
             SqlParameter parmid_subject = cmd.CreateParameter();
             parmid_subject.ParameterName = "@ID_SUBJECT";
             parmid_subject.Value = id_subject;
             cmd.Parameters.Add(parmid_subject);
 
-            SqlParameter parmidid_users = cmd.CreateParameter();
-            parmidid_users.ParameterName = "@ID_USERS";
-            parmidid_users.Value = id_users;
-            cmd.Parameters.Add(parmidid_users);
-
+      
             SqlParameter parmContentPost = cmd.CreateParameter();
-            parmContentPost.ParameterName = "@TEXT_REPONSE";
+            parmContentPost.ParameterName = "@POST_CONTENT";
             parmContentPost.Value = post_content;
             cmd.Parameters.Add(parmContentPost);
 

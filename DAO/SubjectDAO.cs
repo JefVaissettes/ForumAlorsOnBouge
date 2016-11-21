@@ -176,54 +176,8 @@ namespace DAO
             int nbLigne = cmd.ExecuteNonQuery();
             con.Close();
             return nbLigne;
-        }
-
-        ///// <summary>
-        ///// La méthode EditSujet, permet la modification du titre d'un sujet, et/ou la description
-        ///// on passant l'ancien sujet en parametre
-        ///// </summary>
-        ///// <param name="id_sujet">Sujet</param>
-        ///// <param name="subject_title">Nouveau Titre</param>
-        ///// <param name="subject_description">Nouvelle description</param>
-        ///// <returns>Le nombre des lignes affectées, nbligne = 1, si tout se passe bien</returns>
-        //public static int EditSujet(int id_subject, string subject_title, string subject_description)
-        //{
-        //    SqlCommand cmd = con.CreateCommand();
-        //    cmd.CommandText = "EditSujet";
-        //    cmd.CommandType = CommandType.StoredProcedure;
-
-        //    SqlParameter parmIdSujet = cmd.CreateParameter();
-        //    parmIdSujet.ParameterName = "@ID_SUJET";
-        //    parmIdSujet.Value = id_subject;
-        //    cmd.Parameters.Add(parmIdSujet);
-
-        //    SqlParameter paramTitre = cmd.CreateParameter();
-        //    paramTitre.ParameterName = "@NEW_TITRE";
-        //    paramTitre.Value = subject_title;
-        //    cmd.Parameters.Add(paramTitre);
-
-        //    //SqlParameter parmOldTitre = cmd.CreateParameter();
-        //    //parmOldTitre.ParameterName = "@OLD_TITRE";
-        //    //parmOldTitre.Value = subject.subject_title;
-        //    //cmd.Parameters.Add(parmOldTitre);
-
-        //    SqlParameter parmDesc = cmd.CreateParameter();
-        //    parmDesc.ParameterName = "@NEW_DESC";
-        //    parmDesc.Value = subject_description;
-        //    cmd.Parameters.Add(parmDesc);
-
-        //    //SqlParameter parmOldDesc = cmd.CreateParameter();
-        //    //parmOldDesc.ParameterName = "@OLD_DESC";
-        //    //parmOldDesc.Value = subject.subject_description;
-        //    //cmd.Parameters.Add(parmOldDesc);
-
-        //    con.Open();
-        //    int nbLigne = cmd.ExecuteNonQuery();
-        //    con.Close();
-        //    return nbLigne;
-        //}
-
-
+        }    
+        
         /// <summary>
         /// La méthode DeleteSujet, permet la suppression d'un sujet
         /// dont l'id est passé en parametre

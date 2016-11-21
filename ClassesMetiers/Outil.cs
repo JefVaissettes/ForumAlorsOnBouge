@@ -253,9 +253,9 @@ namespace ClassesMetiers
             return null;
         }
 
-        public static int AddReponse(int id_subject, int id_users, string post_content)
+        public static int AddReponse(int id_users,int id_subject, string post_content)
         {
-            return PostDAO.AddReponse(id_subject, id_users, post_content);
+            return PostDAO.AddReponse(id_users, id_subject,  post_content);
         }
 
         public static int DeleteReponse(int idReponse)
