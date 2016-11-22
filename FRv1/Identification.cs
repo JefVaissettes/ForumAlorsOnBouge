@@ -20,31 +20,21 @@ namespace IHMFR
 
         private void btAnnuler_Click(object sender, EventArgs e)
         {
-            using (Accueil frmAccueil = new Accueil())
-            {
+            
                 this.Close();
-            }
-        }
-
-        private void btModifPwd_Click(object sender, EventArgs e)
-        {
-            using (modifpwd frmModifpwd = new modifpwd())
-            {
-                frmModifpwd.ShowDialog();
-            }
+            
         }
 
         private void btConnect_Click(object sender, EventArgs e)
         {
 
-            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
+            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);//TODO
             if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;
                 Accueil.IsRmodo = Accueil.CurrentUsers.role;
                 this.Close();
 
-                frmPrincipale frmprincipale = new frmPrincipale();
             }
             else
             {

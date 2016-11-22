@@ -13,7 +13,7 @@ namespace IHMFR
 {
     public partial class frmPrincipale : Form
     {
-    
+
 
         public frmPrincipale()
         {
@@ -45,7 +45,7 @@ namespace IHMFR
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btConnect_Click(object sender, EventArgs e)
+        private void btConnecter_Click(object sender, EventArgs e)
         {
             using (Identification frmIdentity = new Identification())
             {
@@ -53,7 +53,6 @@ namespace IHMFR
             }
             visibiliteModerateur();
         }
-
         /// <summary>
         /// 
         /// </summary>
@@ -69,7 +68,7 @@ namespace IHMFR
 
         private void btModifMdp_Click(object sender, EventArgs e)
         {
-            using(modifpwd frmmodifpwd = new modifpwd())
+            using (modifpwd frmmodifpwd = new modifpwd())
             {
                 frmmodifpwd.ShowDialog();
             }
@@ -167,7 +166,7 @@ namespace IHMFR
             }
         }
 
-       
+
         #endregion
 
         #region event indexchanged
@@ -321,8 +320,9 @@ namespace IHMFR
 
 
 
+
         #endregion
 
-   
+
     }
 }
