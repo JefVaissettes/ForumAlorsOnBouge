@@ -36,7 +36,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btAnnuler = new System.Windows.Forms.Button();
             this.btConnect = new System.Windows.Forms.Button();
-            this.btModifPwd = new System.Windows.Forms.Button();
             this.gpbxIdentification.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,28 +117,15 @@
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(109, 40);
             this.btConnect.TabIndex = 2;
-            this.btConnect.Text = "Se Connecter";
+            this.btConnect.Text = "Valider";
             this.btConnect.UseVisualStyleBackColor = true;
             this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
-            // 
-            // btModifPwd
-            // 
-            this.btModifPwd.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btModifPwd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModifPwd.Location = new System.Drawing.Point(141, 186);
-            this.btModifPwd.Name = "btModifPwd";
-            this.btModifPwd.Size = new System.Drawing.Size(109, 40);
-            this.btModifPwd.TabIndex = 3;
-            this.btModifPwd.Text = "Modifier mot de passe";
-            this.btModifPwd.UseVisualStyleBackColor = true;
-            this.btModifPwd.Click += new System.EventHandler(this.btModifPwd_Click);
             // 
             // Identification
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(388, 243);
-            this.Controls.Add(this.btModifPwd);
             this.Controls.Add(this.btConnect);
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.gpbxIdentification);
@@ -164,6 +150,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btAnnuler;
         private System.Windows.Forms.Button btConnect;
-        private System.Windows.Forms.Button btModifPwd;
     }
 }

@@ -29,11 +29,6 @@
         private void InitializeComponent()
         {
             this.label1 = new System.Windows.Forms.Label();
-            this.gpbxIdentification = new System.Windows.Forms.GroupBox();
-            this.txtPwd = new System.Windows.Forms.TextBox();
-            this.txtLogin = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             this.gpbxModifIdentity = new System.Windows.Forms.GroupBox();
             this.txtNewPwd = new System.Windows.Forms.TextBox();
             this.txtConfirmNewPwd = new System.Windows.Forms.TextBox();
@@ -41,7 +36,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.btValider = new System.Windows.Forms.Button();
             this.btAnnuler = new System.Windows.Forms.Button();
-            this.gpbxIdentification.SuspendLayout();
             this.gpbxModifIdentity.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,59 +49,13 @@
             this.label1.TabIndex = 15;
             this.label1.Text = "Modification du Password";
             // 
-            // gpbxIdentification
-            // 
-            this.gpbxIdentification.Controls.Add(this.txtPwd);
-            this.gpbxIdentification.Controls.Add(this.txtLogin);
-            this.gpbxIdentification.Controls.Add(this.label3);
-            this.gpbxIdentification.Controls.Add(this.label2);
-            this.gpbxIdentification.Location = new System.Drawing.Point(20, 53);
-            this.gpbxIdentification.Name = "gpbxIdentification";
-            this.gpbxIdentification.Size = new System.Drawing.Size(343, 119);
-            this.gpbxIdentification.TabIndex = 16;
-            this.gpbxIdentification.TabStop = false;
-            // 
-            // txtPwd
-            // 
-            this.txtPwd.Location = new System.Drawing.Point(129, 75);
-            this.txtPwd.Name = "txtPwd";
-            this.txtPwd.Size = new System.Drawing.Size(190, 20);
-            this.txtPwd.TabIndex = 1;
-            // 
-            // txtLogin
-            // 
-            this.txtLogin.Location = new System.Drawing.Point(129, 35);
-            this.txtLogin.Name = "txtLogin";
-            this.txtLogin.Size = new System.Drawing.Size(190, 20);
-            this.txtLogin.TabIndex = 0;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(17, 76);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 16);
-            this.label3.TabIndex = 19;
-            this.label3.Text = "Mot de passe";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(17, 36);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(96, 16);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Nom utilisateur";
-            // 
             // gpbxModifIdentity
             // 
             this.gpbxModifIdentity.Controls.Add(this.txtNewPwd);
             this.gpbxModifIdentity.Controls.Add(this.txtConfirmNewPwd);
             this.gpbxModifIdentity.Controls.Add(this.label5);
             this.gpbxModifIdentity.Controls.Add(this.label4);
-            this.gpbxModifIdentity.Location = new System.Drawing.Point(19, 190);
+            this.gpbxModifIdentity.Location = new System.Drawing.Point(22, 60);
             this.gpbxModifIdentity.Name = "gpbxModifIdentity";
             this.gpbxModifIdentity.Size = new System.Drawing.Size(343, 116);
             this.gpbxModifIdentity.TabIndex = 17;
@@ -153,7 +101,7 @@
             // btValider
             // 
             this.btValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btValider.Location = new System.Drawing.Point(253, 312);
+            this.btValider.Location = new System.Drawing.Point(256, 202);
             this.btValider.Name = "btValider";
             this.btValider.Size = new System.Drawing.Size(109, 40);
             this.btValider.TabIndex = 4;
@@ -164,7 +112,7 @@
             // btAnnuler
             // 
             this.btAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAnnuler.Location = new System.Drawing.Point(20, 312);
+            this.btAnnuler.Location = new System.Drawing.Point(22, 202);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(109, 40);
             this.btAnnuler.TabIndex = 5;
@@ -176,17 +124,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(377, 362);
+            this.ClientSize = new System.Drawing.Size(377, 265);
             this.Controls.Add(this.btAnnuler);
             this.Controls.Add(this.btValider);
             this.Controls.Add(this.gpbxModifIdentity);
-            this.Controls.Add(this.gpbxIdentification);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "modifpwd";
             this.Text = "Alors on bouge !";
-            this.gpbxIdentification.ResumeLayout(false);
-            this.gpbxIdentification.PerformLayout();
             this.gpbxModifIdentity.ResumeLayout(false);
             this.gpbxModifIdentity.PerformLayout();
             this.ResumeLayout(false);
@@ -197,11 +142,6 @@
         #endregion
 
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox gpbxIdentification;
-        private System.Windows.Forms.TextBox txtPwd;
-        private System.Windows.Forms.TextBox txtLogin;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.GroupBox gpbxModifIdentity;
         private System.Windows.Forms.TextBox txtNewPwd;
         private System.Windows.Forms.TextBox txtConfirmNewPwd;

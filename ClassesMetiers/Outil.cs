@@ -258,9 +258,9 @@ namespace ClassesMetiers
             return PostDAO.AddReponse(id_users, id_subject,  post_content);
         }
 
-        public static int DeleteReponse(int idReponse)
+        public static int DeleteReponse(int idPost)
         {
-            return PostDAO.DeleteReponse(idReponse);
+            return PostDAO.DeleteReponse(idPost);
         }
         #endregion
     }

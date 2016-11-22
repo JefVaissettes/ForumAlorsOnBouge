@@ -13,9 +13,7 @@ namespace IHMFR
 {
     public partial class frmPrincipale : Form
     {
-        static internal int IsRmodo;
-        static internal Utilisateur CurrentUsers;
-        static internal bool IsConnected;
+    
 
         public frmPrincipale()
         {
@@ -42,12 +40,40 @@ namespace IHMFR
             this.Close();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btConnect_Click(object sender, EventArgs e)
         {
             using (Identification frmIdentity = new Identification())
             {
                 frmIdentity.ShowDialog();
             }
+            visibiliteModerateur();
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btSeDeconnect_Click(object sender, EventArgs e)
+        {
+            Accueil.IsConnected = false;
+            Accueil.IsRmodo = false;
+            MessageBox.Show(Properties.Resources.MsgBoxDeconnexionText, Properties.Resources.MsgBoxDeconnexionTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            visibiliteModerateur();
+        }
+
+        private void btModifMdp_Click(object sender, EventArgs e)
+        {
+            using(modifpwd frmmodifpwd = new modifpwd())
+            {
+                frmmodifpwd.ShowDialog();
+            }
+            visibiliteModerateur();
         }
 
         private void btCreerSujet_Click(object sender, EventArgs e)
@@ -121,7 +147,7 @@ namespace IHMFR
             dr = MessageBox.Show(Properties.Resources.MsgBoxDeletePostText, Properties.Resources.MsgBoxDeletePostTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
-                if (Outil.DeleteReponse((int)dGVPost.CurrentRow.Cells["ID_POST"].Value) != 1)
+                if (Outil.DeleteReponse((int)dGVPost.CurrentRow.Cells["ID"].Value) != 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
                 }
@@ -141,6 +167,7 @@ namespace IHMFR
             }
         }
 
+       
         #endregion
 
         #region event indexchanged
@@ -156,6 +183,8 @@ namespace IHMFR
             else
             {
                 PanelSujetInvisible();
+                PanelPostInvisible();
+
             }
         }
 
@@ -220,10 +249,11 @@ namespace IHMFR
 
         private void visibiliteModerateur()
         {
-            //tbLPModerator.Visible = frmPrincipale.IsConnected;
-            //tbLPUserLogged.Visible = frmPrincipale.IsConnected;
-            //btConnect.Visible = frmPrincipale.IsConnected;
+            tbLPUserLogged.Visible = Accueil.IsConnected;
+            gbxModerator.Visible = Accueil.IsRmodo;
         }
+
+
 
         private void displaydgVPost(List<Post> posts)
         {
@@ -289,7 +319,10 @@ namespace IHMFR
             btSupPost.Enabled = false;
         }
 
+
+
         #endregion
 
+   
     }
 }

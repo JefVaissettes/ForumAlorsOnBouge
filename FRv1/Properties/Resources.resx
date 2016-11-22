@@ -135,6 +135,12 @@
   <data name="MsgBoxCancelTitre" xml:space="preserve">
     <value>Annuler</value>
   </data>
+  <data name="MsgBoxConfirmChangementPasswordText" xml:space="preserve">
+    <value>Confirmation de changement du mot de passe</value>
+  </data>
+  <data name="MsgBoxConfirmChangementPasswordTitre" xml:space="preserve">
+    <value>Confirmation de changement</value>
+  </data>
   <data name="MsgBoxDeconnexionText" xml:space="preserve">
     <value>Vous-êtes déconnecté, avec succès</value>
   </data>

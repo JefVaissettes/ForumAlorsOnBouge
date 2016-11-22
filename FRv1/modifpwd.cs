@@ -20,23 +20,21 @@ namespace IHMFR
 
         private void btAnnuler_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Close(); 
         }
 
         private void btValider_Click(object sender, EventArgs e)
         {
-            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
-            if (Accueil.CurrentUsers != null)
+            btValider.Visible = false;
+            DialogResult dr = new DialogResult();
+            dr = MessageBox.Show(Properties.Resources.MsgBoxConfirmChangementPasswordText, Properties.Resources.MsgBoxConfirmChangementPasswordTitre, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            if (dr == DialogResult.Yes && (txtNewPwd.TextLength != txtConfirmNewPwd.TextLength) || !(string.IsNullOrWhiteSpace(txtNewPwd.Text) || string.IsNullOrWhiteSpace(txtConfirmNewPwd.Text)))
             {
-                Accueil.IsConnected = true;
-                Accueil.IsRmodo = Accueil.CurrentUsers.role;
+                Outil.ModifierPassword(Accueil.CurrentUsers.id_utilisateur, txtNewPwd.Text);
+                btValider.Visible = true;
                 this.Close();
             }
-            else
-            {
-                Accueil.IsConnected = false;
-                MessageBox.Show("Votre Login ou votre mot de passe sont incorrect!", "Veuillez saisir vos identifiants svp", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+
         }
 
         private void txtNewPwd_TextChanged(object sender, EventArgs e)

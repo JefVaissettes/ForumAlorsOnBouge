@@ -115,6 +115,24 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
+        ///   Recherche une chaîne localisée semblable à Confirmation de changement du mot de passe.
+        /// </summary>
+        internal static string MsgBoxConfirmChangementPasswordText {
+            get {
+                return ResourceManager.GetString("MsgBoxConfirmChangementPasswordText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une chaîne localisée semblable à Confirmation de changement.
+        /// </summary>
+        internal static string MsgBoxConfirmChangementPasswordTitre {
+            get {
+                return ResourceManager.GetString("MsgBoxConfirmChangementPasswordTitre", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Vous-êtes déconnecté, avec succès.
         /// </summary>
         internal static string MsgBoxDeconnexionText {

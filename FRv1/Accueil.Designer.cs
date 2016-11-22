@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Accueil));
             this.textSummary = new System.Windows.Forms.TextBox();
             this.btConsul = new System.Windows.Forms.Button();
-            this.btConnect = new System.Windows.Forms.Button();
             this.btQuitter = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
@@ -54,7 +53,7 @@
             // 
             this.btConsul.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btConsul.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConsul.Location = new System.Drawing.Point(551, 245);
+            this.btConsul.Location = new System.Drawing.Point(693, 245);
             this.btConsul.Name = "btConsul";
             this.btConsul.Size = new System.Drawing.Size(132, 34);
             this.btConsul.TabIndex = 1;
@@ -62,22 +61,10 @@
             this.btConsul.UseVisualStyleBackColor = true;
             this.btConsul.Click += new System.EventHandler(this.btConsul_Click);
             // 
-            // btConnect
-            // 
-            this.btConnect.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConnect.Location = new System.Drawing.Point(705, 245);
-            this.btConnect.Name = "btConnect";
-            this.btConnect.Size = new System.Drawing.Size(132, 34);
-            this.btConnect.TabIndex = 2;
-            this.btConnect.Text = "Se connecter";
-            this.btConnect.UseVisualStyleBackColor = true;
-            this.btConnect.Click += new System.EventHandler(this.btConnect_Click);
-            // 
             // btQuitter
             // 
             this.btQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btQuitter.Location = new System.Drawing.Point(12, 245);
+            this.btQuitter.Location = new System.Drawing.Point(37, 245);
             this.btQuitter.Name = "btQuitter";
             this.btQuitter.Size = new System.Drawing.Size(132, 34);
             this.btQuitter.TabIndex = 4;
@@ -103,7 +90,6 @@
             this.ClientSize = new System.Drawing.Size(855, 306);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btQuitter);
-            this.Controls.Add(this.btConnect);
             this.Controls.Add(this.btConsul);
             this.Controls.Add(this.textSummary);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
@@ -118,7 +104,6 @@
 
         private System.Windows.Forms.TextBox textSummary;
         private System.Windows.Forms.Button btConsul;
-        private System.Windows.Forms.Button btConnect;
         private System.Windows.Forms.Button btQuitter;
         private System.Windows.Forms.Label label1;
     }

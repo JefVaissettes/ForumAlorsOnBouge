@@ -30,16 +30,6 @@ namespace IHMFR
             }
         }
 
-        private void btConnect_Click(object sender, EventArgs e)
-        {
-
-            using (Identification frmIdentity = new Identification())
-            {
-                frmIdentity.ShowDialog();
-            }
-            
-        }
-
         private void btQuitter_Click(object sender, EventArgs e)
         {
             this.Close();
