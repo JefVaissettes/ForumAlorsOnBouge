@@ -19,16 +19,14 @@ namespace IHMFR
         }
 
         private void btAnnuler_Click(object sender, EventArgs e)
-        {
-            
-                this.Close();
-            
+        {            
+                this.Close();            
         }
 
         private void btConnect_Click(object sender, EventArgs e)
         {
 
-            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);//TODO
+            Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
             if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;
@@ -40,6 +38,7 @@ namespace IHMFR
             {
                 Accueil.IsConnected = false;
                 MessageBox.Show("Votre Login ou votre mot de passe sont incorrect!", "Veuillez saisir vos identifiants svp", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
             }
         }
     }

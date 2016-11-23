@@ -189,7 +189,7 @@ namespace IHMFR
             {
                 PanelSujetVisible();
                 Subject subject = (Subject)cbBxSubject.SelectedItem;
-                txtDescSujet.Text = subject.subject_description;
+                txtDescSujet.Text = subject.subject_description + Environment.NewLine + "De, " + subject.Auteur + Environment.NewLine + "Le, " + subject.subject_date;
 
                 if (visibilitePost())
                 {

@@ -59,13 +59,13 @@
             // 
             // txtPostContent
             // 
+            this.txtPostContent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPostContent.Location = new System.Drawing.Point(14, 19);
             this.txtPostContent.Multiline = true;
             this.txtPostContent.Name = "txtPostContent";
             this.txtPostContent.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtPostContent.Size = new System.Drawing.Size(283, 217);
             this.txtPostContent.TabIndex = 18;
-            this.txtPostContent.UseWaitCursor = true;
             // 
             // gpBxCreatePost
             // 

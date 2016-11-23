@@ -61,7 +61,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à la réponse a été ajouter avec succès.
+        ///   Recherche une chaîne localisée semblable à Le post a été ajouté avec succès..
         /// </summary>
         internal static string MsgBoxAddReponseText {
             get {

@@ -69,10 +69,10 @@ namespace ClassesMetiers
 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Subject sujet = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJEC_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
-                    _Subjects.Add(sujet);
+                    Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
 
-                    //_Subjects.Add(new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJEC_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
+                    //Subject sujet = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJEC_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
+                    _Subjects.Add(subject);
                 }
 
                 return _Subjects;
@@ -96,7 +96,9 @@ namespace ClassesMetiers
                 // parcours des toutes lignes de notre table 
                 foreach (DataRow row in dt.Rows)
                 {
-                    Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
+                    Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
+
+                    //Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(),row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
                     _Sujets.Add(subject);
                 }
                 return _Sujets;
@@ -116,7 +118,7 @@ namespace ClassesMetiers
             if (dt.Rows.Count == 1)
             {
                 DataRow row = dt.Rows[0];
-                Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
+                Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
 
                 return subject;
             }

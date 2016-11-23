@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="MsgBoxAddReponseText" xml:space="preserve">
-    <value>la réponse a été ajouter avec succès</value>
+    <value>Le post a été ajouté avec succès.</value>
   </data>
   <data name="MsgBoxAddReponseTitre" xml:space="preserve">
     <value>Ajouter une réponse</value>

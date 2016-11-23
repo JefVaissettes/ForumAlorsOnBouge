@@ -85,6 +85,30 @@ namespace ClassesMetiers
             set { _Rubric = value; }
         }
 
+        /// <summary>
+        /// L'utilisateur qui a crée et posté la reponse
+        /// </summary>
+        private Utilisateur _Utilisateur;
+
+        [DataMember]
+        public Utilisateur Utilisateur
+        {
+            get { return _Utilisateur; }
+            set { _Utilisateur = value; }
+        }
+
+        /// <summary>
+        /// L'auteur de la reponse
+        /// </summary>
+        private string _Auteur;
+
+        [DataMember]
+        public string Auteur
+        {
+            get { return _Auteur; }
+            set { _Auteur = value; }
+        }
+
         #region "Constructeurs"
 
         /// <summary>
@@ -118,7 +142,7 @@ namespace ClassesMetiers
         }
 
         /// <summary>
-        /// Constructeur d'un nouveau sujet
+        /// Constructeur d'un nouveau sujet 
         /// </summary>
         /// <param name="id">Identifiant du sujet</param>
         /// <param name="title">Titre du sujet</param>
@@ -128,6 +152,13 @@ namespace ClassesMetiers
             this.id_subject = id;
             this.subject_title = title;
             this.Rubric = rubric;
+        }
+
+        public Subject(int id, string titre, string description, DateTime date, Utilisateur utilisateur, Rubric rubric) : this(id, titre, description, rubric)
+        {
+            this.subject_Date = date;
+            this.Utilisateur = utilisateur;
+            this.Auteur = utilisateur.Login;
         }
 
 
