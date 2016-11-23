@@ -80,7 +80,7 @@
             this.tblLPfrmPrincipale.ColumnCount = 3;
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.34F));
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.66F));
-            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 125F));
+            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 126F));
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPRubric, 0, 0);
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPUserLogged, 1, 3);
             this.tblLPfrmPrincipale.Controls.Add(this.tableLayoutPanel1, 0, 2);
@@ -139,7 +139,7 @@
             this.cbBxRubric.FormattingEnabled = true;
             this.cbBxRubric.Location = new System.Drawing.Point(0, 20);
             this.cbBxRubric.Name = "cbBxRubric";
-            this.cbBxRubric.Size = new System.Drawing.Size(187, 21);
+            this.cbBxRubric.Size = new System.Drawing.Size(185, 21);
             this.cbBxRubric.TabIndex = 3;
             this.cbBxRubric.SelectedIndexChanged += new System.EventHandler(this.cbBxRubric_SelectedIndexChanged);
             // 
@@ -155,7 +155,7 @@
             this.tbLPUserLogged.RowCount = 1;
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 82F));
-            this.tbLPUserLogged.Size = new System.Drawing.Size(496, 82);
+            this.tbLPUserLogged.Size = new System.Drawing.Size(495, 82);
             this.tbLPUserLogged.TabIndex = 2;
             // 
             // gbxUserLogged
@@ -166,14 +166,14 @@
             this.gbxUserLogged.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxUserLogged.Location = new System.Drawing.Point(3, 3);
             this.gbxUserLogged.Name = "gbxUserLogged";
-            this.gbxUserLogged.Size = new System.Drawing.Size(490, 76);
+            this.gbxUserLogged.Size = new System.Drawing.Size(489, 76);
             this.gbxUserLogged.TabIndex = 14;
             this.gbxUserLogged.TabStop = false;
             // 
             // btSeDeconnect
             // 
             this.btSeDeconnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSeDeconnect.Location = new System.Drawing.Point(255, 8);
+            this.btSeDeconnect.Location = new System.Drawing.Point(341, 18);
             this.btSeDeconnect.Name = "btSeDeconnect";
             this.btSeDeconnect.Size = new System.Drawing.Size(118, 40);
             this.btSeDeconnect.TabIndex = 12;
@@ -184,7 +184,7 @@
             // btCreerPost
             // 
             this.btCreerPost.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCreerPost.Location = new System.Drawing.Point(6, 8);
+            this.btCreerPost.Location = new System.Drawing.Point(41, 18);
             this.btCreerPost.Name = "btCreerPost";
             this.btCreerPost.Size = new System.Drawing.Size(109, 40);
             this.btCreerPost.TabIndex = 11;
@@ -195,7 +195,7 @@
             // btCreerSujet
             // 
             this.btCreerSujet.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCreerSujet.Location = new System.Drawing.Point(129, 8);
+            this.btCreerSujet.Location = new System.Drawing.Point(185, 18);
             this.btCreerSujet.Name = "btCreerSujet";
             this.btCreerSujet.Size = new System.Drawing.Size(109, 40);
             this.btCreerSujet.TabIndex = 1;
@@ -306,7 +306,7 @@
             this.tbLPConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tbLPConnexion.Controls.Add(this.btConnect, 0, 0);
             this.tbLPConnexion.Controls.Add(this.btConnecter, 0, 1);
-            this.tbLPConnexion.Location = new System.Drawing.Point(703, 440);
+            this.tbLPConnexion.Location = new System.Drawing.Point(702, 440);
             this.tbLPConnexion.Name = "tbLPConnexion";
             this.tbLPConnexion.RowCount = 2;
             this.tbLPConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -349,7 +349,7 @@
             this.dGVPost.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dGVPost.Location = new System.Drawing.Point(201, 133);
             this.dGVPost.Name = "dGVPost";
-            this.dGVPost.Size = new System.Drawing.Size(496, 301);
+            this.dGVPost.Size = new System.Drawing.Size(495, 301);
             this.dGVPost.TabIndex = 16;
             this.dGVPost.SelectionChanged += new System.EventHandler(this.dGVPost_SelectionChanged);
             // 
@@ -376,7 +376,7 @@
             this.tbLPModerator.RowCount = 1;
             this.tbLPModerator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPModerator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 105F));
-            this.tbLPModerator.Size = new System.Drawing.Size(496, 105);
+            this.tbLPModerator.Size = new System.Drawing.Size(495, 105);
             this.tbLPModerator.TabIndex = 3;
             // 
             // gbxModerator
@@ -387,7 +387,7 @@
             this.gbxModerator.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxModerator.Location = new System.Drawing.Point(3, 3);
             this.gbxModerator.Name = "gbxModerator";
-            this.gbxModerator.Size = new System.Drawing.Size(490, 99);
+            this.gbxModerator.Size = new System.Drawing.Size(489, 99);
             this.gbxModerator.TabIndex = 13;
             this.gbxModerator.TabStop = false;
             // 
@@ -428,9 +428,9 @@
             // 
             this.panel2.Controls.Add(this.btModifMdp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(703, 133);
+            this.panel2.Location = new System.Drawing.Point(702, 133);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(120, 301);
+            this.panel2.Size = new System.Drawing.Size(121, 301);
             this.panel2.TabIndex = 18;
             // 
             // btModifMdp

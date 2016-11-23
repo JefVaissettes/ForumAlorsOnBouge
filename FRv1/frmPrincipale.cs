@@ -13,8 +13,6 @@ namespace IHMFR
 {
     public partial class frmPrincipale : Form
     {
-
-
         public frmPrincipale()
         {
             InitializeComponent();
@@ -28,8 +26,6 @@ namespace IHMFR
             displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             visibiliteModerateur();
         }
-
-
 
         #endregion
 
@@ -250,6 +246,8 @@ namespace IHMFR
         {
             tbLPUserLogged.Visible = Accueil.IsConnected;
             gbxModerator.Visible = Accueil.IsRmodo;
+            btModifMdp.Visible = Accueil.IsConnected;
+            btConnecter.Visible = !Accueil.IsConnected;
         }
 
 
