@@ -70,7 +70,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ajouter une réponse.
+        ///   Recherche une chaîne localisée semblable à Ajouter un post..
         /// </summary>
         internal static string MsgBoxAddReponseTitre {
             get {
@@ -79,7 +79,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Le sujet a été ajouté avec succès.
+        ///   Recherche une chaîne localisée semblable à Le sujet a été ajouté avec succès..
         /// </summary>
         internal static string MsgBoxAddSujetText {
             get {

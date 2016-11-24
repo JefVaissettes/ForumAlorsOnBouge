@@ -121,10 +121,10 @@
     <value>Le post a été ajouté avec succès.</value>
   </data>
   <data name="MsgBoxAddReponseTitre" xml:space="preserve">
-    <value>Ajouter une réponse</value>
+    <value>Ajouter un post.</value>
   </data>
   <data name="MsgBoxAddSujetText" xml:space="preserve">
-    <value>Le sujet a été ajouté avec succès</value>
+    <value>Le sujet a été ajouté avec succès.</value>
   </data>
   <data name="MsgBoxAddSujetTitre" xml:space="preserve">
     <value>Ajouter un sujet</value>

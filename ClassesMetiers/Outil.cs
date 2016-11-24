@@ -70,8 +70,6 @@ namespace ClassesMetiers
                 foreach (DataRow row in dt.Rows)
                 {
                     Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
-
-                    //Subject sujet = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJEC_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
                     _Subjects.Add(subject);
                 }
 
@@ -97,8 +95,6 @@ namespace ClassesMetiers
                 foreach (DataRow row in dt.Rows)
                 {
                     Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
-
-                    //Subject subject = (new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(),row["SUBJECT_DESCRIPTION"].ToString(), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString()))));
                     _Sujets.Add(subject);
                 }
                 return _Sujets;

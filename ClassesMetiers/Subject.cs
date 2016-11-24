@@ -154,11 +154,20 @@ namespace ClassesMetiers
             this.Rubric = rubric;
         }
 
+        /// <summary>
+        /// constructeur construit pour l'ajout de l'auteur et de la date du sujet
+        /// </summary>
+        /// <param name="id"></param>
+        /// <param name="titre"></param>
+        /// <param name="description"></param>
+        /// <param name="date"></param>
+        /// <param name="utilisateur"></param>
+        /// <param name="rubric"></param>
         public Subject(int id, string titre, string description, DateTime date, Utilisateur utilisateur, Rubric rubric) : this(id, titre, description, rubric)
         {
-            this.subject_Date = date;
+            this.subject_date = date;
             this.Utilisateur = utilisateur;
-            this.Auteur = utilisateur.Login;
+            this.Auteur = utilisateur.username;
         }
 
 
