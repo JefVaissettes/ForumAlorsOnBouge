@@ -24,7 +24,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
-        [DataMember]
+        [DataMember]   
         public int Id
         {
             get { return _Id; }
