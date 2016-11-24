@@ -88,7 +88,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Ajouter un sujet.
+        ///   Recherche une chaîne localisée semblable à Ajouter un sujet..
         /// </summary>
         internal static string MsgBoxAddSujetTitre {
             get {
@@ -97,7 +97,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte..
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte..
         /// </summary>
         internal static string MsgBoxCancelText {
             get {
@@ -106,7 +106,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Annuler.
+        ///   Recherche une chaîne localisée semblable à Annuler..
         /// </summary>
         internal static string MsgBoxCancelTitre {
             get {
@@ -115,7 +115,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Confirmation de changement du mot de passe.
+        ///   Recherche une chaîne localisée semblable à Confirmation de changement du mot de passe..
         /// </summary>
         internal static string MsgBoxConfirmChangementPasswordText {
             get {
@@ -124,7 +124,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Confirmation de changement.
+        ///   Recherche une chaîne localisée semblable à Changement de mot de passe..
         /// </summary>
         internal static string MsgBoxConfirmChangementPasswordTitre {
             get {
@@ -133,7 +133,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Vous-êtes déconnecté, avec succès.
+        ///   Recherche une chaîne localisée semblable à Vous-êtes déconnecté avec succès..
         /// </summary>
         internal static string MsgBoxDeconnexionText {
             get {
@@ -151,7 +151,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir supprimer la réponse ?.
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer le post ?.
         /// </summary>
         internal static string MsgBoxDeletePostText {
             get {
@@ -160,7 +160,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Suppression de la réponse.
+        ///   Recherche une chaîne localisée semblable à Suppression du post..
         /// </summary>
         internal static string MsgBoxDeletePostTitre {
             get {
@@ -169,7 +169,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir supprimer le sujet sélectionné ?.
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir supprimer le sujet sélectionné ?.
         /// </summary>
         internal static string MsgBoxDeleteSujetText {
             get {
@@ -178,7 +178,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Suppression du Sujet.
+        ///   Recherche une chaîne localisée semblable à Suppression du sujet..
         /// </summary>
         internal static string MsgBoxDeleteSujetTitre {
             get {
@@ -187,7 +187,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Modification du sujet.
+        ///   Recherche une chaîne localisée semblable à Modification du sujet..
         /// </summary>
         internal static string MsgBoxEditSujetText {
             get {
@@ -196,7 +196,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter la réponse !.
+        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter un post..
         /// </summary>
         internal static string MsgBoxErreurAddReponseText {
             get {
@@ -205,7 +205,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout de la réponse.
+        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout du post..
         /// </summary>
         internal static string MsgBoxErreurAddReponseTitre {
             get {
@@ -214,7 +214,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter le sujet.
+        ///   Recherche une chaîne localisée semblable à Impossible d&apos;ajouter le sujet..
         /// </summary>
         internal static string MsgBoxErreurAddSujetText {
             get {
@@ -223,7 +223,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout du sujet.
+        ///   Recherche une chaîne localisée semblable à Erreur au moment de l&apos;ajout du sujet..
         /// </summary>
         internal static string MsgBoxErreurAddSujetTitre {
             get {
@@ -232,7 +232,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Suppression impossible de la réponse !.
+        ///   Recherche une chaîne localisée semblable à Suppression impossible du post..
         /// </summary>
         internal static string MsgBoxErreurDeletePostText {
             get {
@@ -268,7 +268,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur de modification du sujet.
+        ///   Recherche une chaîne localisée semblable à Erreur de modification du sujet..
         /// </summary>
         internal static string MsgBoxErreurEditSujetText {
             get {
@@ -277,7 +277,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Erreur de modification du titre du sujet.
+        ///   Recherche une chaîne localisée semblable à Erreur de modification du titre du sujet..
         /// </summary>
         internal static string MsgBoxErreurEditSujetTitre {
             get {
@@ -286,7 +286,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Etes-vous sur de vouloir modifier le sujet ?.
+        ///   Recherche une chaîne localisée semblable à Etes-vous sûr de vouloir modifier le sujet ?.
         /// </summary>
         internal static string MsgBoxUpDateSujetText {
             get {
@@ -295,7 +295,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Mofdification du sujet.
+        ///   Recherche une chaîne localisée semblable à Mofdification du sujet..
         /// </summary>
         internal static string MsgBoxUpDateSujetTitre {
             get {
@@ -304,7 +304,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Désolé ! Le sujet sélectionné, ne contient aucune reponse.
+        ///   Recherche une chaîne localisée semblable à Désolé ! Le sujet sélectionné, ne contient aucun post..
         /// </summary>
         internal static string MsglblPasDeReponseText {
             get {
@@ -313,7 +313,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Pas de reponse pour le sujet sélectionné.
+        ///   Recherche une chaîne localisée semblable à Pas de post pour le sujet sélectionné..
         /// </summary>
         internal static string MsglblPasDeReponseTitre {
             get {
@@ -322,7 +322,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Désolé ! la catégorie sélectionnée ne contient aucun sujet.
+        ///   Recherche une chaîne localisée semblable à Désolé ! la rubrique sélectionnée ne contient aucun sujet..
         /// </summary>
         internal static string MsglblPasDeSujetText {
             get {
@@ -331,7 +331,7 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
-        ///   Recherche une chaîne localisée semblable à Pas de sujet pour la catégorie sélectionnée.
+        ///   Recherche une chaîne localisée semblable à Pas de sujet pour la rubrique sélectionnée..
         /// </summary>
         internal static string MsglblPasDeSujetTitre {
             get {

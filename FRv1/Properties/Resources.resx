@@ -127,55 +127,55 @@
     <value>Le sujet a été ajouté avec succès.</value>
   </data>
   <data name="MsgBoxAddSujetTitre" xml:space="preserve">
-    <value>Ajouter un sujet</value>
+    <value>Ajouter un sujet.</value>
   </data>
   <data name="MsgBoxCancelText" xml:space="preserve">
-    <value>Etes-vous sur de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte.</value>
+    <value>Etes-vous sûr de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte.</value>
   </data>
   <data name="MsgBoxCancelTitre" xml:space="preserve">
-    <value>Annuler</value>
+    <value>Annuler.</value>
   </data>
   <data name="MsgBoxConfirmChangementPasswordText" xml:space="preserve">
-    <value>Confirmation de changement du mot de passe</value>
+    <value>Confirmation de changement du mot de passe.</value>
   </data>
   <data name="MsgBoxConfirmChangementPasswordTitre" xml:space="preserve">
-    <value>Confirmation de changement</value>
+    <value>Changement de mot de passe.</value>
   </data>
   <data name="MsgBoxDeconnexionText" xml:space="preserve">
-    <value>Vous-êtes déconnecté, avec succès</value>
+    <value>Vous-êtes déconnecté avec succès.</value>
   </data>
   <data name="MsgBoxDeconnexionTitre" xml:space="preserve">
     <value>Déconnexion</value>
   </data>
   <data name="MsgBoxDeletePostText" xml:space="preserve">
-    <value>Etes-vous sur de vouloir supprimer la réponse ?</value>
+    <value>Etes-vous sûr de vouloir supprimer le post ?</value>
   </data>
   <data name="MsgBoxDeletePostTitre" xml:space="preserve">
-    <value>Suppression de la réponse</value>
+    <value>Suppression du post.</value>
   </data>
   <data name="MsgBoxDeleteSujetText" xml:space="preserve">
-    <value>Etes-vous sur de vouloir supprimer le sujet sélectionné ?</value>
+    <value>Etes-vous sûr de vouloir supprimer le sujet sélectionné ?</value>
   </data>
   <data name="MsgBoxDeleteSujetTitre" xml:space="preserve">
-    <value>Suppression du Sujet</value>
+    <value>Suppression du sujet.</value>
   </data>
   <data name="MsgBoxEditSujetText" xml:space="preserve">
-    <value>Modification du sujet</value>
+    <value>Modification du sujet.</value>
   </data>
   <data name="MsgBoxErreurAddReponseText" xml:space="preserve">
-    <value>Impossible d'ajouter la réponse !</value>
+    <value>Impossible d'ajouter un post.</value>
   </data>
   <data name="MsgBoxErreurAddReponseTitre" xml:space="preserve">
-    <value>Erreur au moment de l'ajout de la réponse</value>
+    <value>Erreur au moment de l'ajout du post.</value>
   </data>
   <data name="MsgBoxErreurAddSujetText" xml:space="preserve">
-    <value>Impossible d'ajouter le sujet</value>
+    <value>Impossible d'ajouter le sujet.</value>
   </data>
   <data name="MsgBoxErreurAddSujetTitre" xml:space="preserve">
-    <value>Erreur au moment de l'ajout du sujet</value>
+    <value>Erreur au moment de l'ajout du sujet.</value>
   </data>
   <data name="MsgBoxErreurDeletePostText" xml:space="preserve">
-    <value>Suppression impossible de la réponse !</value>
+    <value>Suppression impossible du post.</value>
   </data>
   <data name="MsgBoxErreurDeletePostTitre" xml:space="preserve">
     <value>Erreur !</value>
@@ -187,27 +187,27 @@
     <value>Erreur !</value>
   </data>
   <data name="MsgBoxErreurEditSujetText" xml:space="preserve">
-    <value>Erreur de modification du sujet</value>
+    <value>Erreur de modification du sujet.</value>
   </data>
   <data name="MsgBoxErreurEditSujetTitre" xml:space="preserve">
-    <value>Erreur de modification du titre du sujet</value>
+    <value>Erreur de modification du titre du sujet.</value>
   </data>
   <data name="MsgBoxUpDateSujetText" xml:space="preserve">
-    <value>Etes-vous sur de vouloir modifier le sujet ?</value>
+    <value>Etes-vous sûr de vouloir modifier le sujet ?</value>
   </data>
   <data name="MsgBoxUpDateSujetTitre" xml:space="preserve">
-    <value>Mofdification du sujet</value>
+    <value>Mofdification du sujet.</value>
   </data>
   <data name="MsglblPasDeReponseText" xml:space="preserve">
-    <value>Désolé ! Le sujet sélectionné, ne contient aucune reponse</value>
+    <value>Désolé ! Le sujet sélectionné, ne contient aucun post.</value>
   </data>
   <data name="MsglblPasDeReponseTitre" xml:space="preserve">
-    <value>Pas de reponse pour le sujet sélectionné</value>
+    <value>Pas de post pour le sujet sélectionné.</value>
   </data>
   <data name="MsglblPasDeSujetText" xml:space="preserve">
-    <value>Désolé ! la catégorie sélectionnée ne contient aucun sujet</value>
+    <value>Désolé ! la rubrique sélectionnée ne contient aucun sujet.</value>
   </data>
   <data name="MsglblPasDeSujetTitre" xml:space="preserve">
-    <value>Pas de sujet pour la catégorie sélectionnée</value>
+    <value>Pas de sujet pour la rubrique sélectionnée.</value>
   </data>
 </root>
