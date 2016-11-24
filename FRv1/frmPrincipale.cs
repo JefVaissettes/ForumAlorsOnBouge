@@ -76,7 +76,7 @@ namespace IHMFR
             using (frmCreerSujet creerSujet = new frmCreerSujet())
             {
                 creerSujet.rubric = (Rubric)cbBxRubric.SelectedItem;
-                creerSujet.Text = string.Format("Ajouter le sujet dans la rubrique {0}", creerSujet.rubric.rubric_title);
+                creerSujet.Text = string.Format("Ajouter le sujet dans la rubrique {0}", creerSujet.rubric.Libelle);
                 creerSujet.ShowDialog();
                 displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             }
@@ -87,9 +87,9 @@ namespace IHMFR
             using (CreerPost frmCreerPost = new CreerPost())
             {
                 frmCreerPost.subject = (Subject)cbBxSubject.SelectedItem;
-                frmCreerPost.Text = string.Format("Ajout du post au sujet {0}", frmCreerPost.subject.subject_title);
+                frmCreerPost.Text = string.Format("Ajout du post au sujet {0}", frmCreerPost.subject.Titre);
                 frmCreerPost.ShowDialog();
-                displaydgVPost(Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue));
+                displaydgVPost(Outil.GetAllReponseBySujet((int)cbBxSubject.SelectedValue));
             }
         }
 
@@ -103,7 +103,7 @@ namespace IHMFR
             {
                 Modifsubject.rubric = (Rubric)cbBxRubric.SelectedItem;
                 Modifsubject.subject = (Subject)cbBxSubject.SelectedItem;
-                Modifsubject.Text = string.Format("Changer le sujet {0} dans la rubrique {1}", Modifsubject.subject.subject_title, Modifsubject.subject.subject_description);
+                Modifsubject.Text = string.Format("Changer le sujet {0} dans la rubrique {1}", Modifsubject.subject.Titre, Modifsubject.subject.Desc);
                 Modifsubject.ShowDialog();
                 displaycbBxSubject(Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue));
             }
@@ -146,7 +146,7 @@ namespace IHMFR
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
                 }
-                List<Post> posts = Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue);
+                List<Post> posts = Outil.GetAllReponseBySujet((int)cbBxSubject.SelectedValue);
                 if (posts != null)
                 {
                     displaydgVPost(posts);
@@ -169,8 +169,10 @@ namespace IHMFR
 
         private void cbBxRubric_SelectedIndexChanged(object sender, EventArgs e)
         {
+            //Rubric currentRubric = (Rubric)cbBxRubric.SelectedValue;
+            //List<Subject> subjects = Outil.GetSujetsByCategorieID(currentRubric.Id);
             List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
-            if (subjects != null)
+            if(subjects != null)
             {
                 PanelSujetVisible();
                 displaycbBxSubject(subjects);
@@ -179,8 +181,19 @@ namespace IHMFR
             {
                 PanelSujetInvisible();
                 PanelPostInvisible();
-
             }
+            //List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
+            //if (subjects != null)
+            //{
+            //    PanelSujetVisible();
+            //    displaycbBxSubject(subjects);
+            //}
+            //else
+            //{
+            //    PanelSujetInvisible();
+            //    PanelPostInvisible();
+
+            //}
         }
 
         private void cbBxSubject_SelectedIndexChanged(object sender, EventArgs e)
@@ -189,12 +202,12 @@ namespace IHMFR
             {
                 PanelSujetVisible();
                 Subject subject = (Subject)cbBxSubject.SelectedItem;
-                txtDescSujet.Text = subject.subject_description + Environment.NewLine + "De, " + subject.Auteur + Environment.NewLine + "Le, " + subject.subject_date;
+                txtDescSujet.Text = subject.Desc + Environment.NewLine + "De, " + subject.Auteur + Environment.NewLine + "Le, " + subject.Date;
 
                 if (visibilitePost())
                 {
                     PanelPostVisible();
-                    List<Post> posts = Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue);
+                    List<Post> posts = Outil.GetAllReponseBySujet((int)cbBxSubject.SelectedValue);
                     if (posts != null)
                     {
                         displaydgVPost(posts);
@@ -229,15 +242,15 @@ namespace IHMFR
 
         private void displaycbBxRubric(List<Rubric> rubrics)
         {
-            cbBxRubric.ValueMember = "id_rubric";
-            cbBxRubric.DisplayMember = "rubric_title";
+            cbBxRubric.ValueMember = "Id";
+            cbBxRubric.DisplayMember = "Libelle";
             cbBxRubric.DataSource = rubrics;
         }
 
         private void displaycbBxSubject(List<Subject> subjects)
         {
-            cbBxSubject.ValueMember = "id_subject";
-            cbBxSubject.DisplayMember = "subject_title";
+            cbBxSubject.ValueMember = "Id";
+            cbBxSubject.DisplayMember = "Titre";
             cbBxSubject.DataSource = subjects;
             Subject subject = (Subject)cbBxSubject.SelectedItem;
         }
@@ -294,7 +307,7 @@ namespace IHMFR
         {
             if (cbBxSubject.SelectedIndex != -1)
             {
-                if (Outil.GetAllReponseBySubject((int)cbBxSubject.SelectedValue) != null)
+                if (Outil.GetAllReponseBySujet((int)cbBxSubject.SelectedValue) != null)
                 {
                     return true;
                 }
@@ -316,11 +329,20 @@ namespace IHMFR
             btSupPost.Enabled = false;
         }
 
-
-
-
         #endregion
 
+        #region méthode readonly in combobox
 
+        private void cbBxSubject_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        private void cbBxRubric_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }
+
+        #endregion
     }
 }

@@ -30,7 +30,7 @@ namespace IHMFR
             if (Accueil.CurrentUsers != null)
             {
                 Accueil.IsConnected = true;
-                Accueil.IsRmodo = Accueil.CurrentUsers.role;
+                Accueil.IsRmodo = Accueil.CurrentUsers.IsRmod;
                 this.Close();
 
             }

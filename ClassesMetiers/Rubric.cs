@@ -20,27 +20,29 @@ namespace ClassesMetiers
     {
         #region "Property et attributs"
 
-        private int _id_rubric;
+        private int _Id;
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
         [DataMember]
-        public int id_rubric
+        public int Id
         {
-            get { return _id_rubric; }
-            set { _id_rubric = value; }
+            get { return _Id; }
+            set { _Id = value; }
         }
 
-        private string _rubric_title;
+        private string _Libelle;
         /// <summary>
         /// Titre de la rubrique
         /// </summary>
         [DataMember]
-        public string rubric_title
+        public string Libelle
         {
-            get { return _rubric_title; }
-            set { _rubric_title = value; }
+            get { return _Libelle; }
+            set { _Libelle = value; }
         }
+
+
 
         #endregion
 
@@ -53,8 +55,8 @@ namespace ClassesMetiers
         /// 
         public Rubric(int id, string title)
         {
-            this.id_rubric = id;
-            this.rubric_title = title;
+            this.Id = id;
+            this.Libelle = title;
         }
 
 

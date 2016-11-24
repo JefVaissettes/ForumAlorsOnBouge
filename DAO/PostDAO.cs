@@ -28,15 +28,15 @@ namespace DAO
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Les reponses, concernant un sujet dont l'identifiant est passé en paramètre</returns>
         /// 
-        public static DataTable GetAllReponseBySubject(int id_subject)
+        public static DataTable GetAllReponseBySujet(int idSubject)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllReponseBySujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idsubject";
-            parm.Value = id_subject;
+            parm.ParameterName = "@idSubject";
+            parm.Value = idSubject;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -54,27 +54,27 @@ namespace DAO
         /// <param name="id_users">L'identifiant de l'utilisateur, qui répond</param>
         /// <param name="post_content">Le texte de la reponse</param>
         /// <returns></returns>
-        public static int AddReponse(int id_users, int id_subject, string post_content)
+        public static int AddReponse(int idUsers, int idSubject, string texte)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "AddReponse";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parmidid_users = cmd.CreateParameter();
-            parmidid_users.ParameterName = "@ID_UTILISATEUR";
-            parmidid_users.Value = id_users;
-            cmd.Parameters.Add(parmidid_users);
+            SqlParameter parmididUsers = cmd.CreateParameter();
+            parmididUsers.ParameterName = "@ID_UTILISATEUR";
+            parmididUsers.Value = idUsers;
+            cmd.Parameters.Add(parmididUsers);
 
-            SqlParameter parmid_subject = cmd.CreateParameter();
-            parmid_subject.ParameterName = "@ID_SUBJECT";
-            parmid_subject.Value = id_subject;
-            cmd.Parameters.Add(parmid_subject);
+            SqlParameter parmidSubject = cmd.CreateParameter();
+            parmidSubject.ParameterName = "@ID_SUBJECT";
+            parmidSubject.Value = idSubject;
+            cmd.Parameters.Add(parmidSubject);
 
       
-            SqlParameter parmContentPost = cmd.CreateParameter();
-            parmContentPost.ParameterName = "@POST_CONTENT";
-            parmContentPost.Value = post_content;
-            cmd.Parameters.Add(parmContentPost);
+            SqlParameter parmTexte = cmd.CreateParameter();
+            parmTexte.ParameterName = "@POST_CONTENT";
+            parmTexte.Value = texte;
+            cmd.Parameters.Add(parmTexte);
 
             con.Open();
             //excute une action T-SQL sur la connexion et retourne le nombres de lignes affectéess
@@ -95,10 +95,10 @@ namespace DAO
             cmd.CommandText = "DeleteReponse";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parmIdRep = cmd.CreateParameter();
-            parmIdRep.ParameterName = "@ID_POST";
-            parmIdRep.Value = idPost;
-            cmd.Parameters.Add(parmIdRep);
+            SqlParameter parmIdPost = cmd.CreateParameter();
+            parmIdPost.ParameterName = "@ID_POST";
+            parmIdPost.Value = idPost;
+            cmd.Parameters.Add(parmIdPost);
 
             con.Open();
             int nbLigne = cmd.ExecuteNonQuery();

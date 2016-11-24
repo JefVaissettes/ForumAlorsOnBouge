@@ -32,7 +32,7 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter();
-            DataTable dt = new DataTable("Subject");
+            DataTable dt = new DataTable("TousLesSujet");
             da.Fill(dt);
             //con.Close();
 
@@ -44,7 +44,7 @@ namespace DAO
         /// <param name="id_rubric">L'identifiant de la catégorie</param>
         /// <returns>La liste des sujets pour une catégorie donnée</returns>
 
-        public static DataTable GetSujetsByCategorieID(int id_rubric)
+        public static DataTable GetSujetsByCategorieID(int idrubric)
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -52,8 +52,8 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idrubric";
-            parm.Value = id_rubric;
+            parm.ParameterName = "@IdRubric";
+            parm.Value = idrubric;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -70,7 +70,7 @@ namespace DAO
         /// </summary>
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Le sujet, dont l'identifiant est passé en paramatre </returns>
-        public static DataTable GetSujetByID(int id_subject)
+        public static DataTable GetSujetByID(int idsubject)
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
@@ -79,7 +79,7 @@ namespace DAO
 
             SqlParameter parm = cmd.CreateParameter();
             parm.ParameterName = "@ID_SUBJECT";
-            parm.Value = id_subject;
+            parm.Value = idsubject;
 
             cmd.Parameters.Add(parm);
 
@@ -141,16 +141,16 @@ namespace DAO
         /// <param name="newTitre">le nouveau titre</param>
         /// <param name="newDescription">la nouvelle description</param>
         /// <returns>le nombre de ligne modifié, nbligne = 1 si tout va bien</returns>
-        public static int ModifierSujet (int idsujet, string oldtitre,  string newTitre, string olddescription, string newDescription)
+        public static int ModifierSujet (int idsubject, string oldTitre,  string newTitre, string oldDescription, string newDescription)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "ModifierSujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parmIdSujet = cmd.CreateParameter();
-            parmIdSujet.ParameterName = "@ID_SUJET";
-            parmIdSujet.Value = idsujet;
-            cmd.Parameters.Add(parmIdSujet);
+            SqlParameter parmIdSubject = cmd.CreateParameter();
+            parmIdSubject.ParameterName = "@ID_SUBJECT";
+            parmIdSubject.Value = idsubject;
+            cmd.Parameters.Add(parmIdSubject);
 
             SqlParameter parmNewTitre = cmd.CreateParameter();
             parmNewTitre.ParameterName = "@NEW_TITRE";
@@ -159,7 +159,7 @@ namespace DAO
 
             SqlParameter parmOldTitre = cmd.CreateParameter();
             parmOldTitre.ParameterName = "@OLD_TITRE";
-            parmOldTitre.Value = oldtitre;
+            parmOldTitre.Value = oldTitre;
             cmd.Parameters.Add(parmOldTitre);
 
             SqlParameter parmNewDescr = cmd.CreateParameter();
@@ -169,7 +169,7 @@ namespace DAO
 
             SqlParameter parmOldDescr = cmd.CreateParameter();
             parmOldDescr.ParameterName = "@OLD_DESC";
-            parmOldDescr.Value = olddescription;
+            parmOldDescr.Value = oldDescription;
             cmd.Parameters.Add(parmOldDescr);
 
             con.Open();
@@ -184,16 +184,16 @@ namespace DAO
         /// </summary>
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Le nombre de lignes supprimées, nbligne = 1 si tout va bien</returns>
-        public static int DeleteSujet(int idsujet)
+        public static int DeleteSujet(int idSubject)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "DeleteSujet";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlParameter parmIdSujet = cmd.CreateParameter();
-            parmIdSujet.ParameterName = "@ID_SUBJECT";
-            parmIdSujet.Value = idsujet;
-            cmd.Parameters.Add(parmIdSujet);
+            SqlParameter parmIdSubject = cmd.CreateParameter();
+            parmIdSubject.ParameterName = "@ID_SUBJECT";
+            parmIdSubject.Value = idSubject;
+            cmd.Parameters.Add(parmIdSubject);
 
             con.Open();
             int nbLigne = cmd.ExecuteNonQuery();

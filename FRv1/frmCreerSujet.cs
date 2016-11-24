@@ -31,8 +31,8 @@ namespace IHMFR
             }
             else
             {
-                txtBxTitreSujet.Text = subject.subject_title;
-                txtBxDescSujet.Text = subject.subject_description;
+                txtBxTitreSujet.Text = subject.Titre;
+                txtBxDescSujet.Text = subject.Desc;
                 btValider.Text = "Valider la modification";
             }
         }
@@ -41,7 +41,7 @@ namespace IHMFR
         {
             if(subject == null)
             {
-                if(Outil.AddSujet(Accueil.CurrentUsers.id_utilisateur, rubric.id_rubric, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                if(Outil.AddSujet(Accueil.CurrentUsers.Id, rubric.Id, txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxAddSujetText, Properties.Resources.MsgBoxAddSujetTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -53,7 +53,7 @@ namespace IHMFR
             }
             else
             {
-                if(Outil.ModifierSujet(subject.id_subject, subject.subject_title ,subject.subject_description,txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
+                if(Outil.ModifierSujet(subject.Id, subject.Titre ,subject.Desc,txtBxTitreSujet.Text, txtBxDescSujet.Text) == 1)
                 {
                     MessageBox.Show(Properties.Resources.MsgBoxEditSujetText, Properties.Resources.MsgBoxEditSujetText, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }

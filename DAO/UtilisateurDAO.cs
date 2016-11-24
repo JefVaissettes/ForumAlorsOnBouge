@@ -27,7 +27,7 @@ namespace DAO
         /// <param name="username">Le username (NOM)</param>
         /// <param name="password">LE mot de passe</param>
         /// <returns></returns>
-        public static DataTable GetLoginPassword(string username, string password)
+        public static DataTable Username(string username, string password)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetLoginPassword";
@@ -57,7 +57,7 @@ namespace DAO
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idutilisateur";
+            parm.ParameterName = "@iduser";
             parm.Value = idutilisateur;
             cmd.Parameters.Add(parm);
 

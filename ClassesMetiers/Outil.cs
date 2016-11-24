@@ -26,7 +26,7 @@ namespace ClassesMetiers
                 foreach (DataRow row in dt.Rows)
                 {
                     Rubric cat = new Rubric(int.Parse(row["ID_RUBRIC"].ToString()), row["RUBRIC_TITLE"].ToString());
-                    cat.id_rubric = int.Parse(row["ID_RUBRIC"].ToString());
+                    cat.Id = int.Parse(row["ID_RUBRIC"].ToString());
                     _Rubrics.Add(cat);
                 }
                 return _Rubrics;
@@ -84,9 +84,9 @@ namespace ClassesMetiers
         /// </summary>
         /// <param name="idrubric"></param>
         /// <returns></returns>
-        public static List<Subject> GetSujetsByCategorieID(int id_rubric)
+        public static List<Subject> GetSujetsByCategorieID(int idrubric)
         {
-            DataTable dt = SubjectDAO.GetSujetsByCategorieID(id_rubric);
+            DataTable dt = SubjectDAO.GetSujetsByCategorieID(idrubric);
             if (dt.Rows.Count >= 1)
             {
                 List<Subject> _Sujets = new List<Subject>();
@@ -94,6 +94,7 @@ namespace ClassesMetiers
                 // parcours des toutes lignes de notre table 
                 foreach (DataRow row in dt.Rows)
                 {
+                    
                     Subject subject = new Subject(int.Parse(row["ID_SUBJECT"].ToString()), row["SUBJECT_TITLE"].ToString(), row["SUBJECT_DESCRIPTION"].ToString(), DateTime.Parse(row["SUBJECT_DATE"].ToString()), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())), GetRubricByID(int.Parse(row["ID_RUBRIC"].ToString())));
                     _Sujets.Add(subject);
                 }
@@ -107,9 +108,9 @@ namespace ClassesMetiers
         /// </summary>
         /// <param name="id_subject"></param>
         /// <returns></returns>
-        public static Subject GetSujetByID(int id_subject)
+        public static Subject GetSujetByID(int idsubject)
         {
-            DataTable dt = SubjectDAO.GetSujetByID(id_subject);
+            DataTable dt = SubjectDAO.GetSujetByID(idsubject);
             //DataTable dt = SubjectDAO.GetSujetByID(id_subject);
             if (dt.Rows.Count == 1)
             {
@@ -144,9 +145,9 @@ namespace ClassesMetiers
         /// <param name="olddescription"></param>
         /// <param name="newDescription"></param>
         /// <returns></returns>
-        public static int ModifierSujet(int idsubject, string oldtitre ,string olddescription, string newTitre,  string newDescription)
+        public static int ModifierSujet(int idsubject, string oldTitre, string newTitre, string oldDescription, string newDescription)
         {
-            return SubjectDAO.ModifierSujet(idsubject, oldtitre, olddescription, newTitre,  newDescription);
+            return SubjectDAO.ModifierSujet(idsubject, oldTitre, oldDescription, newTitre,  newDescription);
         }
 
         /// <summary>
@@ -154,9 +155,9 @@ namespace ClassesMetiers
         /// </summary>
         /// <param name="idsujet"></param>
         /// <returns></returns>
-        public static int DeleteSujet(int idsujet)
+        public static int DeleteSujet(int idSubject)
         {
-            return SubjectDAO.DeleteSujet(idsujet);
+            return SubjectDAO.DeleteSujet(idSubject);
         }
 
         #endregion
@@ -171,7 +172,7 @@ namespace ClassesMetiers
         /// <returns></returns>
         public static Utilisateur GetLoginPassword(string username, string password)
         {
-            DataTable dt = UtilisateurDAO.GetLoginPassword(username, password);
+            DataTable dt = UtilisateurDAO.Username(username, password);
             if (dt.Rows.Count == 1)
             {
                 DataRow row = dt.Rows[0];
@@ -208,13 +209,13 @@ namespace ClassesMetiers
             DataTable dt = UtilisateurDAO.GetAllUtilisateurs();
             if (dt.Rows.Count >= 1)
             {
-                List<Utilisateur> _users = new List<Utilisateur>();
+                List<Utilisateur> _Users = new List<Utilisateur>();
                 foreach (DataRow row in dt.Rows)
                 {
                     Utilisateur user = new Utilisateur(int.Parse(row["ID_UTILISATEUR"].ToString()), row["USERNAME"].ToString(), row["PASSWORD"].ToString(), (bool)row["ROLE"]);
-                    _users.Add(user);
+                    _Users.Add(user);
                 }
-                return _users;
+                return _Users;
             }
             return null;
         }
@@ -234,26 +235,26 @@ namespace ClassesMetiers
 
         #region Post
 
-        public static List<Post> GetAllReponseBySubject(int id_subject)
+        public static List<Post> GetAllReponseBySujet(int idSubject)
         {
-            DataTable dt = PostDAO.GetAllReponseBySubject(id_subject);
+            DataTable dt = PostDAO.GetAllReponseBySujet(idSubject);
                 if (dt.Rows.Count >= 1)
             {
                 List<Post> _Posts = new List<Post>();
                 foreach (DataRow row in dt.Rows)
                 {
                   
-                    Post rep = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(id_subject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())));
-                    _Posts.Add(rep);
+                    Post post = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(idSubject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())));
+                    _Posts.Add(post);
                 }
                 return _Posts;
             }
             return null;
         }
 
-        public static int AddReponse(int id_users,int id_subject, string post_content)
+        public static int AddReponse(int idUsers, int idSubject, string texte)
         {
-            return PostDAO.AddReponse(id_users, id_subject,  post_content);
+            return PostDAO.AddReponse(idUsers, idSubject,  texte);
         }
 
         public static int DeleteReponse(int idPost)

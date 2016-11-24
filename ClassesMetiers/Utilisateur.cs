@@ -20,60 +20,60 @@ namespace ClassesMetiers
     {
         #region "Property et attributs"
 
-        private int _id_utilisateur;
+        private int _Id;
         /// <summary>
         /// Identifiant de l'utilisateur
         /// </summary>
         [DataMember]
-        public int id_utilisateur
+        public int Id
         {
-            get { return _id_utilisateur; }
-            set { _id_utilisateur = value; }
+            get { return _Id; }
+            set { _Id = value; }
         }
 
-        private string _username;
+        private string _Username;
         /// <summary>
         /// Nom de l'utilisateur
         /// </summary>
         [DataMember]
-        public string username
+        public string Username
         {
-            get { return _username; }
-            set { _username = value; }
+            get { return _Username; }
+            set { _Username = value; }
         }
 
-        private string _password;
+        private string _Mdp;
         /// <summary>
         /// Mot de passe de l'utilisateur
         /// </summary>
         [DataMember]
-        public string password
+        public string Mdp
         {
-            get { return _password; }
-            set { _password = value; }
+            get { return _Mdp; }
+            set { _Mdp = value; }
         }
 
-        private string _email;
+        private string _Email;
         /// <summary>
         /// Email de l'utilisateur
         /// </summary>
         [DataMember]
-        public string email
+        public string Email
         {
-            get { return _email; }
-            set { _email = value; }
+            get { return _Email; }
+            set { _Email = value; }
         }
 
-        private bool _role;
+        private bool _IsRmod;
         /// <summary>
         /// Numéro de role de l'utilisateur
-        /// 0 = userlogged, 1 = moderator, 2 = administrator
+        /// Isrmod permet de voir si l'user est un moderateur ou non 
         /// </summary>
         [DataMember]
-        public bool role
+        public bool IsRmod
         {
-            get { return _role; }
-            set { _role = value; }
+            get { return _IsRmod; }
+            set { _IsRmod = value; }
         }
 
        #endregion
@@ -88,27 +88,24 @@ namespace ClassesMetiers
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public Utilisateur(int id, string username, string password, string email, bool role)
+        public Utilisateur(int id, string username, string password, string email, bool isRmod)
         {
-            this.id_utilisateur = id;
-            this.username = username;
-            this.password = password;
-            this.email = email;
-            this.role = role;
+            this.Id = id;
+            this.Username = username;
+            this.Mdp = password;
+            this.Email = email;
+            this.IsRmod = isRmod;
         }
 
-        public Utilisateur(int id, string username, string password, bool role)
+       public Utilisateur( int id, string username, string password, bool isRmod)
         {
-            this.id_utilisateur = id;
-            this.username = username;
-            this.password = password;
-            this.role = role;
+            this.Id = id;
+            this.Username = username;
+            this.Mdp = password;
+            this.IsRmod = isRmod;
         }
 
-        public Utilisateur(int id)
-        {
-            this.id_utilisateur = id;
-        }
+        
 
         #endregion
 

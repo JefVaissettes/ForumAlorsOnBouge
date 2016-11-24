@@ -22,7 +22,7 @@ namespace IHMFR
 
         private void btValider_Click(object sender, EventArgs e)
         {
-            if(Outil.AddReponse(Accueil.CurrentUsers.id_utilisateur, subject.id_subject, txtPostContent.Text) == 1)
+            if(Outil.AddReponse(Accueil.CurrentUsers.Id, subject.Id, txtPostContent.Text) == 1)
             {
                 MessageBox.Show(Properties.Resources.MsgBoxAddReponseText, Properties.Resources.MsgBoxAddReponseTitre, MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();

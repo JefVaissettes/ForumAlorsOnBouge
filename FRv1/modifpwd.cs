@@ -30,7 +30,7 @@ namespace IHMFR
             dr = MessageBox.Show(Properties.Resources.MsgBoxConfirmChangementPasswordText, Properties.Resources.MsgBoxConfirmChangementPasswordTitre, MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (dr == DialogResult.Yes && (txtNewPwd.TextLength != txtConfirmNewPwd.TextLength) || !(string.IsNullOrWhiteSpace(txtNewPwd.Text) || string.IsNullOrWhiteSpace(txtConfirmNewPwd.Text)))
             {
-                Outil.ModifierPassword(Accueil.CurrentUsers.id_utilisateur, txtNewPwd.Text);
+                Outil.ModifierPassword(Accueil.CurrentUsers.Id, txtNewPwd.Text);
                 btValider.Visible = true;
                 this.Close();
             }

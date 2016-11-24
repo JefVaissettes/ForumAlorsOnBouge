@@ -19,48 +19,48 @@ namespace ClassesMetiers
     
     public class Subject
     {
-        private int _id_subject;
+        private int _Id;
         /// <summary>
         /// Identifiant du sujet
         /// </summary>
         [DataMember]
-        public int id_subject
+        public int Id
         {
-            get { return _id_subject; }
-            set { _id_subject = value; }
+            get { return _Id; }
+            set { _Id = value; }
         }
 
-        private string _subject_title;
+        private string _Titre;
         /// <summary>
         /// Titre du sujet
         /// </summary>
         [DataMember]
-        public string subject_title
+        public string Titre
         {
-            get { return _subject_title; }
-            set { _subject_title = value; }
+            get { return _Titre; }
+            set { _Titre = value; }
         }
 
-        private string _subject_description;
+        private string _Desc;
         /// <summary>
         /// Description du sujet
         /// </summary>
         [DataMember]
-        public string subject_description
+        public string Desc
         {
-            get { return _subject_description; }
-            set { _subject_description = value; }
+            get { return _Desc; }
+            set { _Desc = value; }
         }
 
-        private DateTime _subject_date;
+        private DateTime _Date;
         /// <summary>
         /// Date de création du sujet
         /// </summary>
         [DataMember]
-        public DateTime subject_date
+        public DateTime Date
         {
-            get { return _subject_date; }
-            set { _subject_date = value; }
+            get { return _Date; }
+            set { _Date = value; }
         }
 
         private List<Post> _Posts;
@@ -120,12 +120,12 @@ namespace ClassesMetiers
         /// <param name="rubric">Identifiant de la rubrique</param>
         public Subject(int id, string title, string description, Rubric rubric)
         {
-            id_subject = id;
-            subject_title = title;
-            subject_description = description;
-            Rubric = rubric;
-            _Posts = new List<Post>();
-            subject_date = DateTime.Now;
+            this.Id = id;
+            this.Titre = title;
+            this.Desc = description;
+            this.Rubric = rubric;
+            this.Posts = new List<Post>();
+            this.Date = DateTime.Now;
         }
 
         /// <summary>
@@ -136,23 +136,12 @@ namespace ClassesMetiers
         /// <param name="subject_description">Description du sujet</param>
         /// <param name="id_rubric">Identifiant de la rubrique</param>
         /// <param name="Posts">Post en retour</param>
-        public Subject(int id_subject, string subject_title, string subject_description, Rubric rubric, List<Post> Posts) : this(id_subject, subject_title, subject_description, rubric)
+        public Subject(int id, string title, string description, Rubric rubric, List<Post> Posts) : this(id, title, description, rubric)
         {
             this.Posts = Posts;
         }
 
-        /// <summary>
-        /// Constructeur d'un nouveau sujet 
-        /// </summary>
-        /// <param name="id">Identifiant du sujet</param>
-        /// <param name="title">Titre du sujet</param>
-        /// <param name="rubric">Identifiant de la rubrique</param>
-        public Subject(int id, string title, Rubric rubric)
-        {
-            this.id_subject = id;
-            this.subject_title = title;
-            this.Rubric = rubric;
-        }
+     
 
         /// <summary>
         /// constructeur construit pour l'ajout de l'auteur et de la date du sujet
@@ -165,15 +154,21 @@ namespace ClassesMetiers
         /// <param name="rubric"></param>
         public Subject(int id, string titre, string description, DateTime date, Utilisateur utilisateur, Rubric rubric) : this(id, titre, description, rubric)
         {
-            this.subject_date = date;
+            this.Date = date;
             this.Utilisateur = utilisateur;
-            this.Auteur = utilisateur.username;
+            this.Auteur = utilisateur.Username;
         }
 
 
         #endregion
 
         #region "Methodes"
+
+        public string GetUsername()
+        {
+            return Utilisateur.Username;
+        }
+
         #endregion
 
         #region "Methodes héritées et substituées"

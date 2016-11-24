@@ -36,7 +36,7 @@ namespace DAO
         {
             // con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetAllRubrics";
+            cmd.CommandText = "GetAllCategories";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -58,7 +58,7 @@ namespace DAO
         {
             //con.Open();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "GetRubricByID";
+            cmd.CommandText = "GetCategorieByID";
             cmd.CommandType = CommandType.StoredProcedure;
 
             SqlParameter parm = cmd.CreateParameter();

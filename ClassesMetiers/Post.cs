@@ -98,7 +98,7 @@ namespace ClassesMetiers
             this.Id = id;
             this.PostContent = texte;
             this.Date = date;
-            this.Auteur = utilisateur.username;
+            this.Auteur = utilisateur.Username;
             this.Sujet = sujet;
             this.Utilisateur = utilisateur;
         }
@@ -124,7 +124,7 @@ namespace ClassesMetiers
         /// <returns>Username (nom de l'utilisateur)</returns>
         public string GetUsername()
         {
-            return Utilisateur.username;
+            return Utilisateur.Username;
         }
         #endregion
 
