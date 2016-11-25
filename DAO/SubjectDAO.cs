@@ -102,7 +102,7 @@ namespace DAO
         /// <param name="titre">Le titre su sujet</param>
         /// <returns>Le nombre de ligne, nbligne = 1, si tout se passe bien</returns>
         public static int AddSujet(int idUtilisateur, int idRubric, string titre, string description)
-        {
+        { 
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "AddSujet";
             cmd.CommandType = CommandType.StoredProcedure;
