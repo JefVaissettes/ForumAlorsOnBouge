@@ -62,6 +62,12 @@ namespace IHMFR
                     MessageBox.Show(Properties.Resources.MsgBoxErreurEditSujetText, Properties.Resources.MsgBoxErreurEditSujetTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
                 }
             }
+            this.Close();
+        }
+
+        private void btAnnuler_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

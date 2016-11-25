@@ -13,6 +13,7 @@ namespace IHMFR
 {
     public partial class Identification : Form
     {
+        
         public Identification()
         {
             InitializeComponent();
@@ -25,7 +26,6 @@ namespace IHMFR
 
         private void btConnect_Click(object sender, EventArgs e)
         {
-
             Accueil.CurrentUsers = Outil.GetLoginPassword(txtLogin.Text, txtPwd.Text);
             if (Accueil.CurrentUsers != null)
             {

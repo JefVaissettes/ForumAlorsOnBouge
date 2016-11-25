@@ -56,6 +56,7 @@
             this.txtPwd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.txtPwd.Location = new System.Drawing.Point(129, 75);
             this.txtPwd.Name = "txtPwd";
+            this.txtPwd.PasswordChar = '*';
             this.txtPwd.Size = new System.Drawing.Size(190, 20);
             this.txtPwd.TabIndex = 1;
             // 

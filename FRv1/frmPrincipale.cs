@@ -168,9 +168,7 @@ namespace IHMFR
         #region event indexchanged
 
         private void cbBxRubric_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            //Rubric currentRubric = (Rubric)cbBxRubric.SelectedValue;
-            //List<Subject> subjects = Outil.GetSujetsByCategorieID(currentRubric.Id);
+        {           
             List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
             if(subjects != null)
             {
@@ -182,18 +180,6 @@ namespace IHMFR
                 PanelSujetInvisible();
                 PanelPostInvisible();
             }
-            //List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
-            //if (subjects != null)
-            //{
-            //    PanelSujetVisible();
-            //    displaycbBxSubject(subjects);
-            //}
-            //else
-            //{
-            //    PanelSujetInvisible();
-            //    PanelPostInvisible();
-
-            //}
         }
 
         private void cbBxSubject_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,7 +188,7 @@ namespace IHMFR
             {
                 PanelSujetVisible();
                 Subject subject = (Subject)cbBxSubject.SelectedItem;
-                txtDescSujet.Text = subject.Desc + Environment.NewLine + "De, " + subject.Auteur + Environment.NewLine + "Le, " + subject.Date;
+                txtDescSujet.Text = subject.Desc + Environment.NewLine + "de, " + subject.Auteur + Environment.NewLine + "le, " + subject.Date;
 
                 if (visibilitePost())
                 {
