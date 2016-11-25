@@ -131,9 +131,9 @@ namespace ClassesMetiers
         /// <param name="description"></param>
         /// <param name="titre"></param>
         /// <returns></returns>
-        public static int AddSujet(int idUtilisateur, int idRubric, string description, string titre)
+        public static int AddSujet(int idUtilisateur, int idRubric,string titre, string description)
         {
-            return SubjectDAO.AddSujet(idUtilisateur, idRubric, description, titre);
+            return SubjectDAO.AddSujet(idUtilisateur, idRubric , titre, description);
         }
 
         /// <summary>

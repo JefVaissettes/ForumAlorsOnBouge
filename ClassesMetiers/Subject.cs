@@ -131,17 +131,15 @@ namespace ClassesMetiers
         /// <summary>
         /// Constructeur d'un sujet, avec des posts en réponse, on fait appel au constructeur du sujet sans réponse
         /// </summary>
-        /// <param name="id_subject">Identifiant du sujet</param>
-        /// <param name="subject_title">Titre du sujet</param>
-        /// <param name="subject_description">Description du sujet</param>
-        /// <param name="id_rubric">Identifiant de la rubrique</param>
-        /// <param name="Posts">Post en retour</param>
-        public Subject(int id, string title, string description, Rubric rubric, List<Post> Posts) : this(id, title, description, rubric)
+        /// <param name="id"></param>
+        /// <param name="title"></param>
+        /// <param name="description"></param>
+        /// <param name="rubric"></param>
+        /// <param name="Posts"></param>
+        public Subject(int id, string titre, string description, Rubric rubric, List<Post> Posts) : this(id, titre, description, rubric)
         {
             this.Posts = Posts;
         }
-
-     
 
         /// <summary>
         /// constructeur construit pour l'ajout de l'auteur et de la date du sujet
@@ -158,7 +156,6 @@ namespace ClassesMetiers
             this.Utilisateur = utilisateur;
             this.Auteur = utilisateur.Username;
         }
-
 
         #endregion
 

@@ -36,7 +36,7 @@ namespace DAO
             da.Fill(dt);
             //con.Close();
 
-           return dt;
+            return dt;
         }
         /// <summary>
         /// La methode GetSujetsByCategorie, permet de récupéré tous les sujets d'une catégorie
@@ -62,7 +62,7 @@ namespace DAO
             //con.Close();
 
             return dt;
-            
+
         }
 
         /// <summary>
@@ -89,7 +89,7 @@ namespace DAO
             //con.Close();
 
             return dt;
-            
+
         }
 
         /// <summary>
@@ -101,7 +101,7 @@ namespace DAO
         /// <param name="description">La description du sujet</param>
         /// <param name="titre">Le titre su sujet</param>
         /// <returns>Le nombre de ligne, nbligne = 1, si tout se passe bien</returns>
-        public static int AddSujet(int idUtilisateur, int idRubric, string description, string titre)
+        public static int AddSujet(int idUtilisateur, int idRubric, string titre, string description)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "AddSujet";
@@ -117,15 +117,15 @@ namespace DAO
             parmIdCategorie.Value = idRubric;
             cmd.Parameters.Add(parmIdCategorie);
 
-            SqlParameter parmDescri = cmd.CreateParameter();
-            parmDescri.ParameterName = "@SUBJECT_DESCRIPTION";
-            parmDescri.Value = description;
-            cmd.Parameters.Add(parmDescri);
-
             SqlParameter parmTitre = cmd.CreateParameter();
             parmTitre.ParameterName = "@SUBJECT_TITLE";
             parmTitre.Value = titre;
             cmd.Parameters.Add(parmTitre);
+
+            SqlParameter parmDescri = cmd.CreateParameter();
+            parmDescri.ParameterName = "@SUBJECT_DESCRIPTION";
+            parmDescri.Value = description;
+            cmd.Parameters.Add(parmDescri);
 
             con.Open();
             int nbLigne = cmd.ExecuteNonQuery();
@@ -141,7 +141,7 @@ namespace DAO
         /// <param name="newTitre">le nouveau titre</param>
         /// <param name="newDescription">la nouvelle description</param>
         /// <returns>le nombre de ligne modifié, nbligne = 1 si tout va bien</returns>
-        public static int ModifierSujet (int idsubject, string oldTitre,  string newTitre, string oldDescription, string newDescription)
+        public static int ModifierSujet(int idsubject, string oldTitre, string newTitre, string oldDescription, string newDescription)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "ModifierSujet";
@@ -176,8 +176,8 @@ namespace DAO
             int nbLigne = cmd.ExecuteNonQuery();
             con.Close();
             return nbLigne;
-        }    
-        
+        }
+
         /// <summary>
         /// La méthode DeleteSujet, permet la suppression d'un sujet
         /// dont l'id est passé en parametre
