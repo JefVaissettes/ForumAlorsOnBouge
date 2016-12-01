@@ -2,25 +2,18 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 
-
-namespace ClassesMetiers
+namespace DALWinPhone
 {
     [Serializable]
 
     [DataContract]
 
-    /// <summary>
-    /// La classe Users permet à un utilisateur de s'identifier avec 
-    /// son username (nom) et son mot de passe
-    /// </summary>
-    
-    public class Utilisateur
+    public class DalWSRUtilisateur
     {
-        #region "Property et attributs"
+        #region Propriétés et attributs
 
         private int _Id;
         /// <summary>
@@ -54,7 +47,7 @@ namespace ClassesMetiers
             get { return _Mdp; }
             set { _Mdp = value; }
         }
-       
+
         private string _Email;
         /// <summary>
         /// Email de l'utilisateur
@@ -77,10 +70,14 @@ namespace ClassesMetiers
             get { return _IsRmod; }
             set { _IsRmod = value; }
         }
-
         #endregion
 
-        #region "Constructeurs"
+        #region Constructeurs
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        public DalWSRUtilisateur() { }
 
         /// <summary>
         /// Constructeur d'un utilisateur
@@ -90,7 +87,7 @@ namespace ClassesMetiers
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public Utilisateur(int id, string username, string password, string email, bool isRmod)
+        public DalWSRUtilisateur(int id, string username, string password, string email, bool isRmod)
         {
             this.Id = id;
             this.Username = username;
@@ -99,7 +96,7 @@ namespace ClassesMetiers
             this.IsRmod = isRmod;
         }
 
-       public Utilisateur( int id, string username, string password, bool isRmod)
+        public DalWSRUtilisateur(int id, string username, string password, bool isRmod)
         {
             this.Id = id;
             this.Username = username;
@@ -108,13 +105,5 @@ namespace ClassesMetiers
         }
 
         #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
-        #endregion
     }
-
-
 }
