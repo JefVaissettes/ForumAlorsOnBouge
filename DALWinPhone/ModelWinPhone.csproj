@@ -42,10 +42,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DalWSRMétiers\DalWSRPost.cs" />
-    <Compile Include="DalWSRMétiers\DalWSRRubric.cs" />
-    <Compile Include="DalWSRMétiers\DalWSRSubject.cs" />
-    <Compile Include="DalWSRMétiers\DalWSRUtilisateur.cs" />
+    <Compile Include="DalWSRMétiers\ModelWSRPost.cs" />
+    <Compile Include="DalWSRMétiers\ModelWSRRubric.cs" />
+    <Compile Include="DalWSRMétiers\ModelWSRSubject.cs" />
+    <Compile Include="DalWSRMétiers\ModelWSRUtilisateur.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

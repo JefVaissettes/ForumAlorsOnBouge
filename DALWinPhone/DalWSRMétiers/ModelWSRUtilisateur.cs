@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALWinPhone
+namespace ModelWinPhone
 {
     [Serializable]
 
     [DataContract]
 
-    public class DalWSRUtilisateur
+    public class ModelWSRUtilisateur
     {
         #region Propriétés et attributs
 
@@ -77,7 +77,7 @@ namespace DALWinPhone
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public DalWSRUtilisateur() { }
+        public ModelWSRUtilisateur() { }
 
         /// <summary>
         /// Constructeur d'un utilisateur
@@ -87,7 +87,7 @@ namespace DALWinPhone
         /// <param name="password">Mot de passe d'un utilisateur</param>
         /// <param name="email">Email d'un utilisateur</param>
         /// <param name="role">Role d'un utilisateur</param>
-        public DalWSRUtilisateur(int id, string username, string password, string email, bool isRmod)
+        public ModelWSRUtilisateur(int id, string username, string password, string email, bool isRmod)
         {
             this.Id = id;
             this.Username = username;
@@ -96,7 +96,7 @@ namespace DALWinPhone
             this.IsRmod = isRmod;
         }
 
-        public DalWSRUtilisateur(int id, string username, string password, bool isRmod)
+        public ModelWSRUtilisateur(int id, string username, string password, bool isRmod)
         {
             this.Id = id;
             this.Username = username;

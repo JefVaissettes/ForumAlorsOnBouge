@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
-    [Serializable]
-
-    [DataContract]
-
     /// <summary>
     /// La classe Rubric, se compose d'un identifiant unique pour chaque rubrique
     /// Elle est compposée d'un titre et d'un résumé
@@ -24,7 +19,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
-        [DataMember]   
         public int Id
         {
             get { return _Id; }
@@ -35,18 +29,20 @@ namespace ClassesMetiers
         /// <summary>
         /// Titre de la rubrique
         /// </summary>
-        [DataMember]
         public string Libelle
         {
             get { return _Libelle; }
             set { _Libelle = value; }
         }
-
-
-
         #endregion
 
         #region "Constructeurs"
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        public Rubric() { }
+
         /// <summary>
         /// Constructeur d'une rubrique
         /// </summary>
@@ -58,17 +54,6 @@ namespace ClassesMetiers
             this.Id = id;
             this.Libelle = title;
         }
-
-
-        #endregion
-
-        #region "Methodes"
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
-        #endregion
+        #endregion       
     }
 }

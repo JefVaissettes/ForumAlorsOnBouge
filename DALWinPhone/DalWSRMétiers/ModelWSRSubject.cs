@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALWinPhone
+namespace ModelWinPhone
 {
     [Serializable]
 
     [DataContract]
 
-    public class DalWSRSubject
+    public class ModelWSRSubject
     {
         #region Propriétés et attributs
 
@@ -112,7 +112,7 @@ namespace DALWinPhone
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public DalWSRSubject() { }
+        public ModelWSRSubject() { }
 
         /// <summary>
         /// Constructeur d'un nouveau sujet
@@ -121,7 +121,7 @@ namespace DALWinPhone
         /// <param name="title">Titre du sujet</param>
         /// <param name="description">Description du sujet</param>
         /// <param name="rubric">Identifiant de la rubrique</param>
-        public DalWSRSubject(int id, string title, string description, Rubric rubric)
+        public ModelWSRSubject(int id, string title, string description, Rubric rubric)
         {
             this.Id = id;
             this.Titre = title;
@@ -139,7 +139,7 @@ namespace DALWinPhone
         /// <param name="description"></param>
         /// <param name="rubric"></param>
         /// <param name="Posts"></param>
-        public DalWSRSubject(int id, string titre, string description, Rubric rubric, List<Post> Posts) : this(id, titre, description, rubric)
+        public ModelWSRSubject(int id, string titre, string description, Rubric rubric, List<Post> Posts) : this(id, titre, description, rubric)
         {
             this.Posts = Posts;
         }
@@ -153,7 +153,7 @@ namespace DALWinPhone
         /// <param name="date"></param>
         /// <param name="utilisateur"></param>
         /// <param name="rubric"></param>
-        public DalWSRSubject(int id, string titre, string description, DateTime date, Utilisateur utilisateur, Rubric rubric) : this(id, titre, description, rubric)
+        public ModelWSRSubject(int id, string titre, string description, DateTime date, Utilisateur utilisateur, Rubric rubric) : this(id, titre, description, rubric)
         {
             this.Date = date;
             this.Utilisateur = utilisateur;

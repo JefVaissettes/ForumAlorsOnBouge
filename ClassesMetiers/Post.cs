@@ -1,16 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
-    [Serializable]
-
-    [DataContract]
-
     public class Post
     {
         #region "Property et attributs"
@@ -19,7 +14,6 @@ namespace ClassesMetiers
         /// L'identifiant de la reponse
         /// </summary>
         private int _Id;
-        [DataMember]
         public int Id
         {
             get { return _Id; }
@@ -30,7 +24,6 @@ namespace ClassesMetiers
         /// Le texte de la reponse
         /// </summary>
         private string _PostContent;
-        [DataMember]
         public string PostContent
         {
             get { return _PostContent; }
@@ -41,7 +34,6 @@ namespace ClassesMetiers
         ///Le sujet auquel appartient la reponse
         /// </summary>
         private Subject _Sujet;
-        [DataMember]
         public Subject Sujet
         {
             get { return _Sujet; }
@@ -52,7 +44,6 @@ namespace ClassesMetiers
         /// La date de creation de la reponse
         /// </summary>
         private DateTime _Date;
-        [DataMember]
         public DateTime Date
         {
             get { return _Date; }
@@ -63,7 +54,6 @@ namespace ClassesMetiers
         /// L'utilisateur qui a crée et posté la reponse
         /// </summary>
         private Utilisateur _Utilisateur;
-        [DataMember]
         public Utilisateur Utilisateur
         {
             get { return _Utilisateur; }
@@ -74,7 +64,6 @@ namespace ClassesMetiers
         /// L'auteur de la reponse
         /// </summary>
         private string _Auteur;
-        [DataMember]
         public string Auteur
         {
             get { return _Auteur; }
@@ -84,6 +73,11 @@ namespace ClassesMetiers
         #endregion
 
         #region "Constructeurs"
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        public Post() { }
 
         /// <summary>
         /// Constructeur de la reponse
@@ -126,12 +120,6 @@ namespace ClassesMetiers
         {
             return Utilisateur.Username;
         }
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
         #endregion
     }
 }

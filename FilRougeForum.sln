@@ -13,7 +13,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebServiceFR", "WebServRest
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WinPhoneFR", "WinPhoneFR\WinPhoneFR.csproj", "{53169735-E8DF-4707-9AE7-BF479A37B10C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DALWinPhone", "DALWinPhone\DALWinPhone.csproj", "{6AB7176A-A457-4904-B9AE-508FCFF7C322}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelWinPhone", "DALWinPhone\ModelWinPhone.csproj", "{6AB7176A-A457-4904-B9AE-508FCFF7C322}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -5,13 +5,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALWinPhone
+namespace ModelWinPhone
 {
     [Serializable]
 
     [DataContract]
 
-    public class DalWSRRubric
+    public class ModelWSRRubric
     {
         #region propriétés et attributs
 
@@ -44,7 +44,7 @@ namespace DALWinPhone
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public DalWSRRubric() { }
+        public ModelWSRRubric() { }
 
         /// <summary>
         /// Constructeur d'une rubrique
@@ -52,7 +52,7 @@ namespace DALWinPhone
         /// <param name="id_rubric">L'identifiant d'une rubrique</param>
         /// <param name="rubric_title">Titre d'une rubrique</param>
         /// 
-        public DalWSRRubric(int id, string title)
+        public ModelWSRRubric(int id, string title)
         {
             this.Id = id;
             this.Libelle = title;

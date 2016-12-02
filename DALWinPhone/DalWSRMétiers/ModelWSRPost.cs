@@ -6,13 +6,13 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DALWinPhone
+namespace ModelWinPhone
 {
     [Serializable]
 
     [DataContract]
 
-    public class DalWSRPost
+    public class ModelWSRPost
     {
         #region Propriétés et attibuts
 
@@ -89,7 +89,7 @@ namespace DALWinPhone
         /// <summary>
         /// Constructeur par défaut
         /// </summary>
-        public DalWSRPost() { }
+        public ModelWSRPost() { }
 
         /// <summary>
         /// Constructeur de la reponse
@@ -99,7 +99,7 @@ namespace DALWinPhone
         /// <param name="date">La date de création </param>
         /// <param name="utilisateur">L'utilisateur qui a crée et posté la reponse</param>
         /// <param name="sujet">Le sujet auquel appartient la reponse</param>
-        public DalWSRPost(int id, string texte, DateTime date, Subject sujet, Utilisateur utilisateur)
+        public ModelWSRPost(int id, string texte, DateTime date, Subject sujet, Utilisateur utilisateur)
         {
             this.Id = id;
             this.PostContent = texte;
@@ -114,7 +114,7 @@ namespace DALWinPhone
         /// </summary>
         /// <param name="id"></param>
         /// <param name="text"></param>
-        public DalWSRPost(int id, string text)
+        public ModelWSRPost(int id, string text)
         {
             this.Id = id;
             this.PostContent = text;

@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,10 +8,6 @@ using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
-    [Serializable]
-
-    [DataContract]
-
     /// <summary>
     /// La classe Users permet à un utilisateur de s'identifier avec 
     /// son username (nom) et son mot de passe
@@ -26,7 +21,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de l'utilisateur
         /// </summary>
-        [DataMember]
         public int Id
         {
             get { return _Id; }
@@ -37,7 +31,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Nom de l'utilisateur
         /// </summary>
-        [DataMember]
         public string Username
         {
             get { return _Username; }
@@ -48,7 +41,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Mot de passe de l'utilisateur
         /// </summary>
-        [DataMember]
         public string Mdp
         {
             get { return _Mdp; }
@@ -59,7 +51,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Email de l'utilisateur
         /// </summary>
-        [DataMember]
         public string Email
         {
             get { return _Email; }
@@ -71,16 +62,19 @@ namespace ClassesMetiers
         /// Numéro de role de l'utilisateur
         /// Isrmod permet de voir si l'user est un moderateur ou non 
         /// </summary>
-        [DataMember]
         public bool IsRmod
         {
             get { return _IsRmod; }
             set { _IsRmod = value; }
         }
-
         #endregion
 
         #region "Constructeurs"
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        public Utilisateur() { }
 
         /// <summary>
         /// Constructeur d'un utilisateur
@@ -106,15 +100,6 @@ namespace ClassesMetiers
             this.Mdp = password;
             this.IsRmod = isRmod;
         }
-
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
         #endregion
     }
-
-
 }

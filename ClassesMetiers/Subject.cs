@@ -7,10 +7,6 @@ using System.Threading.Tasks;
 
 namespace ClassesMetiers
 {
-    [Serializable]
-
-    [DataContract]
-
     /// <summary>
     /// La classe Subject, permet de voir tous les sujets d'une rubrique
     /// Permet de voir les posts, concernant un sujet
@@ -23,7 +19,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant du sujet
         /// </summary>
-        [DataMember]
         public int Id
         {
             get { return _Id; }
@@ -34,7 +29,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Titre du sujet
         /// </summary>
-        [DataMember]
         public string Titre
         {
             get { return _Titre; }
@@ -45,7 +39,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Description du sujet
         /// </summary>
-        [DataMember]
         public string Desc
         {
             get { return _Desc; }
@@ -56,7 +49,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Date de création du sujet
         /// </summary>
-        [DataMember]
         public DateTime Date
         {
             get { return _Date; }
@@ -67,7 +59,6 @@ namespace ClassesMetiers
         /// <summary>
         /// La liste de reponse, concernant un sujet
         /// </summary>
-        [DataMember]
         public List<Post> Posts
         {
             get { return _Posts; }
@@ -78,7 +69,6 @@ namespace ClassesMetiers
         /// <summary>
         /// Identifiant de la rubrique
         /// </summary>
-        [DataMember]
         public Rubric Rubric
         {
             get { return _Rubric; }
@@ -89,8 +79,6 @@ namespace ClassesMetiers
         /// L'utilisateur qui a crée et posté la reponse
         /// </summary>
         private Utilisateur _Utilisateur;
-
-        [DataMember]
         public Utilisateur Utilisateur
         {
             get { return _Utilisateur; }
@@ -101,8 +89,6 @@ namespace ClassesMetiers
         /// L'auteur de la reponse
         /// </summary>
         private string _Auteur;
-
-        [DataMember]
         public string Auteur
         {
             get { return _Auteur; }
@@ -110,6 +96,11 @@ namespace ClassesMetiers
         }
 
         #region "Constructeurs"
+
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        public Subject() { }
 
         /// <summary>
         /// Constructeur d'un nouveau sujet
@@ -165,13 +156,6 @@ namespace ClassesMetiers
         {
             return Utilisateur.Username;
         }
-
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
         #endregion
     }
 }
