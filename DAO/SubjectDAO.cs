@@ -16,9 +16,6 @@ namespace DAO
 
         #endregion
 
-        #region "Constructeurs"
-        #endregion
-
         #region "Methodes"
         /// <summary>
         /// La méthode GetAllSujet, retourne tous les sujets du forum
@@ -202,11 +199,5 @@ namespace DAO
 
         }
         #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
-        #endregion 
     }
 }

@@ -105,14 +105,6 @@ namespace DAO
             con.Close();
             return nbLigne;
         }
-
-
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
         #endregion
     }
 }

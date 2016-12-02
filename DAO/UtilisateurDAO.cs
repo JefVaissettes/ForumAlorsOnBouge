@@ -16,9 +16,6 @@ namespace DAO
 
         #endregion
 
-        #region "Constructeurs"
-        #endregion
-
         #region "Methodes"
 
         /// <summary>
@@ -104,12 +101,6 @@ namespace DAO
             return nbligne;
         }
 
-        #endregion
-
-        #region "Methodes héritées et substituées"
-        #endregion
-
-        #region "Methodes à implementer pour les interfaces"
         #endregion
     }
 }
