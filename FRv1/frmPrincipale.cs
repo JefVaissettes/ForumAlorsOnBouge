@@ -168,9 +168,9 @@ namespace IHMFR
         #region event indexchanged
 
         private void cbBxRubric_SelectedIndexChanged(object sender, EventArgs e)
-        {           
+        {
             List<Subject> subjects = Outil.GetSujetsByCategorieID((int)cbBxRubric.SelectedValue);
-            if(subjects != null)
+            if (subjects != null)
             {
                 PanelSujetVisible();
                 displaycbBxSubject(subjects);
@@ -317,7 +317,7 @@ namespace IHMFR
 
         #endregion
 
-        #region méthode readonly in combobox
+        #region méthode readonly dans les outils d'affichage
 
         private void cbBxSubject_KeyDown(object sender, KeyEventArgs e)
         {
@@ -328,6 +328,11 @@ namespace IHMFR
         {
             e.SuppressKeyPress = true;
         }
+
+        private void txtDescSujet_KeyDown(object sender, KeyEventArgs e)
+        {
+            e.SuppressKeyPress = true;
+        }      
 
         #endregion
     }
