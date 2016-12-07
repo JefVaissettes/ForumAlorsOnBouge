@@ -19,6 +19,6 @@ namespace WebServRestFR
         List<Rubric> GetAllCategories();         
 
         [OperationContract]
-        List<Rubric> GetSujetsByCategorieID() ;        
+        List<Rubric> GetSujetsByCategorieID();        
     }
 }
