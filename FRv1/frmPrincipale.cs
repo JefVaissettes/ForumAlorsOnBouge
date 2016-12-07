@@ -16,6 +16,7 @@ namespace IHMFR
         public frmPrincipale()
         {
             InitializeComponent();
+            dGVPost.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
         }
 
         #region Load
@@ -332,8 +333,28 @@ namespace IHMFR
         private void txtDescSujet_KeyDown(object sender, KeyEventArgs e)
         {
             e.SuppressKeyPress = true;
-        }      
+        }
 
         #endregion
+
+        #region Affichage des posts en détail                
+
+        private void dGVPost_CellClick(object sender, DataGridViewCellEventArgs e)
+        {            
+            int CurrentRow = e.RowIndex;
+
+            DataGridViewRow row = dGVPost.Rows[CurrentRow];
+            using (frmDetailPost frmdetailpost = new frmDetailPost())
+            {
+                frmdetailpost.txtPost.Text = row.Cells["PostContent"].Value.ToString();
+                frmdetailpost.lblAuteur.Text += row.Cells["Auteur"].Value.ToString();
+                frmdetailpost.lblDateCreation.Text += row.Cells["Date"].Value.ToString();
+                frmdetailpost.ShowDialog();
+            }
+
+        }
+
+        #endregion
+
     }
 }

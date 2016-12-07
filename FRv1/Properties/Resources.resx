@@ -117,35 +117,21 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="MsgBoxAddReponseText" xml:space="preserve">
-    <value>Le post a été ajouté avec succès.</value>
-  </data>
-  <data name="MsgBoxAddReponseTitre" xml:space="preserve">
-    <value>Ajouter un post.</value>
-  </data>
   <data name="MsgBoxAddSujetText" xml:space="preserve">
     <value>Le sujet a été ajouté avec succès.</value>
   </data>
-  <data name="MsgBoxAddSujetTitre" xml:space="preserve">
-    <value>Ajouter un sujet.</value>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="logo44x44" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo44x44.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="MsgBoxCancelText" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte.</value>
+  <data name="MsgBoxErreurAddReponseTitre" xml:space="preserve">
+    <value>Erreur au moment de l'ajout du post.</value>
   </data>
-  <data name="MsgBoxCancelTitre" xml:space="preserve">
-    <value>Annuler.</value>
+  <data name="MsgBoxErreurAddReponseText" xml:space="preserve">
+    <value>Impossible d'ajouter un post.</value>
   </data>
-  <data name="MsgBoxConfirmChangementPasswordText" xml:space="preserve">
-    <value>Confirmation de changement du mot de passe.</value>
-  </data>
-  <data name="MsgBoxConfirmChangementPasswordTitre" xml:space="preserve">
-    <value>Changement de mot de passe.</value>
-  </data>
-  <data name="MsgBoxDeconnexionText" xml:space="preserve">
-    <value>Vous-êtes déconnecté avec succès.</value>
-  </data>
-  <data name="MsgBoxDeconnexionTitre" xml:space="preserve">
-    <value>Déconnexion</value>
+  <data name="MsgBoxAddReponseTitre" xml:space="preserve">
+    <value>Ajouter un post.</value>
   </data>
   <data name="MsgBoxDeletePostText" xml:space="preserve">
     <value>Etes-vous sûr de vouloir supprimer le post ?</value>
@@ -153,61 +139,85 @@
   <data name="MsgBoxDeletePostTitre" xml:space="preserve">
     <value>Suppression du post.</value>
   </data>
-  <data name="MsgBoxDeleteSujetText" xml:space="preserve">
-    <value>Etes-vous sûr de vouloir supprimer le sujet sélectionné ?</value>
-  </data>
-  <data name="MsgBoxDeleteSujetTitre" xml:space="preserve">
-    <value>Suppression du sujet.</value>
-  </data>
-  <data name="MsgBoxEditSujetText" xml:space="preserve">
-    <value>Modification du sujet.</value>
-  </data>
-  <data name="MsgBoxErreurAddReponseText" xml:space="preserve">
-    <value>Impossible d'ajouter un post.</value>
-  </data>
-  <data name="MsgBoxErreurAddReponseTitre" xml:space="preserve">
-    <value>Erreur au moment de l'ajout du post.</value>
-  </data>
-  <data name="MsgBoxErreurAddSujetText" xml:space="preserve">
-    <value>Impossible d'ajouter le sujet.</value>
-  </data>
-  <data name="MsgBoxErreurAddSujetTitre" xml:space="preserve">
-    <value>Erreur au moment de l'ajout du sujet.</value>
-  </data>
-  <data name="MsgBoxErreurDeletePostText" xml:space="preserve">
-    <value>Suppression impossible du post.</value>
-  </data>
-  <data name="MsgBoxErreurDeletePostTitre" xml:space="preserve">
-    <value>Erreur !</value>
-  </data>
-  <data name="MsgBoxErreurDeleteSujetText" xml:space="preserve">
-    <value>Suppression impossible du sujet !</value>
-  </data>
   <data name="MsgBoxErreurDeleteSujetTitre" xml:space="preserve">
     <value>Erreur !</value>
-  </data>
-  <data name="MsgBoxErreurEditSujetText" xml:space="preserve">
-    <value>Erreur de modification du sujet.</value>
-  </data>
-  <data name="MsgBoxErreurEditSujetTitre" xml:space="preserve">
-    <value>Erreur de modification du titre du sujet.</value>
   </data>
   <data name="MsgBoxUpDateSujetText" xml:space="preserve">
     <value>Etes-vous sûr de vouloir modifier le sujet ?</value>
   </data>
-  <data name="MsgBoxUpDateSujetTitre" xml:space="preserve">
-    <value>Mofdification du sujet.</value>
+  <data name="MsgBoxErreurDeletePostText" xml:space="preserve">
+    <value>Suppression impossible du post.</value>
   </data>
-  <data name="MsglblPasDeReponseText" xml:space="preserve">
-    <value>Désolé ! Le sujet sélectionné, ne contient aucun post.</value>
-  </data>
-  <data name="MsglblPasDeReponseTitre" xml:space="preserve">
-    <value>Pas de post pour le sujet sélectionné.</value>
+  <data name="MsgBoxAddSujetTitre" xml:space="preserve">
+    <value>Ajouter un sujet.</value>
   </data>
   <data name="MsglblPasDeSujetText" xml:space="preserve">
     <value>Désolé ! la rubrique sélectionnée ne contient aucun sujet.</value>
   </data>
+  <data name="MsgBoxDeleteSujetTitre" xml:space="preserve">
+    <value>Suppression du sujet.</value>
+  </data>
+  <data name="MsgBoxDeleteSujetText" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir supprimer le sujet sélectionné ?</value>
+  </data>
+  <data name="MsgBoxCancelTitre" xml:space="preserve">
+    <value>Annuler.</value>
+  </data>
+  <data name="MsglblPasDeReponseTitre" xml:space="preserve">
+    <value>Pas de post pour le sujet sélectionné.</value>
+  </data>
+  <data name="MsgBoxCancelText" xml:space="preserve">
+    <value>Etes-vous sûr de vouloir quitter ? Si oui les modifications éffectuées ne seront pas prises en compte.</value>
+  </data>
+  <data name="MsgBoxConfirmChangementPasswordText" xml:space="preserve">
+    <value>Confirmation de changement du mot de passe.</value>
+  </data>
+  <data name="MsgBoxEditSujetText" xml:space="preserve">
+    <value>Modification du sujet.</value>
+  </data>
+  <data name="logo310x150" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo310x150.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="MsgBoxErreurDeleteSujetText" xml:space="preserve">
+    <value>Suppression impossible du sujet !</value>
+  </data>
+  <data name="MsgBoxConfirmChangementPasswordTitre" xml:space="preserve">
+    <value>Changement de mot de passe.</value>
+  </data>
+  <data name="MsgBoxAddReponseText" xml:space="preserve">
+    <value>Le post a été ajouté avec succès.</value>
+  </data>
+  <data name="MsgBoxErreurAddSujetTitre" xml:space="preserve">
+    <value>Erreur au moment de l'ajout du sujet.</value>
+  </data>
+  <data name="MsgBoxErreurAddSujetText" xml:space="preserve">
+    <value>Impossible d'ajouter le sujet.</value>
+  </data>
   <data name="MsglblPasDeSujetTitre" xml:space="preserve">
     <value>Pas de sujet pour la rubrique sélectionnée.</value>
+  </data>
+  <data name="MsglblPasDeReponseText" xml:space="preserve">
+    <value>Désolé ! Le sujet sélectionné, ne contient aucun post.</value>
+  </data>
+  <data name="MsgBoxDeconnexionTitre" xml:space="preserve">
+    <value>Déconnexion</value>
+  </data>
+  <data name="MsgBoxErreurEditSujetTitre" xml:space="preserve">
+    <value>Erreur de modification du titre du sujet.</value>
+  </data>
+  <data name="MsgBoxUpDateSujetTitre" xml:space="preserve">
+    <value>Mofdification du sujet.</value>
+  </data>
+  <data name="MsgBoxErreurEditSujetText" xml:space="preserve">
+    <value>Erreur de modification du sujet.</value>
+  </data>
+  <data name="MsgBoxDeconnexionText" xml:space="preserve">
+    <value>Vous-êtes déconnecté avec succès.</value>
+  </data>
+  <data name="MsgBoxErreurDeletePostTitre" xml:space="preserve">
+    <value>Erreur !</value>
+  </data>
+  <data name="logo71x71" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo71x71.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

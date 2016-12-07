@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(modifpwd));
             this.label1 = new System.Windows.Forms.Label();
             this.gpbxModifIdentity = new System.Windows.Forms.GroupBox();
             this.txtNewPwd = new System.Windows.Forms.TextBox();
@@ -130,6 +131,7 @@
             this.Controls.Add(this.gpbxModifIdentity);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "modifpwd";
             this.Text = "Alors on bouge !";
             this.gpbxModifIdentity.ResumeLayout(false);

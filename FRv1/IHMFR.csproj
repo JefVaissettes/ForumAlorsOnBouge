@@ -79,6 +79,12 @@
     <Compile Include="frmCreerSujet.Designer.cs">
       <DependentUpon>frmCreerSujet.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmDetailPost.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetailPost.Designer.cs">
+      <DependentUpon>frmDetailPost.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmPrincipale.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -107,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmCreerSujet.resx">
       <DependentUpon>frmCreerSujet.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetailPost.resx">
+      <DependentUpon>frmDetailPost.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipale.resx">
       <DependentUpon>frmPrincipale.cs</DependentUpon>
@@ -158,6 +167,15 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo310x150.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo44x44.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo71x71.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

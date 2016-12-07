@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Identification));
             this.gpbxIdentification = new System.Windows.Forms.GroupBox();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.txtLogin = new System.Windows.Forms.TextBox();
@@ -132,6 +133,7 @@
             this.Controls.Add(this.gpbxIdentification);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Identification";
             this.Text = "Alors on bouge !";
             this.gpbxIdentification.ResumeLayout(false);

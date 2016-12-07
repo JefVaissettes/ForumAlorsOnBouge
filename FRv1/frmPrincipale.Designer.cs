@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipale));
             this.tblLPfrmPrincipale = new System.Windows.Forms.TableLayoutPanel();
             this.tbLPRubric = new System.Windows.Forms.TableLayoutPanel();
             this.gpBxRubric = new System.Windows.Forms.GroupBox();
@@ -80,7 +81,7 @@
             this.tblLPfrmPrincipale.ColumnCount = 3;
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 28.34F));
             this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 71.66F));
-            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 132F));
+            this.tblLPfrmPrincipale.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 133F));
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPRubric, 0, 0);
             this.tblLPfrmPrincipale.Controls.Add(this.tbLPUserLogged, 1, 3);
             this.tblLPfrmPrincipale.Controls.Add(this.tableLayoutPanel1, 0, 2);
@@ -156,7 +157,7 @@
             this.tbLPUserLogged.RowCount = 1;
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPUserLogged.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 81F));
-            this.tbLPUserLogged.Size = new System.Drawing.Size(646, 81);
+            this.tbLPUserLogged.Size = new System.Drawing.Size(645, 81);
             this.tbLPUserLogged.TabIndex = 2;
             // 
             // gbxUserLogged
@@ -167,7 +168,7 @@
             this.gbxUserLogged.Dock = System.Windows.Forms.DockStyle.Fill;
             this.gbxUserLogged.Location = new System.Drawing.Point(3, 3);
             this.gbxUserLogged.Name = "gbxUserLogged";
-            this.gbxUserLogged.Size = new System.Drawing.Size(640, 75);
+            this.gbxUserLogged.Size = new System.Drawing.Size(639, 75);
             this.gbxUserLogged.TabIndex = 14;
             this.gbxUserLogged.TabStop = false;
             // 
@@ -309,7 +310,7 @@
             this.tbLPConnexion.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tbLPConnexion.Controls.Add(this.btConnect, 0, 0);
             this.tbLPConnexion.Controls.Add(this.btConnecter, 0, 1);
-            this.tbLPConnexion.Location = new System.Drawing.Point(912, 510);
+            this.tbLPConnexion.Location = new System.Drawing.Point(911, 510);
             this.tbLPConnexion.Name = "tbLPConnexion";
             this.tbLPConnexion.RowCount = 2;
             this.tbLPConnexion.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -353,8 +354,9 @@
             this.dGVPost.Location = new System.Drawing.Point(260, 203);
             this.dGVPost.Name = "dGVPost";
             this.dGVPost.ReadOnly = true;
-            this.dGVPost.Size = new System.Drawing.Size(646, 301);
+            this.dGVPost.Size = new System.Drawing.Size(645, 301);
             this.dGVPost.TabIndex = 16;
+            this.dGVPost.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dGVPost_CellClick);
             this.dGVPost.SelectionChanged += new System.EventHandler(this.dGVPost_SelectionChanged);
             // 
             // lbPasDePost
@@ -380,7 +382,7 @@
             this.tbLPModerator.RowCount = 1;
             this.tbLPModerator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tbLPModerator.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 164F));
-            this.tbLPModerator.Size = new System.Drawing.Size(646, 164);
+            this.tbLPModerator.Size = new System.Drawing.Size(645, 164);
             this.tbLPModerator.TabIndex = 3;
             // 
             // gbxModerator
@@ -389,7 +391,7 @@
             this.gbxModerator.Controls.Add(this.btSupSujet);
             this.gbxModerator.Controls.Add(this.btSupPost);
             this.gbxModerator.Dock = System.Windows.Forms.DockStyle.Right;
-            this.gbxModerator.Location = new System.Drawing.Point(171, 3);
+            this.gbxModerator.Location = new System.Drawing.Point(170, 3);
             this.gbxModerator.Name = "gbxModerator";
             this.gbxModerator.Size = new System.Drawing.Size(472, 158);
             this.gbxModerator.TabIndex = 13;
@@ -432,9 +434,9 @@
             // 
             this.panel2.Controls.Add(this.btModifMdp);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel2.Location = new System.Drawing.Point(912, 203);
+            this.panel2.Location = new System.Drawing.Point(911, 203);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(127, 301);
+            this.panel2.Size = new System.Drawing.Size(128, 301);
             this.panel2.TabIndex = 18;
             // 
             // btModifMdp
@@ -442,7 +444,7 @@
             this.btModifMdp.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btModifMdp.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btModifMdp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btModifMdp.Location = new System.Drawing.Point(8, 130);
+            this.btModifMdp.Location = new System.Drawing.Point(9, 130);
             this.btModifMdp.Name = "btModifMdp";
             this.btModifMdp.Size = new System.Drawing.Size(110, 40);
             this.btModifMdp.TabIndex = 17;
@@ -457,6 +459,7 @@
             this.ClientSize = new System.Drawing.Size(1049, 600);
             this.Controls.Add(this.tblLPfrmPrincipale);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipale";
             this.Text = "Alors on bouge !";
             this.Load += new System.EventHandler(this.frmPrincipale_Load);

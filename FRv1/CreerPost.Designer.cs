@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CreerPost));
             this.btValider = new System.Windows.Forms.Button();
             this.btAnnuler = new System.Windows.Forms.Button();
             this.txtPostContent = new System.Windows.Forms.TextBox();
@@ -86,6 +87,7 @@
             this.Controls.Add(this.btValider);
             this.Controls.Add(this.btAnnuler);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "CreerPost";
             this.Text = "Alors on bouge !";
             this.gpBxCreatePost.ResumeLayout(false);

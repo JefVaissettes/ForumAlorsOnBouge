@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCreerSujet));
             this.gBxTitreSujet = new System.Windows.Forms.GroupBox();
             this.txtBxTitreSujet = new System.Windows.Forms.TextBox();
             this.gBxDescription = new System.Windows.Forms.GroupBox();
@@ -106,6 +107,7 @@
             this.Controls.Add(this.gBxDescription);
             this.Controls.Add(this.gBxTitreSujet);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmCreerSujet";
             this.Text = "Alors on bouge !";
             this.Load += new System.EventHandler(this.frmCreerSujet_Load);

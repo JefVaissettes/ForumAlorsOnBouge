@@ -31,7 +31,6 @@ namespace DAO
 
         public static DataTable GetAllRubrics()
         {
-            // con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllCategories";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -39,7 +38,6 @@ namespace DAO
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("Rubric");
             da.Fill(dt);
-            //con.Close();
 
             return dt;
         }

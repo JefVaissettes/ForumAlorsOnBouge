@@ -43,7 +43,6 @@ namespace DAO
 
         public static DataTable GetSujetsByCategorieID(int idrubric)
         {
-            //con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetSujetsByCategorieID";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -56,7 +55,6 @@ namespace DAO
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("TousLesSujets");
             da.Fill(dt);
-            //con.Close();
 
             return dt;
 

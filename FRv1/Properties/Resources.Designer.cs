@@ -61,6 +61,36 @@ namespace IHMFR.Properties {
         }
         
         /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo310x150 {
+            get {
+                object obj = ResourceManager.GetObject("logo310x150", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo44x44 {
+            get {
+                object obj = ResourceManager.GetObject("logo44x44", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Recherche une ressource localisée de type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo71x71 {
+            get {
+                object obj = ResourceManager.GetObject("logo71x71", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Recherche une chaîne localisée semblable à Le post a été ajouté avec succès..
         /// </summary>
         internal static string MsgBoxAddReponseText {
