@@ -13,15 +13,20 @@ namespace IHMFR
 {
     public partial class Identification : Form
     {
-        
+
         public Identification()
         {
             InitializeComponent();
         }
 
+        private void Identification_Load(object sender, EventArgs e)
+        {
+            txtLogin.Focus();
+        }
+
         private void btAnnuler_Click(object sender, EventArgs e)
-        {            
-                this.Close();            
+        {
+            Close();
         }
 
         private void btConnect_Click(object sender, EventArgs e)
@@ -31,14 +36,12 @@ namespace IHMFR
             {
                 Accueil.IsConnected = true;
                 Accueil.IsRmodo = Accueil.CurrentUsers.IsRmod;
-                this.Close();
-
+                Close();
             }
             else
             {
                 Accueil.IsConnected = false;
                 MessageBox.Show("Votre Login ou votre mot de passe sont incorrect!", "Veuillez saisir vos identifiants svp", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                
             }
         }
     }

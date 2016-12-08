@@ -139,7 +139,7 @@ namespace IHMFR
 
         private void btSupPost_Click(object sender, EventArgs e)
         {
-            DialogResult dr = new DialogResult();
+             DialogResult dr = new DialogResult();
             dr = MessageBox.Show(Properties.Resources.MsgBoxDeletePostText, Properties.Resources.MsgBoxDeletePostTitre, MessageBoxButtons.OKCancel, MessageBoxIcon.Exclamation);
             if (dr == DialogResult.OK)
             {
@@ -148,21 +148,23 @@ namespace IHMFR
                     MessageBox.Show(Properties.Resources.MsgBoxErreurDeletePostText, Properties.Resources.MsgBoxErreurDeletePostTitre);
                 }
                 List<Post> posts = Outil.GetAllReponseBySujet((int)cbBxSubject.SelectedValue);
+
+
                 if (posts != null)
                 {
                     displaydgVPost(posts);
                 }
+
                 if (visibilitePost())
                 {
-                    PanelSujetInvisible();
+                    PanelPostVisible();
                 }
                 else
                 {
-                    PanelSujetInvisible();
+                    PanelPostInvisible();
                 }
             }
         }
-
 
         #endregion
 

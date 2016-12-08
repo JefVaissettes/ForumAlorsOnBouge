@@ -106,7 +106,7 @@
             this.btAnnuler.Location = new System.Drawing.Point(12, 186);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(109, 40);
-            this.btAnnuler.TabIndex = 4;
+            this.btAnnuler.TabIndex = 3;
             this.btAnnuler.Text = "Annuler";
             this.btAnnuler.UseVisualStyleBackColor = true;
             this.btAnnuler.Click += new System.EventHandler(this.btAnnuler_Click);
@@ -136,6 +136,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Identification";
             this.Text = "Alors on bouge !";
+            this.Load += new System.EventHandler(this.Identification_Load);
             this.gpbxIdentification.ResumeLayout(false);
             this.gpbxIdentification.PerformLayout();
             this.ResumeLayout(false);
