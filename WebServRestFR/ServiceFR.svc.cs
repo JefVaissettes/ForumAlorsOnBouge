@@ -14,12 +14,12 @@ namespace WebServRestFR
     public class ServiceFR : IServiceFR
     {
         private SqlConnection cn;
-        private object idSubject;
+        private object id_subject;
         private object idrubric;
 
         public List<Rubric> GetAllCategories()
         {
-            List<Rubric> liste = new List<Rubric>();
+            List<Rubric> listRubrics = new List<Rubric>();
 
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = "GetAllCategories";
@@ -29,12 +29,12 @@ namespace WebServRestFR
             DataTable dt = new DataTable("Rubric");
             da.Fill(dt);
 
-            return liste;
+            return listRubrics;
         }
 
         public List<Subject> GetAllReponseBySujet()
         {            
-            List<Subject> liste = new List<Subject>();            
+            List<Subject> listPosts = new List<Subject>();            
 
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = "GetAllReponseBySujet";
@@ -42,19 +42,19 @@ namespace WebServRestFR
 
             SqlParameter parm = cmd.CreateParameter();
             parm.ParameterName = "@idSubject";
-            parm.Value = idSubject;
+            parm.Value = id_subject;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("Post");
             da.Fill(dt);
 
-            return liste;
+            return listPosts;
         }
 
         public List<Rubric> GetSujetsByCategorieID()
         {
-            List<Rubric> liste = new List<Rubric>();
+            List<Rubric> listSubjByRub = new List<Rubric>();
 
             SqlCommand cmd = cn.CreateCommand();
             cmd.CommandText = "GetSujetsByCategorieID";
@@ -69,7 +69,7 @@ namespace WebServRestFR
             DataTable dt = new DataTable("TousLesSujets");
             da.Fill(dt);
 
-            return liste;
+            return listSubjByRub;
         }
     }
 }

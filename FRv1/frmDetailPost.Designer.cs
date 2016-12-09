@@ -31,9 +31,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmDetailPost));
             this.tlpPost = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.txtPost = new System.Windows.Forms.TextBox();
             this.lblAuteur = new System.Windows.Forms.Label();
             this.lblDateCreation = new System.Windows.Forms.Label();
+            this.txtPost = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btOK = new System.Windows.Forms.Button();
             this.tlpPost.SuspendLayout();
@@ -46,7 +46,7 @@
             this.tlpPost.ColumnCount = 3;
             this.tlpPost.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 6.626506F));
             this.tlpPost.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 93.3735F));
-            this.tlpPost.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tlpPost.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 22F));
             this.tlpPost.Controls.Add(this.tableLayoutPanel1, 1, 0);
             this.tlpPost.Controls.Add(this.txtPost, 1, 1);
             this.tlpPost.Controls.Add(this.panel1, 1, 2);
@@ -66,22 +66,13 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.lblAuteur, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.lblDateCreation, 1, 0);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(25, 3);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(24, 3);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(304, 45);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 45F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(303, 45);
             this.tableLayoutPanel1.TabIndex = 36;
-            // 
-            // txtPost
-            // 
-            this.txtPost.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtPost.Location = new System.Drawing.Point(25, 54);
-            this.txtPost.Multiline = true;
-            this.txtPost.Name = "txtPost";
-            this.txtPost.Size = new System.Drawing.Size(304, 187);
-            this.txtPost.TabIndex = 12;
             // 
             // lblAuteur
             // 
@@ -96,23 +87,37 @@
             // lblDateCreation
             // 
             this.lblDateCreation.AutoSize = true;
-            this.lblDateCreation.Location = new System.Drawing.Point(155, 19);
+            this.lblDateCreation.Location = new System.Drawing.Point(154, 19);
             this.lblDateCreation.Margin = new System.Windows.Forms.Padding(3, 19, 3, 0);
             this.lblDateCreation.Name = "lblDateCreation";
             this.lblDateCreation.Size = new System.Drawing.Size(28, 13);
             this.lblDateCreation.TabIndex = 11;
             this.lblDateCreation.Text = "Le : ";
             // 
+            // txtPost
+            // 
+            this.txtPost.BackColor = System.Drawing.SystemColors.Window;
+            this.txtPost.Cursor = System.Windows.Forms.Cursors.Default;
+            this.txtPost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtPost.Location = new System.Drawing.Point(24, 54);
+            this.txtPost.Multiline = true;
+            this.txtPost.Name = "txtPost";
+            this.txtPost.ReadOnly = true;
+            this.txtPost.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtPost.Size = new System.Drawing.Size(303, 187);
+            this.txtPost.TabIndex = 12;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.btOK);
-            this.panel1.Location = new System.Drawing.Point(25, 247);
+            this.panel1.Location = new System.Drawing.Point(24, 247);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(304, 33);
+            this.panel1.Size = new System.Drawing.Size(303, 33);
             this.panel1.TabIndex = 21;
             // 
             // btOK
             // 
+            this.btOK.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btOK.Location = new System.Drawing.Point(226, 3);
             this.btOK.Name = "btOK";
             this.btOK.Size = new System.Drawing.Size(75, 27);

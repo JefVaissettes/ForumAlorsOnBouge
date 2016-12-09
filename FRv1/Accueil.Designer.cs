@@ -50,6 +50,7 @@
             // 
             // btQuitter
             // 
+            this.btQuitter.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btQuitter.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btQuitter.Location = new System.Drawing.Point(37, 252);
             this.btQuitter.Name = "btQuitter";
@@ -89,6 +90,7 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.btQuitter);
             this.Controls.Add(this.btConsul);
+            this.Cursor = System.Windows.Forms.Cursors.Default;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximumSize = new System.Drawing.Size(502, 346);

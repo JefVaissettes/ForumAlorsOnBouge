@@ -54,7 +54,7 @@
             // 
             // txtPwd
             // 
-            this.txtPwd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtPwd.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtPwd.Location = new System.Drawing.Point(129, 75);
             this.txtPwd.Name = "txtPwd";
             this.txtPwd.PasswordChar = '*';
@@ -63,7 +63,7 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.txtLogin.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.txtLogin.Location = new System.Drawing.Point(129, 35);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(190, 20);
@@ -103,7 +103,7 @@
             // 
             this.btAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAnnuler.Location = new System.Drawing.Point(12, 186);
+            this.btAnnuler.Location = new System.Drawing.Point(21, 186);
             this.btAnnuler.Name = "btAnnuler";
             this.btAnnuler.Size = new System.Drawing.Size(109, 40);
             this.btAnnuler.TabIndex = 3;
@@ -115,7 +115,7 @@
             // 
             this.btConnect.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btConnect.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConnect.Location = new System.Drawing.Point(267, 186);
+            this.btConnect.Location = new System.Drawing.Point(255, 186);
             this.btConnect.Name = "btConnect";
             this.btConnect.Size = new System.Drawing.Size(109, 40);
             this.btConnect.TabIndex = 2;

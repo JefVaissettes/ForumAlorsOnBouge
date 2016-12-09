@@ -28,7 +28,7 @@ namespace DAO
         /// <param name="id_subject">L'identifiant du sujet</param>
         /// <returns>Les reponses, concernant un sujet dont l'identifiant est passé en paramètre</returns>
         /// 
-        public static DataTable GetAllReponseBySujet(int idSubject)
+        public static DataTable GetAllReponseBySujet(int id_subject)
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllReponseBySujet";
@@ -36,7 +36,7 @@ namespace DAO
 
             SqlParameter parm = cmd.CreateParameter();
             parm.ParameterName = "@idSubject";
-            parm.Value = idSubject;
+            parm.Value = id_subject;
             cmd.Parameters.Add(parm);
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);

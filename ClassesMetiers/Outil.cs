@@ -235,16 +235,16 @@ namespace ClassesMetiers
 
         #region Post
 
-        public static List<Post> GetAllReponseBySujet(int idSubject)
+        public static List<Post> GetAllReponseBySujet(int id_subject)
         {
-            DataTable dt = PostDAO.GetAllReponseBySujet(idSubject);
+            DataTable dt = PostDAO.GetAllReponseBySujet(id_subject);
                 if (dt.Rows.Count >= 1)
             {
                 List<Post> _Posts = new List<Post>();
                 foreach (DataRow row in dt.Rows)
                 {
                   
-                    Post post = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(idSubject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())));
+                    Post post = new Post(int.Parse(row["ID_POST"].ToString()), row["POST_CONTENT"].ToString(), DateTime.Parse(row["POST_DATE"].ToString()), GetSujetByID(id_subject), GetUserByID(int.Parse(row["ID_UTILISATEUR"].ToString())));
                     _Posts.Add(post);
                 }
                 return _Posts;

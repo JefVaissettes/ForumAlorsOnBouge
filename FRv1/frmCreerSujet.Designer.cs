@@ -77,6 +77,7 @@
             // 
             // btAnnuler
             // 
+            this.btAnnuler.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btAnnuler.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAnnuler.Location = new System.Drawing.Point(45, 304);
             this.btAnnuler.Name = "btAnnuler";
@@ -88,6 +89,7 @@
             // 
             // btValider
             // 
+            this.btValider.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btValider.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btValider.Location = new System.Drawing.Point(273, 304);
             this.btValider.Name = "btValider";
