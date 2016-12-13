@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -22,6 +23,8 @@ namespace WinPhoneFR
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private static MonitorViewModel _monitorViewModel = new MonitorViewModel();
+
         public MainPage()
         {
             this.InitializeComponent();
@@ -36,13 +39,24 @@ namespace WinPhoneFR
         /// Ce paramètre est généralement utilisé pour configurer la page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
-            // TODO: préparer la page pour affichage ici.
+            DataContext = _monitorViewModel;
 
-            // TODO: si votre application comporte plusieurs pages, assurez-vous que vous
-            // gérez le bouton Retour physique en vous inscrivant à l’événement
-            // Événement Windows.Phone.UI.Input.HardwareButtons.BackPressed.
-            // Si vous utilisez le NavigationHelper fourni par certains modèles,
-            // cet événement est géré automatiquement.
+            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+        }
+
+        protected override void OnNavigatedFrom(NavigationEventArgs e)
+        {
+            HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
+        }
+
+        private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
+        {
+            e.Handled = true;
+        }
+
+        private async void btClick(object sender, RoutedEventArgs e)
+        {
+            await _monitorViewModel.GetRubric();
         }
     }
 }

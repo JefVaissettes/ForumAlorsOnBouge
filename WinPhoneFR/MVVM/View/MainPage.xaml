@@ -7,8 +7,47 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+    
+    <Page.BottomAppBar>
+        <CommandBar ClosedDisplayMode="Minimal">
+            <AppBarButton x:Name="mnuSynchro" x:Uid="MainPage_MnuSync" Icon="Refresh" Label="Rafraîchir"/>
+            <AppBarButton  x:Name="mnuQuitter" x:Uid="MainPage_MnuQuit" Icon="Clear" Label="Quitter"/>
+        </CommandBar>
+    </Page.BottomAppBar>
 
     <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Button Grid.Row="0" HorizontalAlignment="Center" Content="Choisissez votre rubrique" Click="btClick"/>
+
+        <ListView x:Name="lstvRubric" Grid.Row="1" ItemsSource="{Binding Rubric}" Background="Transparent" Margin="10,50,10,60" VerticalAlignment="Top" FontSize="18" Foreground="Aqua" >
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                </Style>
+            </ListView.ItemContainerStyle>
+            <ListView.ItemContainerTransitions>
+                <TransitionCollection>
+                    <AddDeleteThemeTransition/>
+                </TransitionCollection>
+            </ListView.ItemContainerTransitions>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                        <Button.Content>
+                            <StackPanel Orientation="Horizontal">
+                                <TextBlock FontSize="22" Text="{Binding Title}" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </Button.Content>
+                    </Button>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
 
     </Grid>
 </Page>
