@@ -1,4 +1,4 @@
-﻿using ClassesMetiers;
+﻿using MetiersPortable;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,12 +13,15 @@ namespace WebServRestFR
     public interface IServiceFR
     {
         [OperationContract]
-        List<Subject> GetAllReponseBySujet();
+        [WebGet(UriTemplate = "Rubric")]
+        List<Rubric> GetAllCategories();
 
         [OperationContract]
-        List<Rubric> GetAllCategories();         
+        [WebGet(UriTemplate = "Post/{id_subject}")]
+        List<Post> GetAllReponseBySujet(string id_subject);
 
         [OperationContract]
-        List<Rubric> GetSujetsByCategorieID();        
+        [WebGet(UriTemplate = "subject/{idrubric}")]
+        List<Subject> GetSujetsByCategorieID(string idrubric);
     }
 }

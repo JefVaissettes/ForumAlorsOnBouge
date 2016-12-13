@@ -1,4 +1,5 @@
 ﻿using DAO;
+using MetiersPortable;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -20,7 +21,7 @@ namespace ClassesMetiers
         public static List<Rubric> GetAllRubrics()
         {
             DataTable dt = RubricDAO.GetAllRubrics();
-            if (dt.Rows.Count >= 1)
+                if (dt.Rows.Count >= 1)
             {
                 List<Rubric> _Rubrics = new List<Rubric>();
                 foreach (DataRow row in dt.Rows)

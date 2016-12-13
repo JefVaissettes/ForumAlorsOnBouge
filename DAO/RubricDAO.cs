@@ -34,7 +34,6 @@ namespace DAO
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllCategories";
             cmd.CommandType = CommandType.StoredProcedure;
-
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("Rubric");
             da.Fill(dt);

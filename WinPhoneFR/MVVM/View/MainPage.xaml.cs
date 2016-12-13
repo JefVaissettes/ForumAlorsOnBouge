@@ -13,18 +13,20 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Pour en savoir plus sur le modèle d’élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkID=390556
+// Pour en savoir plus sur le modèle d'élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkId=391641
 
-namespace WinPhoneFR.MVVM.View
+namespace WinPhoneFR
 {
     /// <summary>
     /// Une page vide peut être utilisée seule ou constituer une page de destination au sein d'un frame.
     /// </summary>
-    public sealed partial class BlankPage1 : Page
+    public sealed partial class MainPage : Page
     {
-        public BlankPage1()
+        public MainPage()
         {
             this.InitializeComponent();
+
+            this.NavigationCacheMode = NavigationCacheMode.Required;
         }
 
         /// <summary>
@@ -34,6 +36,13 @@ namespace WinPhoneFR.MVVM.View
         /// Ce paramètre est généralement utilisé pour configurer la page.</param>
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
+            // TODO: préparer la page pour affichage ici.
+
+            // TODO: si votre application comporte plusieurs pages, assurez-vous que vous
+            // gérez le bouton Retour physique en vous inscrivant à l’événement
+            // Événement Windows.Phone.UI.Input.HardwareButtons.BackPressed.
+            // Si vous utilisez le NavigationHelper fourni par certains modèles,
+            // cet événement est géré automatiquement.
         }
     }
 }

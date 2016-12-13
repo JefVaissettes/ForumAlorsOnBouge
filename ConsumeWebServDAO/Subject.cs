@@ -1,19 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassesMetiers
+namespace ConsumeWebServDAO
 {
-    /// <summary>
-    /// La classe Subject, permet de voir tous les sujets d'une rubrique
-    /// Permet de voir les posts, concernant un sujet
-    /// Elle comporte un identifiant, titre du sujet, la description, la rubrique et les posts
-    /// </summary>
-    
-    public class Subject
+    class Subject
     {
         private int _Id;
         /// <summary>

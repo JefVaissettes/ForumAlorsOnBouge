@@ -158,6 +158,10 @@
       <Project>{568cfc35-5b5c-4b74-b52b-3b575c8167e2}</Project>
       <Name>ClassesMetiers</Name>
     </ProjectReference>
+    <ProjectReference Include="..\MetiersPortable\MetiersPortable.csproj">
+      <Project>{DDD1D255-4261-4AC1-AF74-ED7ECA125E75}</Project>
+      <Name>MetiersPortable</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.2">

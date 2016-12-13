@@ -8,68 +8,42 @@ using System.Text;
 using ClassesMetiers;
 using System.Data.SqlClient;
 using System.Data;
+using MetiersPortable;
 
 namespace WebServRestFR
 {
     public class ServiceFR : IServiceFR
     {
-        private SqlConnection cn;
-        private object id_subject;
-        private object idrubric;
-
         public List<Rubric> GetAllCategories()
         {
-            List<Rubric> listRubrics = new List<Rubric>();
-
-            SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "GetAllCategories";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Rubric");
-            da.Fill(dt);
-
-            return listRubrics;
+            return Outil.GetAllRubrics();
         }
 
-        public List<Subject> GetAllReponseBySujet()
-        {            
-            List<Subject> listPosts = new List<Subject>();            
-
-            SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "GetAllReponseBySujet";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@idSubject";
-            parm.Value = id_subject;
-            cmd.Parameters.Add(parm);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Post");
-            da.Fill(dt);
-
-            return listPosts;
-        }
-
-        public List<Rubric> GetSujetsByCategorieID()
+        public List<Post> GetAllReponseBySujet(string id_subject)
         {
-            List<Rubric> listSubjByRub = new List<Rubric>();
-
-            SqlCommand cmd = cn.CreateCommand();
-            cmd.CommandText = "GetSujetsByCategorieID";
-            cmd.CommandType = CommandType.StoredProcedure;
-
-            SqlParameter parm = cmd.CreateParameter();
-            parm.ParameterName = "@IdRubric";
-            parm.Value = idrubric;
-            cmd.Parameters.Add(parm);
-
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("TousLesSujets");
-            da.Fill(dt);
-
-            return listSubjByRub;
+            int r; //Variable locale de retour (résultat)
+            if(int.TryParse(id_subject, out r))
+            {
+                return Outil.GetAllReponseBySujet(r);
+            }
+            else
+            {
+                return null;
+            }
         }
+
+        public List<Subject> GetSujetsByCategorieID(string idrubric)
+        {
+            int r; 
+            if(int.TryParse(idrubric, out r))
+            {
+                return Outil.GetSujetsByCategorieID(r);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
     }
 }

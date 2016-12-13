@@ -22,6 +22,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <UseGlobalApplicationHostFile />
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -70,12 +71,12 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
-    <Reference Include="System.Core" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.EnterpriseServices" />
@@ -98,7 +99,7 @@
     <Compile Include="ServiceFR.svc.cs">
       <DependentUpon>ServiceFR.svc</DependentUpon>
     </Compile>
-    <Compile Include="Contrat\IServiceFR.cs" />
+    <Compile Include="IServiceFR.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -109,7 +110,7 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <None Include="Properties\PublishProfiles\FRF.pubxml" />
+    <None Include="Properties\PublishProfiles\Alors on.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -121,6 +122,10 @@
     <ProjectReference Include="..\ClassesMetiers\ClassesMetiers.csproj">
       <Project>{568cfc35-5b5c-4b74-b52b-3b575c8167e2}</Project>
       <Name>ClassesMetiers</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetiersPortable\MetiersPortable.csproj">
+      <Project>{ddd1d255-4261-4ac1-af74-ed7eca125e75}</Project>
+      <Name>MetiersPortable</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

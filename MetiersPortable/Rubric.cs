@@ -1,20 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassesMetiers
+namespace MetiersPortable
 {
-    /// <summary>
-    /// La classe Rubric, se compose d'un identifiant unique pour chaque rubrique
-    /// Elle est compposée d'un titre et d'un résumé
-    /// </summary>
-    
+    [DataContract]
     public class Rubric
+
     {
         #region "Property et attributs"
 
+        [DataMember]
         private int _Id;
         /// <summary>
         /// Identifiant de la rubrique
@@ -25,6 +24,7 @@ namespace ClassesMetiers
             set { _Id = value; }
         }
 
+        [DataMember]
         private string _Libelle;
         /// <summary>
         /// Titre de la rubrique

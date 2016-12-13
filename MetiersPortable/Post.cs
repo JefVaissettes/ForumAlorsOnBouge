@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ClassesMetiers
+namespace MetiersPortable
 {
+    [DataContract]
     public class Post
     {
         #region "Property et attributs"
@@ -13,6 +15,7 @@ namespace ClassesMetiers
         /// <summary>
         /// L'identifiant de la reponse
         /// </summary>
+        [DataMember]
         private int _Id;
         public int Id
         {
@@ -23,6 +26,7 @@ namespace ClassesMetiers
         /// <summary>
         /// Le texte de la reponse
         /// </summary>
+        [DataMember]
         private string _PostContent;
         public string PostContent
         {
@@ -33,6 +37,7 @@ namespace ClassesMetiers
         /// <summary>
         ///Le sujet auquel appartient la reponse
         /// </summary>
+        [DataMember]
         private Subject _Sujet;
         public Subject Sujet
         {
@@ -43,6 +48,7 @@ namespace ClassesMetiers
         /// <summary>
         /// La date de creation de la reponse
         /// </summary>
+        [DataMember]
         private DateTime _Date;
         public DateTime Date
         {
@@ -53,6 +59,8 @@ namespace ClassesMetiers
         /// <summary>
         /// L'utilisateur qui a crée et posté la reponse
         /// </summary>
+
+        [DataMember]
         private Utilisateur _Utilisateur;
         public Utilisateur Utilisateur
         {
@@ -63,6 +71,8 @@ namespace ClassesMetiers
         /// <summary>
         /// L'auteur de la reponse
         /// </summary>
+
+        [DataMember]
         private string _Auteur;
         public string Auteur
         {

@@ -1,22 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
+using System.Runtime.Serialization;
 using System.Text;
-using System.Threading.Tasks;
 
-
-namespace ClassesMetiers
+namespace MetiersPortable
 {
-    /// <summary>
-    /// La classe Users permet à un utilisateur de s'identifier avec 
-    /// son username (nom) et son mot de passe
-    /// </summary>
-    
+    [DataContract]
     public class Utilisateur
     {
         #region "Property et attributs"
 
+        [DataMember]
         private int _Id;
         /// <summary>
         /// Identifiant de l'utilisateur
@@ -27,6 +22,7 @@ namespace ClassesMetiers
             set { _Id = value; }
         }
 
+        [DataMember]
         private string _Username;
         /// <summary>
         /// Nom de l'utilisateur
@@ -37,6 +33,7 @@ namespace ClassesMetiers
             set { _Username = value; }
         }
 
+        [DataMember]
         private string _Mdp;
         /// <summary>
         /// Mot de passe de l'utilisateur
@@ -46,7 +43,8 @@ namespace ClassesMetiers
             get { return _Mdp; }
             set { _Mdp = value; }
         }
-       
+
+        [DataMember]
         private string _Email;
         /// <summary>
         /// Email de l'utilisateur
@@ -57,6 +55,7 @@ namespace ClassesMetiers
             set { _Email = value; }
         }
 
+        [DataMember]
         private bool _IsRmod;
         /// <summary>
         /// Numéro de role de l'utilisateur
@@ -93,7 +92,7 @@ namespace ClassesMetiers
             this.IsRmod = isRmod;
         }
 
-       public Utilisateur( int id, string username, string password, bool isRmod)
+        public Utilisateur(int id, string username, string password, bool isRmod)
         {
             this.Id = id;
             this.Username = username;

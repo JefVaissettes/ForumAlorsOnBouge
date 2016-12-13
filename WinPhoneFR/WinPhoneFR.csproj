@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{53169735-E8DF-4707-9AE7-BF479A37B10C}</ProjectGuid>
+    <ProjectGuid>{F2B08F3F-37B5-4357-BBB8-CD655F9E8FCB}</ProjectGuid>
     <OutputType>AppContainerExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WinPhoneFR</RootNamespace>
@@ -80,13 +80,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-    <Folder Include="Extensions\" />
-    <Folder Include="MVVM\ViewModel\" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
+    <Compile Include="MVVM\ViewModel\MonitorViewModel.cs" />
+    <Compile Include="MVVM\ViewModel\ViewModelBase.cs" />
+    <Compile Include="MVVM\ViewModel\ViewModelRubric.cs" />
     <Compile Include="MVVM\View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -98,14 +99,12 @@
     </AppxManifest>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Assets\BadgeLogo.scale-100.png" />
-    <Content Include="Assets\Logo.scale-100.png" />
-    <Content Include="Assets\SmallLogo.scale-100.png" />
-    <Content Include="Assets\SplashScreen.scale-100.png" />
-    <Content Include="Assets\Square71x71Logo.scale-100.png" />
-    <Content Include="Assets\StoreLogo.scale-100.png" />
-    <Content Include="Assets\Wide310x150Logo.scale-100.png" />
-    <Content Include="Assets\WideLogo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\SmallLogo.scale-240.png" />
+    <Content Include="Assets\SplashScreen.scale-240.png" />
+    <Content Include="Assets\Square71x71Logo.scale-240.png" />
+    <Content Include="Assets\StoreLogo.scale-240.png" />
+    <Content Include="Assets\WideLogo.scale-240.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -113,21 +112,19 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="MVVM\View\MainPage.xaml">
-      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
   <ItemGroup>
-    <PRIResource Include="Chaines\en\Messages.resw" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Include="Chaines\en\Resources.resw" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Include="Chaines\fr-FR\Messages.resw" />
-  </ItemGroup>
-  <ItemGroup>
-    <PRIResource Include="Chaines\fr-FR\Resources.resw" />
+    <ProjectReference Include="..\ConsumeWSR\ConsumeWSR.csproj">
+      <Project>{a38f9140-5277-4aca-81d7-9b237578e37c}</Project>
+      <Name>ConsumeWSR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetiersPortable\MetiersPortable.csproj">
+      <Project>{ddd1d255-4261-4ac1-af74-ed7eca125e75}</Project>
+      <Name>MetiersPortable</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>

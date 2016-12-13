@@ -1,4 +1,5 @@
 ﻿using ClassesMetiers;
+using MetiersPortable;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
