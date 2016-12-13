@@ -1,57 +1,58 @@
 ﻿using ConsumeWSR;
 using MetiersPortable;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinPhoneFR
 {
     public class ViewModelRubric : ViewModelBase
     {
         private ConsumeWSRest _cdDAL;
-        private int _idRubric;
-        private string _title;
+        private int _idCategorie;
+        private string _Libelle;
 
         #region Constructeurs
 
         internal ViewModelRubric(Rubric rubric, ConsumeWSRest cdDAL)
         {
-            _idRubric = rubric.Id;
-            _title = rubric.Libelle;
+            _idCategorie = rubric.Id;
+            _Libelle = rubric.Libelle;
             _cdDAL = cdDAL;
         }
         #endregion Constructeurs
 
+
         #region Propriétés bindables
 
-        public int IdRubric
+        public int IdCategorie
         {
-            get { return _idRubric; }
+            get { return _idCategorie; }
+            private set            
+                {
+                    _idCategorie = value;
+                    RaisePropertyChanged();
+                }
+        }
+
+        public string Libelle
+        {
+            get { return _Libelle; }
             private set
             {
-                _idRubric = value;
-                RaisePropertyChanged();
+                if(_Libelle != null)
+                {
+                    _Libelle = value;
+                    RaisePropertyChanged();
+                }
             }
         }
 
-        public string Title
-        {
-            get { return _title; }
-            private set
-            {
-                _title = value;
-                RaisePropertyChanged();
-            }
-        }
         #endregion¨Propriétés bindables
+        
 
         #region Méthodes
 
         public override string ToString()
         {
-            return Title;
+            return Libelle;
         }
         #endregion Méthodes
     }

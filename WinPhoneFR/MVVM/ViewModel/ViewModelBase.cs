@@ -1,20 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
+﻿using System.ComponentModel;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace WinPhoneFR
 {
-    public class ViewModelBase
+    public class ViewModelBase : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged Membres
 
         public event PropertyChangedEventHandler PropertyChanged;
 
         #endregion INotifyPropertyChanged Membres
+
 
         #region Méthodes
 

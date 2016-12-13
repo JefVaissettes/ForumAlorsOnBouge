@@ -11,7 +11,7 @@ namespace ConsumeWSR
 {
     public class ConsumeWSRest
     {
-        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc/";
+        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc/Rubric";
         private List<Rubric> _rubrics = new List<Rubric>();
 
         #region Rubric

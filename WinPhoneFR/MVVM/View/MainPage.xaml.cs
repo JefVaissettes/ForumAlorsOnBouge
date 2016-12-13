@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Phone.UI.Input;
@@ -23,7 +24,7 @@ namespace WinPhoneFR
     /// </summary>
     public sealed partial class MainPage : Page
     {
-        private static MonitorViewModel _monitorViewModel = new MonitorViewModel();
+        private MonitorViewModel _monitorViewModel = new MonitorViewModel();
 
         public MainPage()
         {
@@ -37,11 +38,14 @@ namespace WinPhoneFR
         /// </summary>
         /// <param name="e">Données d'événement décrivant la manière dont l'utilisateur a accédé à cette page.
         /// Ce paramètre est généralement utilisé pour configurer la page.</param>
-        protected override void OnNavigatedTo(NavigationEventArgs e)
+        protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            // Binding de la source de données (MonitorViewModel) avec le contexte de la page
             DataContext = _monitorViewModel;
 
+            // On s'abonne à l'événement système 'HardwareButtons_BackPressed'  
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+            await _monitorViewModel.GetRubric();
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)

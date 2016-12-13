@@ -80,6 +80,14 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <ProjectReference Include="..\ConsumeWSR\ConsumeWSR.csproj">
+      <Project>{a38f9140-5277-4aca-81d7-9b237578e37c}</Project>
+      <Name>ConsumeWSR</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MetiersPortable\MetiersPortable.csproj">
+      <Project>{ddd1d255-4261-4ac1-af74-ed7eca125e75}</Project>
+      <Name>MetiersPortable</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App.xaml.cs">
@@ -115,16 +123,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\ConsumeWSR\ConsumeWSR.csproj">
-      <Project>{a38f9140-5277-4aca-81d7-9b237578e37c}</Project>
-      <Name>ConsumeWSR</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MetiersPortable\MetiersPortable.csproj">
-      <Project>{ddd1d255-4261-4ac1-af74-ed7eca125e75}</Project>
-      <Name>MetiersPortable</Name>
-    </ProjectReference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">
     <VisualStudioVersion>12.0</VisualStudioVersion>
