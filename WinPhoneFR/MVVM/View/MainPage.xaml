@@ -40,7 +40,7 @@
             </ListView.ItemContainerTransitions>
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch" Click="ListView_Click">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
                                 <TextBlock FontSize="22" Text="{Binding Libelle}" VerticalAlignment="Center"/>

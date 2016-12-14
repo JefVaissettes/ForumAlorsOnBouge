@@ -56,5 +56,10 @@ namespace WinPhoneFR
         {
             e.Handled = true;
         }
+
+        private async void btClick(object sender, RoutedEventArgs e)
+        {
+            await _monitorViewModel.GetRubric();
+        }
     }
 }

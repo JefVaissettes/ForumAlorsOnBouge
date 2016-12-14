@@ -29,7 +29,8 @@ namespace WinPhoneFR
         public ReadOnlyObservableCollection<ViewModelRubric> Rubric
         {
             get { return new ReadOnlyObservableCollection<ViewModelRubric>(_colViewModelRubric); }
-        }
+        }       
+
         #endregion Propriétés bindables
 
 

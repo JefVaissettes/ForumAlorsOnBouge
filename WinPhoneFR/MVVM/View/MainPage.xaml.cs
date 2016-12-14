@@ -62,5 +62,11 @@ namespace WinPhoneFR
         {
             await _monitorViewModel.GetRubric();
         }
+
+        private void ListView_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModelRubric viewModelRubric = (ViewModelRubric)((Button)sender).DataContext;
+            Frame.Navigate(typeof(SujetPage), viewModelRubric);
+        }
     }
 }

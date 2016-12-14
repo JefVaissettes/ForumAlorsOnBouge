@@ -11,13 +11,13 @@ namespace ConsumeWSR
 {
     public class ConsumeWSRest
     {
-        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc";
+        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc/Rubric";
         private List<Rubric> _rubrics = new List<Rubric>();
 
-        private const string ADR_GET_SUBJECT = "http://user12.2isa.org/ServiceFR.svc";
+        private const string ADR_GET_SUBJECT = "http://user12.2isa.org/ServiceFR.svc/Subject/idRubric";
         private List<Subject> _subjects = new List<Subject>();
 
-        private const string ADR_GET_POST = "http://user12.2isa.org/ServiceFR.svc";
+        private const string ADR_GET_POST = "http://user12.2isa.org/ServiceFR.svc/Post/idSubject";
         private List<Post> _posts = new List<Post>();
 
 
@@ -92,7 +92,6 @@ namespace ConsumeWSR
                 }
                 return null;
             }
-
         }
 
         private List<Subject> DeserializeHttpContentSubject(HttpContent content)
