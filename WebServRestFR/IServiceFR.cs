@@ -17,11 +17,11 @@ namespace WebServRestFR
         List<Rubric> GetAllCategories();
 
         [OperationContract]
-        [WebGet(UriTemplate = "Post/{id_subject}")]
-        List<Post> GetAllReponseBySujet(string id_subject);
-
-        [OperationContract]
         [WebGet(UriTemplate = "subject/{idrubric}")]
         List<Subject> GetSujetsByCategorieID(string idrubric);
+
+        [OperationContract]
+        [WebGet(UriTemplate = "Post/{id_subject}")]
+        List<Post> GetAllReponseBySujet(string id_subject);
     }
 }

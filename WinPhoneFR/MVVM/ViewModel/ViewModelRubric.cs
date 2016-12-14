@@ -11,6 +11,16 @@ namespace WinPhoneFR
 
         #region Constructeurs
 
+        /// <summary>
+        /// Constructeur par défaut
+        /// </summary>
+        internal ViewModelRubric() { }
+
+        /// <summary>
+        /// Constructeur avec passage des paramètres Id et Libellé (titre)
+        /// </summary>
+        /// <param name="rubric"></param>
+        /// <param name="cdDAL"></param>
         internal ViewModelRubric(Rubric rubric, ConsumeWSRest cdDAL)
         {
             _idCategorie = rubric.Id;

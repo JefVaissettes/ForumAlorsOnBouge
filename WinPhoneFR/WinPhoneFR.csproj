@@ -95,11 +95,16 @@
     </Compile>
     <Compile Include="MVVM\ViewModel\MonitorViewModel.cs" />
     <Compile Include="MVVM\ViewModel\ViewModelBase.cs" />
+    <Compile Include="MVVM\ViewModel\ViewModelPost.cs" />
     <Compile Include="MVVM\ViewModel\ViewModelRubric.cs" />
+    <Compile Include="MVVM\ViewModel\ViewModelSubject.cs" />
     <Compile Include="MVVM\View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="MVVM\View\SujetPage.xaml.cs">
+      <DependentUpon>SujetPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
@@ -108,6 +113,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.scale-240.png" />
+    <Content Include="Assets\logo150x150.png" />
+    <Content Include="Assets\logo24x24.png" />
+    <Content Include="Assets\logo310x150.png" />
+    <Content Include="Assets\logo44x44.png" />
+    <Content Include="Assets\logo480x800.png" />
+    <Content Include="Assets\logo50x50.scale-240.png" />
+    <Content Include="Assets\logo71x71.png" />
+    <Content Include="Assets\logo800x480.png" />
     <Content Include="Assets\SmallLogo.scale-240.png" />
     <Content Include="Assets\SplashScreen.scale-240.png" />
     <Content Include="Assets\Square71x71Logo.scale-240.png" />
@@ -122,6 +135,10 @@
     <Page Include="MVVM\View\MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MVVM\View\SujetPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '12.0' ">

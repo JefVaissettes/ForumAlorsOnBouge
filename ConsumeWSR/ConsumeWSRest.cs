@@ -11,8 +11,15 @@ namespace ConsumeWSR
 {
     public class ConsumeWSRest
     {
-        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc/Rubric";
+        private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc";
         private List<Rubric> _rubrics = new List<Rubric>();
+
+        private const string ADR_GET_SUBJECT = "http://user12.2isa.org/ServiceFR.svc";
+        private List<Subject> _subjects = new List<Subject>();
+
+        private const string ADR_GET_POST = "http://user12.2isa.org/ServiceFR.svc";
+        private List<Post> _posts = new List<Post>();
+
 
         #region Rubric
 
@@ -43,13 +50,10 @@ namespace ConsumeWSR
                         // Désérialisation de la réponse du service
                         return DeserializeHttpContent(wcfResponse.Content);
                     }
-
                 }
                 return null;
             }
         }
-
-
 
         private List<Rubric> DeserializeHttpContent(HttpContent content)
         {
@@ -64,10 +68,83 @@ namespace ConsumeWSR
         }
         #endregion Rubric
 
-        #region Sujet
 
+        #region Subject
 
+        public List<Subject> Subjects
+        {
+            get
+            {
+                return _subjects;
+            }
+        }
 
-        #endregion Sujet
+        public async Task<List<Subject>> getSubject()
+        {
+            using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
+            {
+                using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_SUBJECT, CancellationToken.None))
+                {
+                    if(wcfResponse.IsSuccessStatusCode)
+                    {
+                        return DeserializeHttpContentSubject(wcfResponse.Content);
+                    }
+                }
+                return null;
+            }
+
+        }
+
+        private List<Subject> DeserializeHttpContentSubject(HttpContent content)
+        {
+            using (Stream s = content.ReadAsStreamAsync().Result)
+            {
+                if(s.Length > 0)
+                {
+                    return _subjects = (List<Subject>)new DataContractSerializer(typeof(List<Subject>)).ReadObject(s);
+                }
+                return null;
+            }
+        }
+        #endregion Subject
+
+        #region Post
+
+        public List<Post> Posts
+        {
+            get
+            {
+                return _posts;
+            }
+        }
+
+        public async Task<List<Post>> getPost()
+        {
+            using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
+            {
+                using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_POST, CancellationToken.None))
+                {
+                    if(wcfResponse.IsSuccessStatusCode)
+                    {
+                        return DeserializeHttpContentPost(wcfResponse.Content);
+                    }
+                }
+                return null;
+            }
+        }
+
+        private List<Post> DeserializeHttpContentPost(HttpContent content)
+        {
+            using (Stream s = content.ReadAsStreamAsync().Result)
+            {
+                if(s.Length > 0)
+                {
+                    return _posts = (List<Post>)new DataContractSerializer(typeof(List<Post>)).ReadObject(s);
+                }
+                return null;
+            }
+        }
+
+        #endregion Post
     }
 }
