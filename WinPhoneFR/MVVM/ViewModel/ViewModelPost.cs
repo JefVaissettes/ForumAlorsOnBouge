@@ -29,7 +29,7 @@ namespace WinPhoneFR
         /// </summary>
         /// <param name="post"></param>
         /// <param name="cdDAL"></param>
-        internal ViewModelPost(Post post, ConsumeWSRest cdDAL )
+        internal ViewModelPost(Post post, ConsumeWSRest cdDAL)
         {
             _cdDAL = cdDAL;
             _idPost = post.Id;
@@ -48,8 +48,13 @@ namespace WinPhoneFR
             get { return _idPost; }
             private set
             {
-                _idPost = value;
-                RaisePropertyChanged();
+                if (_idPost != value)
+                {
+                    _idPost = value;
+                    RaisePropertyChanged();
+                }
+
+
             }
         }
 
@@ -58,7 +63,7 @@ namespace WinPhoneFR
             get { return _postContent; }
             private set
             {
-                if(_postContent != null)
+                if (_postContent != value)
                 {
                     _postContent = value;
                     RaisePropertyChanged();
@@ -71,7 +76,7 @@ namespace WinPhoneFR
             get { return _date; }
             private set
             {
-                if(_date != null)
+                if (_date != value)
                 {
                     _date = value;
                     RaisePropertyChanged();
@@ -84,7 +89,7 @@ namespace WinPhoneFR
             get { return _auteur; }
             private set
             {
-                if(_auteur != null)
+                if (_auteur != value)
                 {
                     _auteur = value;
                     RaisePropertyChanged();

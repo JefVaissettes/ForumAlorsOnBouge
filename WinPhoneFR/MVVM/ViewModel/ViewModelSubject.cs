@@ -8,14 +8,12 @@ namespace WinPhoneFR
     public class ViewModelSubject : ViewModelBase
 
     {
-        //private ConsumeWSRest _cdDAL;
-        //private int _idCategorie;
         private int _idSubject;
         private string _Titre;
         private DateTime _date;
         private string _auteur;
 
-        private ObservableCollection<ViewModelPost> _colViewModelPost;
+        private ObservableCollection<ViewModelPost> _colViewModelPosts;
 
         #region Constructeurs
 
@@ -31,12 +29,11 @@ namespace WinPhoneFR
         /// <param name="subject"></param>
         internal ViewModelSubject(Subject subject, ConsumeWSRest cdDAL)
         {
-            //_cdDAL = cdDAL;
             _idSubject = subject.Id;
             _Titre = subject.Titre;
             _date = subject.Date;
             _auteur = subject.Auteur;
-            _colViewModelPost = new ObservableCollection<ViewModelPost>();
+            _colViewModelPosts = new ObservableCollection<ViewModelPost>();
         }
 
         #endregion Constructeurs
@@ -48,8 +45,12 @@ namespace WinPhoneFR
             get { return _idSubject; }
             private set
             {
-                _idSubject = value;
-                RaisePropertyChanged();
+                if (_idSubject != value)
+                {
+                    _idSubject = value;
+                    RaisePropertyChanged();
+                }
+
             }
         }
 
@@ -58,7 +59,7 @@ namespace WinPhoneFR
             get { return _Titre; }
             private set
             {
-                if (_Titre != null)
+                if (_Titre != value)
                 {
                     _Titre = value;
                     RaisePropertyChanged();
@@ -71,7 +72,7 @@ namespace WinPhoneFR
             get { return _date; }
             private set
             {
-                if (_date != null)
+                if (_date != value)
                 {
                     _date = value;
                     RaisePropertyChanged();
@@ -84,7 +85,7 @@ namespace WinPhoneFR
             get { return _auteur; }
             private set
             {
-                if (_auteur != null)
+                if (_auteur != value)
                 {
                     _auteur = value;
                     RaisePropertyChanged();

@@ -1,17 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Phone.UI.Input;
+﻿using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // Pour en savoir plus sur le modèle d’élément Page vierge, consultez la page http://go.microsoft.com/fwlink/?LinkID=390556
@@ -23,7 +12,7 @@ namespace WinPhoneFR
     /// </summary>
     public sealed partial class SujetPage : Page
     {
-        private MonitorViewModel _monitorViewModel = new MonitorViewModel();
+        private ViewModelRubric _viewModelRubric = null;
 
         public SujetPage()
         {
@@ -32,6 +21,8 @@ namespace WinPhoneFR
             NavigationCacheMode = NavigationCacheMode.Required;
         }
 
+        #region Ouverture / fermeture de la fenêtre
+
         /// <summary>
         /// Invoqué lorsque cette page est sur le point d'être affichée dans un frame.
         /// </summary>
@@ -39,12 +30,15 @@ namespace WinPhoneFR
         /// Ce paramètre est généralement utilisé pour configurer la page.</param>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
+            _viewModelRubric = (ViewModelRubric)e.Parameter;
+            await _viewModelRubric.GetSujetByCategorieID();
+
             // Binding de la source de données (MonitorViewModel) avec le contexte de la page
-            DataContext = _monitorViewModel;
+            DataContext = _viewModelRubric;
 
             // On s'abonne à l'événement système 'HardwareButtons_BackPressed'  
             HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-            await _monitorViewModel.GetRubric();
+            
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -52,14 +46,30 @@ namespace WinPhoneFR
             HardwareButtons.BackPressed -= HardwareButtons_BackPressed;
         }
 
+        #endregion Ouverture / fermeture de la fenêtre
+
+
+        #region Evenements
+
+
         private void HardwareButtons_BackPressed(object sender, BackPressedEventArgs e)
         {
             e.Handled = true;
+            Frame.Navigate(typeof(MainPage));
         }
 
-        private async void btClick(object sender, RoutedEventArgs e)
+        private void mnuQuitter_Click(object sender, RoutedEventArgs e)
         {
-            await _monitorViewModel.GetRubric();
+            Frame.Navigate(typeof(MainPage));
         }
+
+        private void mnuSynchro_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(SujetPage));
+        }
+
+
+        #endregion Evenements
+
     }
 }

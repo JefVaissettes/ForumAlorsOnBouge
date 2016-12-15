@@ -14,10 +14,10 @@ namespace ConsumeWSR
         private const string ADR_GET_RUBRIC = "http://user12.2isa.org/ServiceFR.svc/Rubric";
         private List<Rubric> _rubrics = new List<Rubric>();
 
-        private const string ADR_GET_SUBJECT = "http://user12.2isa.org/ServiceFR.svc/Subject/idRubric";
+        private const string ADR_GET_SUBJECT = "http://user12.2isa.org/ServiceFR.svc/Subject/";
         private List<Subject> _subjects = new List<Subject>();
 
-        private const string ADR_GET_POST = "http://user12.2isa.org/ServiceFR.svc/Post/idSubject";
+        private const string ADR_GET_POST = "http://user12.2isa.org/ServiceFR.svc/Post/";
         private List<Post> _posts = new List<Post>();
 
 
@@ -71,24 +71,28 @@ namespace ConsumeWSR
 
         #region Subject
 
-        public List<Subject> Subjects
+        public List<Subject> subjects
         {
-            get
-            {
-                return _subjects;
-            }
+            get { return _subjects; }
         }
 
-        public async Task<List<Subject>> getSubject()
+        public async Task<List<Subject>> getSujetByCategorieID(int idcategorie)
         {
             using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
             {
-                using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_SUBJECT, CancellationToken.None))
+                // Permet de supprimer la mise en cache. En WindowsPhone, deux requêtes successives identiques retournent le résultat de la première 
+                // qui a été mis en cache
+                client.DefaultRequestHeaders.IfModifiedSince = DateTimeOffset.Now;
+
+                // Appel du service Rest (en asynchrone)
+                using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_SUBJECT + idcategorie.ToString(), CancellationToken.None))
                 {
-                    if(wcfResponse.IsSuccessStatusCode)
+                    if (wcfResponse.IsSuccessStatusCode)
                     {
+                        // Désérialisation de la réponse du service
                         return DeserializeHttpContentSubject(wcfResponse.Content);
                     }
+
                 }
                 return null;
             }
@@ -98,7 +102,7 @@ namespace ConsumeWSR
         {
             using (Stream s = content.ReadAsStreamAsync().Result)
             {
-                if(s.Length > 0)
+                if (s.Length > 0)
                 {
                     return _subjects = (List<Subject>)new DataContractSerializer(typeof(List<Subject>)).ReadObject(s);
                 }
