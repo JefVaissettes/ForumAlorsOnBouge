@@ -86,7 +86,7 @@ namespace WinPhoneFR
             MAJ_Subjects(subjects);
         }
 
-        private void MAJ_Subjects(List<Subject> subjects)
+        private void MAJ_Subjects(List<Subject> subjects) 
         {
             _colViewModelSubjects.Clear();
 
