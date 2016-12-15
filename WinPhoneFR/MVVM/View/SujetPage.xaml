@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Page.BottomAppBar>
-        <CommandBar ClosedDisplayMode="Minimal">
+        <CommandBar ClosedDisplayMode="Minimal" Background="#1FA2E1">
             <AppBarButton x:Name="mnuSynchro" x:Uid="SujetPage_MnuSync" Icon="Refresh" Label="Rafraîchir"/>
             <AppBarButton  x:Name="mnuQuitter" x:Uid="SujetPage_MnuQuit" Icon="Clear" Label="Quitter"/>
         </CommandBar>
@@ -43,13 +43,18 @@
                     <Button HorizontalAlignment="Stretch" HorizontalContentAlignment="Stretch">
                         <Button.Content>
                             <StackPanel Orientation="Horizontal">
-                                <TextBlock FontSize="22" Text="{Binding Titre}" VerticalAlignment="Center"/>
+                                <ListBox ScrollViewer.VerticalScrollBarVisibility="Visible">
+                                    <ListBoxItem FontSize="22" Content="{Binding Titre}" VerticalAlignment="Center"  Background="Black" Foreground="#DFF2FF"/>
+                                    <ListBoxItem FontSize="20" Content="{Binding Auteur}" VerticalAlignment="Center"  Background="Black" Foreground="#DFF2FF"/>
+                                    <ListBoxItem FontSize="19" Content="{Binding Date}" VerticalAlignment="Center"  Background="Black" Foreground="#DFF2FF"/>
+                                </ListBox>                               
                             </StackPanel>
                         </Button.Content>
                     </Button>
-                </DataTemplate>
+                </DataTemplate>                
             </ListView.ItemTemplate>
         </ListView>
+        
 
 
 

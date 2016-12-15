@@ -55,6 +55,11 @@ namespace ConsumeWSR
             }
         }
 
+        /// <summary>
+        /// Désérialisation des données XML, les données ont été sérialisées par défaut en XML dans le contrat IServiceFR du WerService
+        /// </summary>
+        /// <param name="content"></param>
+        /// <returns></returns>
         private List<Rubric> DeserializeHttpContent(HttpContent content)
         {
             using (Stream s = content.ReadAsStreamAsync().Result)
