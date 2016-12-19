@@ -29,11 +29,20 @@ namespace DAO
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllCategories";
             cmd.CommandType = CommandType.StoredProcedure;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Rubric");
-            da.Fill(dt);
 
-            return dt;
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Rubric");
+                da.Fill(dt);
+
+                return dt;
+            }
+            catch (System.Exception)
+            {
+
+                return null;
+            }
         }
 
         /// <summary>
@@ -45,7 +54,6 @@ namespace DAO
 
         public static DataTable GetRubricByID(int idRubric)
         {
-            //con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetCategorieByID";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -55,12 +63,18 @@ namespace DAO
             parm.Value = idRubric;
             cmd.Parameters.Add(parm);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Rubric");
-            da.Fill(dt);
-            //con.Close();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Rubric");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (System.Exception)
+            {
+                return null;
+            }
         }
         #endregion
     }

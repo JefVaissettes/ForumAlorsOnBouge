@@ -12,7 +12,7 @@ namespace DAO
     {
         #region "Property et attributs"
 
-        private static SqlConnection con = ConnexionDBDAO.GetConnexion() ;
+        private static SqlConnection con = ConnexionDBDAO.GetConnexion();
 
         #endregion
 
@@ -40,11 +40,18 @@ namespace DAO
             parmMPD.Value = password;
             cmd.Parameters.Add(parmMPD);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Username");
-            da.Fill(dt);
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Username");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         public static DataTable GetUserByID(int idutilisateur)
@@ -58,15 +65,21 @@ namespace DAO
             parm.Value = idutilisateur;
             cmd.Parameters.Add(parm);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Utilisateur");
-            da.Fill(dt);
-            //con.Close();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Utilisateur");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
-        public static DataTable  GetAllUtilisateurs()
+        public static DataTable GetAllUtilisateurs()
         {
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllUtilisateurs";
@@ -74,7 +87,6 @@ namespace DAO
 
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable dt = new DataTable("Users");
-            //con.Close();
 
             return dt;
         }
@@ -95,10 +107,17 @@ namespace DAO
             parPassword.Value = password;
             cmd.Parameters.Add(parPassword);
 
-            con.Open();
-            int nbligne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbligne;
+            try
+            {
+                con.Open();
+                int nbligne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbligne;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         #endregion

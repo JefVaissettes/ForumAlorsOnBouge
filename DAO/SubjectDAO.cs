@@ -23,18 +23,24 @@ namespace DAO
         /// <returns>Tous les sujets</returns>
         public static DataTable GetAllSujets()
         {
-            //con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetAllSujets";
             cmd.CommandType = CommandType.StoredProcedure;
 
-            SqlDataAdapter da = new SqlDataAdapter();
-            DataTable dt = new DataTable("TousLesSujet");
-            da.Fill(dt);
-            //con.Close();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter();
+                DataTable dt = new DataTable("TousLesSujet");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
+
         /// <summary>
         /// La methode GetSujetsByCategorie, permet de récupéré tous les sujets d'une catégorie
         /// </summary>
@@ -52,12 +58,18 @@ namespace DAO
             parm.Value = idrubric;
             cmd.Parameters.Add(parm);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("TousLesSujets");
-            da.Fill(dt);
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("TousLesSujets");
+                da.Fill(dt);
 
-            return dt;
-
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -67,7 +79,6 @@ namespace DAO
         /// <returns>Le sujet, dont l'identifiant est passé en paramatre </returns>
         public static DataTable GetSujetByID(int idsubject)
         {
-            //con.Open();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "GetSujetByID";
             cmd.CommandType = CommandType.StoredProcedure;
@@ -75,15 +86,20 @@ namespace DAO
             SqlParameter parm = cmd.CreateParameter();
             parm.ParameterName = "@ID_SUBJECT";
             parm.Value = idsubject;
-
             cmd.Parameters.Add(parm);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("SUBJECT");
-            da.Fill(dt);
-            //con.Close();
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("SUBJECT");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
 
         }
 
@@ -122,10 +138,17 @@ namespace DAO
             parmDescri.Value = description;
             cmd.Parameters.Add(parmDescri);
 
-            con.Open();
-            int nbLigne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbLigne;
+            try
+            {
+                con.Open();
+                int nbLigne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbLigne;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -167,10 +190,17 @@ namespace DAO
             parmOldDescr.Value = oldDescription;
             cmd.Parameters.Add(parmOldDescr);
 
-            con.Open();
-            int nbLigne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbLigne;
+            try
+            {
+                con.Open();
+                int nbLigne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbLigne;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -190,11 +220,17 @@ namespace DAO
             parmIdSubject.Value = idSubject;
             cmd.Parameters.Add(parmIdSubject);
 
-            con.Open();
-            int nbLigne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbLigne;
-
+            try
+            {
+                con.Open();
+                int nbLigne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbLigne;
+            }
+            catch (Exception)
+            {
+                return 0;                    
+            }
         }
         #endregion
     }

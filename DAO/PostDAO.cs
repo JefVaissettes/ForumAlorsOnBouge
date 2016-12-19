@@ -39,11 +39,18 @@ namespace DAO
             parm.Value = id_subject;
             cmd.Parameters.Add(parm);
 
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable("Post") ;
-            da.Fill(dt);
+            try
+            {
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable dt = new DataTable("Post");
+                da.Fill(dt);
 
-            return dt;
+                return dt;
+            }
+            catch (Exception)
+            {
+                return null;
+            }
         }
 
         /// <summary>
@@ -76,11 +83,18 @@ namespace DAO
             parmTexte.Value = texte;
             cmd.Parameters.Add(parmTexte);
 
-            con.Open();
-            //excute une action T-SQL sur la connexion et retourne le nombres de lignes affectéess
-            int nbLigne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbLigne;
+            try
+            {
+                con.Open();
+                //excute une action T-SQL sur la connexion et retourne le nombres de lignes affectéess
+                int nbLigne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbLigne;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
 
         /// <summary>
@@ -100,10 +114,17 @@ namespace DAO
             parmIdPost.Value = idPost;
             cmd.Parameters.Add(parmIdPost);
 
-            con.Open();
-            int nbLigne = cmd.ExecuteNonQuery();
-            con.Close();
-            return nbLigne;
+            try
+            {
+                con.Open();
+                int nbLigne = cmd.ExecuteNonQuery();
+                con.Close();
+                return nbLigne;
+            }
+            catch (Exception)
+            {
+                return 0;
+            }
         }
         #endregion
     }
