@@ -104,9 +104,11 @@ namespace ConsumeWSR
         }
 
         private List<Subject> DeserializeHttpContentSubject(HttpContent content)
+
         {
             using (Stream s = content.ReadAsStreamAsync().Result)
             {
+
                 if (s.Length > 0)
                 {
                     return _subjects = (List<Subject>)new DataContractSerializer(typeof(List<Subject>)).ReadObject(s);
@@ -114,45 +116,50 @@ namespace ConsumeWSR
                 return null;
             }
         }
-        #endregion Subject
-
-        #region Post
-
-        public List<Post> Posts
-        {
-            get
-            {
-                return _posts;
-            }
-        }
-
-        public async Task<List<Post>> getPost()
-        {
-            using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
-            {
-                using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_POST, CancellationToken.None))
-                {
-                    if(wcfResponse.IsSuccessStatusCode)
-                    {
-                        return DeserializeHttpContentPost(wcfResponse.Content);
-                    }
-                }
-                return null;
-            }
-        }
-
-        private List<Post> DeserializeHttpContentPost(HttpContent content)
-        {
-            using (Stream s = content.ReadAsStreamAsync().Result)
-            {
-                if(s.Length > 0)
-                {
-                    return _posts = (List<Post>)new DataContractSerializer(typeof(List<Post>)).ReadObject(s);
-                }
-                return null;
-            }
-        }
-
-        #endregion Post
     }
+
+
+    #endregion Subject
+
+
+
+    #region Post
+
+    //public List<Post> Posts
+    //{
+    //    get
+    //    {
+    //        return _posts;
+    //    }
+    //}
+
+    //public async Task<List<Post>> GetAllReponseBySujet(int idsubject)
+    //{
+    //    using (HttpClient client = new HttpClient() { Timeout = TimeSpan.FromMilliseconds(Timeout.Infinite) })
+    //    {
+    //        using (HttpResponseMessage wcfResponse = await client.GetAsync(ADR_GET_POST, CancellationToken.None))
+    //        {
+    //            if (wcfResponse.IsSuccessStatusCode)
+    //            {
+    //                return DeserializeHttpContentPost(wcfResponse.Content);
+    //            }
+    //        }
+    //        return null;
+    //    }
+    //}
+
+    //private List<Post> DeserializeHttpContentPost(HttpContent content)
+    //{
+    //    using (Stream s = content.ReadAsStreamAsync().Result)
+    //    {
+    //        if (s.Length > 0)
+    //        {
+    //            return _posts = (List<Post>)new DataContractSerializer(typeof(List<Post>)).ReadObject(s);
+    //        }
+    //        return null;
+    //    }
+    //}
+
+    #endregion Post
+}
 }

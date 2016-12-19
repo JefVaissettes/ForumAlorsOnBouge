@@ -2,7 +2,6 @@
 using MetiersPortable;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Threading;
 using System.Threading.Tasks;
 
 
@@ -15,12 +14,10 @@ namespace WinPhoneFR
     {
         private ConsumeWSRest _cdDAL;
         private ObservableCollection<ViewModelRubric> _colViewModelRubric;
-        //private List<Rubric> rubrics ;
 
         public MonitorViewModel()
         {
             _cdDAL = new ConsumeWSRest();
-            //rubrics = new List<Rubric>();
             _colViewModelRubric = new ObservableCollection<ViewModelRubric>();
         }
 

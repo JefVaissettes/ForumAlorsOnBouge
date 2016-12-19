@@ -1,4 +1,5 @@
-﻿using Windows.Phone.UI.Input;
+﻿using System.Threading;
+using Windows.Phone.UI.Input;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Navigation;
@@ -30,15 +31,23 @@ namespace WinPhoneFR
         /// Ce paramètre est généralement utilisé pour configurer la page.</param>
         protected async override void OnNavigatedTo(NavigationEventArgs e)
         {
-            _viewModelRubric = (ViewModelRubric)e.Parameter;
-            await _viewModelRubric.GetSujetByCategorieID();
+            try
+            {
+                _viewModelRubric = (ViewModelRubric)e.Parameter;
 
-            // Binding de la source de données (MonitorViewModel) avec le contexte de la page
-            DataContext = _viewModelRubric;
+                await _viewModelRubric.GetSujetByCategorieID();
 
-            // On s'abonne à l'événement système 'HardwareButtons_BackPressed'  
-            HardwareButtons.BackPressed += HardwareButtons_BackPressed;
-            
+                // Binding de la source de données (MonitorViewModel) avec le contexte de la page
+                DataContext = _viewModelRubric;
+
+                // On s'abonne à l'événement système 'HardwareButtons_BackPressed'  
+                HardwareButtons.BackPressed += HardwareButtons_BackPressed;
+
+            }
+            catch (System.Exception)
+            {
+                throw new System.Exception("Il n'y a pas de sujet dans cette rubrique");
+            }
         }
 
         protected override void OnNavigatedFrom(NavigationEventArgs e)
@@ -58,18 +67,20 @@ namespace WinPhoneFR
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void mnuQuitter_Click(object sender, RoutedEventArgs e)
+        private void mnuQuitter_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(MainPage));
+            // Retour à la fenêtre appelante
+            if (Frame.CanGoBack)
+            {
+                Frame.GoBack();
+            }
         }
 
-        private void mnuSynchro_Click(object sender, RoutedEventArgs e)
+        private async void mnuSynchro_Click_1(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(SujetPage));
+            await _viewModelRubric.GetSujetByCategorieID();
         }
-
 
         #endregion Evenements
-
     }
 }

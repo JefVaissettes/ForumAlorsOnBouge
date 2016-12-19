@@ -10,8 +10,8 @@
 
     <Page.BottomAppBar>
         <CommandBar ClosedDisplayMode="Minimal" Background="#1FA2E1">
-            <AppBarButton x:Name="mnuSynchro" x:Uid="SujetPage_MnuSync" Icon="Refresh" Label="Rafraîchir"/>
-            <AppBarButton  x:Name="mnuQuitter" x:Uid="SujetPage_MnuQuit" Icon="Clear" Label="Quitter"/>
+            <AppBarButton x:Name="mnuSynchro" x:Uid="SujetPage_MnuSync" Icon="Refresh" Label="Rafraîchir" Click="mnuSynchro_Click_1"/>
+            <AppBarButton  x:Name="mnuQuitter" x:Uid="SujetPage_MnuQuit" Icon="Clear" Label="Quitter" Click="mnuQuitter_Click_1"/>
         </CommandBar>
     </Page.BottomAppBar>
 

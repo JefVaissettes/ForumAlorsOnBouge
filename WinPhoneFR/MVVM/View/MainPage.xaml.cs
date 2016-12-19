@@ -73,5 +73,14 @@ namespace WinPhoneFR
 
         #endregion Evenements
 
+        private void mnuQuitter_Click(object sender, RoutedEventArgs e)
+        {
+            App.Current.Exit();
+        }
+
+        private async void mnuSynchro_Click(object sender, RoutedEventArgs e)
+        {
+            await _monitorViewModel.GetRubric();
+        }
     }
 }

@@ -53,8 +53,6 @@ namespace WinPhoneFR
                     _idPost = value;
                     RaisePropertyChanged();
                 }
-
-
             }
         }
 
